@@ -1,6 +1,11 @@
-name: Deploy portfolio to GitHub Pages (manual fallback)
+name: Deploy portfolio to GitHub Pages (fallback)
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/pages.yml
   workflow_dispatch:
 
 permissions:
@@ -9,7 +14,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-manual
+  group: pages-fallback
   cancel-in-progress: true
 
 jobs:
@@ -33,3 +38,6 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 1800000
+          error_count: 60
