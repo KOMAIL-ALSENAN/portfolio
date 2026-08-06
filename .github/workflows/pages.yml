@@ -1,1 +1,38 @@
-şº(·úk¡ø¥zX§{ßİzÿçºYOz¹¢²È¨×§‰ç[˜[YNˆ\ŞHÜ›Û[ÈÈÚ]XˆYÙ\Â‚›Û‚ˆ\Ú‚ˆœ˜[˜Ú\ÎˆÛXZ[—BˆÛÜšÙ›İ×Ù\Ü]Ú‚‚œ\›Z\ÜÚ[ÛœÎ‚ˆÛÛ[Îˆ™XYˆYÙ\ÎˆÜš]BˆY]ÚÙ[ˆÜš]B‚˜ÛÛ˜İ\œ™[˜ŞN‚ˆÜ›İ\ˆYÙ\ÂˆØ[˜Ù[Z[‹\›ÙÜ™\ÜÎˆYB‚š›ØœÎ‚ˆ\ŞN‚ˆ[š\›Û›Y[‚ˆ˜[YNˆÚ]X‹\YÙ\Âˆ\›ˆ	ŞÈİ\Ë™\Ş[Y[›İ]]ËœYÙWİ\›_Bˆ[œË[ÛˆX[K[]\İˆİ\Î‚ˆH\Ù\ÎˆXİ[ÛœËØÚXÚÛİ]ˆH\Ù\ÎˆXİ[ÛœËØÛÛ™šYİ\™K\YÙ\ĞBˆH\Ù\ÎˆXİ[ÛœËİ\ØY\YÙ\ËX\Y˜XİŒÂˆÚ]‚ˆ]ˆ‚ˆH˜[YNˆ\ŞHÈÚ]XˆYÙ\ÂˆYˆ\Ş[Y[ˆ\Ù\ÎˆXİ[ÛœËÙ\ŞK\YÙ\Ğ
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
