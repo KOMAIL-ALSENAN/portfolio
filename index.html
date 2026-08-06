@@ -1,111 +1,44 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Portfolio of Komail Jaffar Al Senan — BIM Specialist and Revit Developer.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Komail Jaffar Al Senan — BIM Specialist and Revit add-in developer." />
+  <meta name="theme-color" content="#07111f" />
   <title>Komail Al Senan | BIM Specialist</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{--bg:#050b14;--surface:#0b1627;--surface2:#101f35;--text:#edf6ff;--muted:#96a9bd;--blue:#2493ff;--cyan:#4cd7ff;--line:rgba(118,180,255,.16);--shadow:0 24px 60px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 5%,rgba(36,147,255,.16),transparent 27%),var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.65}body[dir="rtl"]{font-family:Tahoma,"Segoe UI",Arial,sans-serif}.container{width:min(1120px,calc(100% - 40px));margin:auto}a{color:inherit;text-decoration:none}button{font:inherit}.nav{position:sticky;top:0;z-index:20;background:rgba(5,11,20,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.4px}.mark{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(76,215,255,.35);border-radius:12px;background:linear-gradient(135deg,rgba(36,147,255,.3),rgba(76,215,255,.08));color:var(--cyan)}.links{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:.94rem}.links a:hover{color:var(--text)}.lang{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:8px 13px;border-radius:10px;cursor:pointer}.hero{min-height:calc(100vh - 72px);display:grid;align-items:center;padding:80px 0}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:72px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:1.8px}.eyebrow:before{content:"";width:28px;height:2px;background:var(--cyan)}h1{font-size:clamp(3.2rem,7vw,6.6rem);line-height:.95;letter-spacing:-.055em;margin:22px 0}.gradient{background:linear-gradient(100deg,var(--text) 20%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}.lead{max-width:720px;color:var(--muted);font-size:clamp(1.05rem,2vw,1.28rem)}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:12px;border:1px solid var(--line);font-weight:700;transition:.2s}.btn.primary{background:linear-gradient(135deg,var(--blue),#1264ff);border-color:transparent;box-shadow:0 14px 35px rgba(36,147,255,.24)}.btn:hover{transform:translateY(-2px);border-color:rgba(76,215,255,.5)}.visual{position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:32px;background:linear-gradient(145deg,rgba(36,147,255,.15),rgba(11,22,39,.5));box-shadow:var(--shadow);overflow:hidden}.visual:before,.visual:after{content:"";position:absolute;border:1px solid rgba(76,215,255,.28);inset:14%;transform:rotate(45deg);border-radius:20px}.visual:after{inset:27%;transform:rotate(45deg);background:linear-gradient(135deg,rgba(36,147,255,.28),rgba(76,215,255,.06))}.monogram{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(4rem,10vw,8rem);font-weight:900;letter-spacing:-.1em;color:white;z-index:2}.status{position:absolute;bottom:22px;left:22px;right:22px;z-index:3;padding:14px 16px;border:1px solid var(--line);background:rgba(5,11,20,.72);backdrop-filter:blur(12px);border-radius:13px;color:var(--muted);font-size:.9rem}.status i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#39e58c;margin-inline-end:8px;box-shadow:0 0 14px #39e58c}section{padding:95px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:38px}.kicker{color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:.82rem}.section-head h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.08;margin:8px 0 0;letter-spacing:-.03em}.section-head p{max-width:530px;color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.card{background:linear-gradient(145deg,rgba(16,31,53,.9),rgba(11,22,39,.72));border:1px solid var(--line);border-radius:20px;padding:28px}.card p{color:var(--muted);margin:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat{padding:23px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(5,11,20,.35)}.stat strong{display:block;font-size:1.45rem;color:var(--cyan)}.stat span{color:var(--muted);font-size:.85rem}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{min-height:330px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.project:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-70px;top:-70px;background:var(--blue);filter:blur(65px);opacity:.2}.tag{display:inline-flex;padding:6px 10px;border:1px solid var(--line);border-radius:99px;color:var(--cyan);font-size:.78rem}.project h3{font-size:1.4rem;margin:18px 0 9px}.project p{font-size:.95rem}.project-link{margin-top:22px;color:var(--text);font-weight:700}.skills{display:flex;flex-wrap:wrap;gap:12px}.skill{padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:#cfe7ff}.contact{padding:48px;border-radius:26px;background:linear-gradient(135deg,#0c2442,#0a1728);border:1px solid rgba(76,215,255,.25);display:flex;align-items:center;justify-content:space-between;gap:30px}.contact h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin:0 0 12px}.contact p{color:var(--muted);margin:0}.footer{padding:30px 0 42px;color:var(--muted);font-size:.9rem}.footer-inner{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:28px}.reveal{opacity:0;transform:translateY(20px);transition:.65s}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:850px){.links a{display:none}.hero-grid,.about-grid{grid-template-columns:1fr}.hero{padding:55px 0}.visual{max-width:520px;width:100%;justify-self:center}.projects{grid-template-columns:1fr 1fr}.section-head,.contact{align-items:flex-start;flex-direction:column}.contact{padding:34px}}
+    @media(max-width:580px){.container{width:min(100% - 28px,1120px)}.projects,.stats{grid-template-columns:1fr}.hero-grid{gap:42px}h1{font-size:3.25rem}.actions .btn{width:100%}.section-head{margin-bottom:28px}section{padding:70px 0}.footer-inner{flex-direction:column;gap:8px}}
+  </style>
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#home" aria-label="Home"><span class="brand-mark">K</span><span>KOMAIL</span></a>
-    <nav aria-label="Primary navigation">
-      <a href="#about" data-en="About" data-ar="نبذة">About</a>
-      <a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
-      <a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
-      <a href="#contact" data-en="Contact" data-ar="التواصل">Contact</a>
-    </nav>
-    <button id="langToggle" class="lang" type="button" aria-label="Switch language">العربية</button>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div class="glow"></div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow" data-en="BIM SPECIALIST · REVIT DEVELOPER" data-ar="متخصص BIM · مطوّر REVIT">BIM SPECIALIST · REVIT DEVELOPER</p>
-        <h1 data-en="I build smarter workflows for the built environment." data-ar="أبني مسارات عمل أذكى للبيئة العمرانية.">I build smarter workflows for the built environment.</h1>
-        <p class="lead" data-en="I’m Komail Jaffar Al Senan, focused on BIM coordination, Revit automation, and practical digital solutions that help project teams work with clarity." data-ar="أنا كميل جعفر آل سنان، متخصص في تنسيق نمذجة معلومات البناء وأتمتة Revit والحلول الرقمية العملية التي تساعد فرق المشاريع على العمل بوضوح وكفاءة.">I’m Komail Jaffar Al Senan, focused on BIM coordination, Revit automation, and practical digital solutions that help project teams work with clarity.</p>
-        <div class="actions">
-          <a class="button primary" href="#projects" data-en="View projects" data-ar="عرض المشاريع">View projects</a>
-          <a class="button ghost" href="#contact" data-en="Let’s connect" data-ar="لنتواصل">Let’s connect</a>
-        </div>
-      </div>
-      <div class="hero-card reveal">
-        <div class="monogram">KA</div>
-        <div class="status"><span></span><span data-en="Available for collaboration" data-ar="متاح للتعاون">Available for collaboration</span></div>
-      </div>
-    </section>
-
-    <section id="about" class="section split">
-      <div>
-        <p class="section-no">01</p>
-        <h2 data-en="Design knowledge. Digital precision." data-ar="معرفة تصميمية. دقة رقمية.">Design knowledge. Digital precision.</h2>
-      </div>
-      <div class="body-copy">
-        <p data-en="I bridge architecture, BIM delivery, and software development. My work centers on simplifying complex Revit tasks, improving coordination, and turning repeatable processes into reliable tools." data-ar="أجمع بين العمارة وتسليم مشاريع BIM وتطوير البرمجيات. يتركز عملي على تبسيط مهام Revit المعقدة وتحسين التنسيق وتحويل العمليات المتكررة إلى أدوات موثوقة.">I bridge architecture, BIM delivery, and software development. My work centers on simplifying complex Revit tasks, improving coordination, and turning repeatable processes into reliable tools.</p>
-        <div class="facts">
-          <div><strong>BIM</strong><span data-en="Coordination & delivery" data-ar="التنسيق والتسليم">Coordination & delivery</span></div>
-          <div><strong>Revit</strong><span data-en="Automation & add-ins" data-ar="الأتمتة والإضافات">Automation & add-ins</span></div>
-          <div><strong>AEC</strong><span data-en="Practical workflows" data-ar="مسارات عمل عملية">Practical workflows</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="section-head">
-        <div><p class="section-no">02</p><h2 data-en="Selected work" data-ar="أعمال مختارة">Selected work</h2></div>
-        <a href="https://github.com/KOMAIL-ALSENAN" target="_blank" rel="noreferrer" data-en="GitHub profile ↗" data-ar="حساب GitHub ↗">GitHub profile ↗</a>
-      </div>
-      <div class="projects">
-        <article class="project featured reveal">
-          <div class="project-top"><span>01</span><span>REVIT · C# · WPF</span></div>
-          <h3 data-en="BIM Specialist Add-in" data-ar="إضافة BIM Specialist">BIM Specialist Add-in</h3>
-          <p data-en="A professional multi-tool Revit add-in designed to streamline rooms, views, schedules, sheets, parameters, and everyday BIM workflows." data-ar="إضافة احترافية متعددة الأدوات لبرنامج Revit، صُممت لتبسيط الغرف والعروض والجداول واللوحات والمعلمات ومسارات عمل BIM اليومية.">A professional multi-tool Revit add-in designed to streamline rooms, views, schedules, sheets, parameters, and everyday BIM workflows.</p>
-          <div class="tags"><span>Revit API</span><span>.NET</span><span>MVVM</span></div>
-        </article>
-        <article class="project reveal">
-          <div class="project-top"><span>02</span><span>BIM · COORDINATION</span></div>
-          <h3 data-en="3D Rooms Workflow" data-ar="مسار عمل الغرف ثلاثية الأبعاد">3D Rooms Workflow</h3>
-          <p data-en="A visual room-management workflow with color schemes, transparency control, room data, and model coordination." data-ar="مسار بصري لإدارة الغرف يتضمن أنظمة الألوان والتحكم بالشفافية وبيانات الغرف وتنسيق النموذج.">A visual room-management workflow with color schemes, transparency control, room data, and model coordination.</p>
-          <div class="tags"><span>Revit</span><span>Automation</span></div>
-        </article>
-        <article class="project reveal">
-          <div class="project-top"><span>03</span><span>WEB · PRODUCT</span></div>
-          <h3 data-en="PDF Tools Platform" data-ar="منصة أدوات PDF">PDF Tools Platform</h3>
-          <p data-en="A browser-first concept for merging, splitting, arranging, and compressing PDF files locally and securely." data-ar="مفهوم لمنصة تعمل داخل المتصفح لدمج ملفات PDF وتقسيمها وترتيبها وضغطها محليًا وبأمان.">A browser-first concept for merging, splitting, arranging, and compressing PDF files locally and securely.</p>
-          <div class="tags"><span>Web</span><span>Local-first</span><span>UX</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills" class="section split">
-      <div><p class="section-no">03</p><h2 data-en="Tools and capabilities" data-ar="الأدوات والقدرات">Tools and capabilities</h2></div>
-      <div class="skill-list">
-        <div><span>01</span><h3 data-en="BIM & Coordination" data-ar="BIM والتنسيق">BIM & Coordination</h3><p>Revit · Navisworks · Dynamo · Autodesk Construction Cloud</p></div>
-        <div><span>02</span><h3 data-en="Development" data-ar="التطوير">Development</h3><p>C# · Revit API · WPF · MVVM · GitHub</p></div>
-        <div><span>03</span><h3 data-en="Design & Documentation" data-ar="التصميم والتوثيق">Design & Documentation</h3><p>AutoCAD · Technical Drawings · PDF · Excel</p></div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact section">
-      <p class="section-no">04</p>
-      <h2 data-en="Have a BIM challenge? Let’s solve it." data-ar="لديك تحدٍ في BIM؟ لنعمل على حله.">Have a BIM challenge? Let’s solve it.</h2>
-      <p data-en="I’m open to professional opportunities, technical collaboration, and conversations about better digital workflows." data-ar="أرحب بالفرص المهنية والتعاون التقني والنقاشات حول تطوير مسارات العمل الرقمية.">I’m open to professional opportunities, technical collaboration, and conversations about better digital workflows.</p>
-      <div class="actions">
-        <a class="button primary" href="mailto:your-email@example.com" data-en="Send an email" data-ar="إرسال بريد إلكتروني">Send an email</a>
-        <a class="button ghost" href="#" data-en="LinkedIn profile" data-ar="حساب LinkedIn">LinkedIn profile</a>
-      </div>
-    </section>
+  <nav class="nav"><div class="container nav-inner"><a class="brand" href="#top"><span class="mark">KA</span><span>KOMAIL</span></a><div class="links"><a href="#about" data-i18n="navAbout">About</a><a href="#projects" data-i18n="navProjects">Projects</a><a href="#skills" data-i18n="navSkills">Skills</a><a href="#contact" data-i18n="navContact">Contact</a><button class="lang" id="langBtn" aria-label="Switch language">العربية</button></div></div></nav>
+  <main id="top">
+    <header class="hero"><div class="container hero-grid"><div><span class="eyebrow" data-i18n="eyebrow">BIM · REVIT · DEVELOPMENT</span><h1><span data-i18n="hello">I build better</span><br><span class="gradient" data-i18n="built">digital buildings.</span></h1><p class="lead" data-i18n="lead">BIM Specialist focused on intelligent Revit workflows, model coordination, and practical tools that turn complex AEC tasks into reliable systems.</p><div class="actions"><a class="btn primary" href="#projects" data-i18n="viewWork">View my work →</a><a class="btn" href="https://github.com/KOMAIL-ALSENAN" target="_blank" rel="noreferrer">GitHub ↗</a></div></div><div class="visual" aria-label="Komail Al Senan monogram"><div class="monogram">KA</div><div class="status"><i></i><span data-i18n="available">Available for BIM collaboration and development</span></div></div></div></header>
+    <section id="about"><div class="container"><div class="section-head reveal"><div><span class="kicker" data-i18n="aboutKicker">Profile</span><h2 data-i18n="aboutTitle">Engineering meets automation.</h2></div><p data-i18n="aboutIntro">I connect architectural thinking with BIM technology to produce coordinated models, clearer data, and faster project delivery.</p></div><div class="about-grid"><article class="card reveal"><p data-i18n="bio">I’m Komail Jaffar Al Senan, a BIM Specialist working across Revit, Navisworks, Dynamo, and custom Revit add-in development. My work focuses on solving real coordination problems and building reusable workflows for AEC teams.</p></article><div class="card stats reveal"><div class="stat"><strong>BIM</strong><span data-i18n="stat1">Modeling & coordination</span></div><div class="stat"><strong>API</strong><span data-i18n="stat2">Revit automation</span></div><div class="stat"><strong>4D</strong><span data-i18n="stat3">Clash & planning</span></div></div></div></div></section>
+    <section id="projects"><div class="container"><div class="section-head reveal"><div><span class="kicker" data-i18n="projectsKicker">Portfolio archive</span><h2 data-i18n="projectsTitle">Architecture and design projects.</h2></div><p data-i18n="projectsIntro">Selected work recovered from my previous portfolio, alongside current BIM development projects.</p></div><div class="projects">
+      <article class="card project reveal"><div><span class="tag">MASTER PLANNING</span><h3>Red Sea Turtle Bay Village</h3><p data-i18n="oldP1">A coastal village design study covering planning, architecture, and presentation.</p></div><a class="project-link" href="https://sites.google.com/view/komail-alsenan/projects/red-sea-turtle-bay-village" target="_blank" rel="noreferrer" data-i18n="viewOld">View project ↗</a></article>
+      <article class="card project reveal"><div><span class="tag">ARCHITECTURE</span><h3>Nesma Car Parking Building</h3><p data-i18n="oldP2">Architectural design and documentation for a multi-level parking facility.</p></div><a class="project-link" href="https://sites.google.com/view/komail-alsenan/projects/nesma-car-parking-building" target="_blank" rel="noreferrer" data-i18n="viewOld">View project ↗</a></article>
+      <article class="card project reveal"><div><span class="tag">RESIDENTIAL</span><h3>Villa 1</h3><p data-i18n="villaText">Residential villa design, plans, elevations, and presentation work.</p></div><a class="project-link" href="https://sites.google.com/view/komail-alsenan/projects/vila-1" target="_blank" rel="noreferrer" data-i18n="viewOld">View project ↗</a></article>
+      <article class="card project reveal"><div><span class="tag">RESIDENTIAL</span><h3>Villa 2</h3><p data-i18n="villaText">Residential villa design, plans, elevations, and presentation work.</p></div><a class="project-link" href="https://sites.google.com/view/komail-alsenan/projects/vila-2" target="_blank" rel="noreferrer" data-i18n="viewOld">View project ↗</a></article>
+      <article class="card project reveal"><div><span class="tag">RESIDENTIAL</span><h3>Villa 3</h3><p data-i18n="villaText">Residential villa design, plans, elevations, and presentation work.</p></div><a class="project-link" href="https://sites.google.com/view/komail-alsenan/projects/vila-3" target="_blank" rel="noreferrer" data-i18n="viewOld">View project ↗</a></article>
+      <article class="card project reveal"><div><span class="tag">RESIDENTIAL</span><h3>Villa 4</h3><p data-i18n="villaText">Residential villa design, plans, elevations, and presentation work.</p></div><a class="project-link" href="https://sites.google.com/view/komail-alsenan/projects/vila-4" target="_blank" rel="noreferrer" data-i18n="viewOld">View project ↗</a></article>
+      <article class="card project reveal"><div><span class="tag">FITNESS · INTERIOR</span><h3>Health Gym</h3><p data-i18n="oldP3">A comprehensive health-club project with architectural and interior design studies.</p></div><a class="project-link" href="https://sites.google.com/view/komail-alsenan/projects/health-gym" target="_blank" rel="noreferrer" data-i18n="viewOld">View project ↗</a></article>
+      <article class="card project reveal"><div><span class="tag">INTERIOR</span><h3>Interior Design</h3><p data-i18n="oldP4">Interior spaces developed through layouts, material studies, and visual presentation.</p></div><a class="project-link" href="https://sites.google.com/view/komail-alsenan/projects/intirary" target="_blank" rel="noreferrer" data-i18n="viewOld">View project ↗</a></article>
+      <article class="card project reveal"><div><span class="tag">VISUALIZATION</span><h3>Photoshop</h3><p data-i18n="oldP5">Architectural graphics and post-production presentation studies.</p></div><a class="project-link" href="https://sites.google.com/view/komail-alsenan/projects/photoshop" target="_blank" rel="noreferrer" data-i18n="viewOld">View project ↗</a></article>
+    </div></div></section>
+    <section id="skills"><div class="container"><div class="section-head reveal"><div><span class="kicker" data-i18n="skillsKicker">Toolkit</span><h2 data-i18n="skillsTitle">Skills & software.</h2></div></div><div class="skills reveal"><span class="skill">Autodesk Revit</span><span class="skill">Navisworks Manage</span><span class="skill">AutoCAD</span><span class="skill">Dynamo</span><span class="skill">Revit API</span><span class="skill">C# / .NET</span><span class="skill">WPF / MVVM</span><span class="skill">BIM Coordination</span><span class="skill">Clash Detection</span><span class="skill">4D Planning</span><span class="skill">GitHub</span><span class="skill">ISO 19650</span></div></div></section>
+    <section id="contact"><div class="container"><div class="contact reveal"><div><h2 data-i18n="contactTitle">Let’s build something useful.</h2><p data-i18n="contactText">For BIM collaboration, Revit automation, and engineering technology projects.</p></div><div class="actions"><a class="btn primary" href="mailto:senankomail@gmail.com" data-i18n="emailBtn">Send an email</a><a class="btn" href="https://www.linkedin.com/in/komail-al-senan/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="btn" href="https://drive.google.com/file/d/12fgy6b7fWczq9piGCfSXWgk3RGpayznP/view" target="_blank" rel="noreferrer" data-i18n="cvBtn">View CV ↗</a></div></div></div></section>
   </main>
-
-  <footer>
-    <span>© <span id="year"></span> KOMAIL JAFFAR AL SENAN</span>
-    <a href="#home" data-en="Back to top ↑" data-ar="العودة للأعلى ↑">Back to top ↑</a>
-  </footer>
-  <script src="script.js"></script>
+  <footer class="footer"><div class="container footer-inner"><span>© <span id="year"></span> Komail Jaffar Al Senan</span><span data-i18n="footer">BIM Specialist · Saudi Arabia</span></div></footer>
+  <script>
+    const translations={ar:{navAbout:"نبذة",navProjects:"المشاريع",navSkills:"المهارات",navContact:"تواصل",eyebrow:"BIM · REVIT · تطوير",hello:"أبني حلولًا",built:"رقمية أفضل للمباني.",lead:"متخصص BIM أركز على تطوير سير عمل ذكي في Revit، وتنسيق النماذج، وصناعة أدوات عملية تحوّل مهام قطاع البناء المعقدة إلى أنظمة موثوقة.",viewWork:"شاهد أعمالي ←",available:"متاح للتعاون في مشاريع BIM والتطوير",aboutKicker:"الملف المهني",aboutTitle:"حيث تلتقي الهندسة بالأتمتة.",aboutIntro:"أربط التفكير المعماري بتقنيات BIM لإنتاج نماذج منسقة وبيانات أوضح وتسليم أسرع للمشاريع.",bio:"أنا كميل جعفر آل سنان، متخصص BIM أعمل على Revit وNavisworks وDynamo وتطوير إضافات Revit المخصصة. أركز على حل مشكلات التنسيق الحقيقية وبناء أساليب عمل قابلة لإعادة الاستخدام لفرق الهندسة والإنشاء.",stat1:"النمذجة والتنسيق",stat2:"أتمتة Revit",stat3:"التعارضات والتخطيط",projectsKicker:"أرشيف الأعمال",projectsTitle:"مشاريع العمارة والتصميم.",projectsIntro:"أعمال مختارة استُعيدت من موقعي السابق، إلى جانب مشاريعي الحالية في تطوير BIM.",oldP1:"دراسة تصميمية لقرية ساحلية تشمل التخطيط والعمارة والإظهار.",oldP2:"تصميم وتوثيق معماري لمبنى مواقف سيارات متعدد الطوابق.",villaText:"تصميم فيلا سكنية يشمل المخططات والواجهات والإظهار.",oldP3:"مشروع متكامل لنادٍ صحي يشمل دراسات العمارة والتصميم الداخلي.",oldP4:"مساحات داخلية طُوّرت من خلال المخططات ودراسات المواد والإظهار.",oldP5:"رسومات معمارية ودراسات ما بعد الإنتاج والإظهار.",viewOld:"عرض المشروع ↗",skillsKicker:"الأدوات",skillsTitle:"المهارات والبرامج.",contactTitle:"لنصنع شيئًا مفيدًا.",contactText:"للتعاون في BIM وأتمتة Revit ومشاريع التقنية الهندسية.",emailBtn:"إرسال بريد",cvBtn:"عرض السيرة الذاتية ↗",footer:"متخصص BIM · المملكة العربية السعودية"},en:{}};
+    const english={};document.querySelectorAll('[data-i18n]').forEach(el=>english[el.dataset.i18n]=el.textContent);translations.en=english;let lang=localStorage.getItem('portfolio-lang')||'en';
+    function setLanguage(next){lang=next;const ar=lang==='ar';document.documentElement.lang=lang;document.documentElement.dir=ar?'rtl':'ltr';document.body.dir=ar?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>{const value=translations[lang][el.dataset.i18n];if(value)el.textContent=value});document.getElementById('langBtn').textContent=ar?'English':'العربية';localStorage.setItem('portfolio-lang',lang)}
+    document.getElementById('langBtn').addEventListener('click',()=>setLanguage(lang==='en'?'ar':'en'));document.getElementById('year').textContent=new Date().getFullYear();setLanguage(lang);
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
 </body>
 </html>
