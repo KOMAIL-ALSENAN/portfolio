@@ -1,8 +1,66 @@
-şº(·úk¡ø¥zX§{ßİzÿçºYOz¹¢²È¨×§‰çHÈÛÛXZ[[Ù[˜[ˆ8 %Ü›Û[Â‚H™\ÜÛœÚ]™Hš[[™İX[
-\˜XšXËÑ[™Û\Ú
-HÜ›Û[È›ÜˆÛÛXZ[˜Y™˜\ˆ[Ù[˜[‹’SHÜXÚX[\İ[™™]š]YZ[ˆ]™[Ü\‹‚‚ˆÈÈ™X]\™\Â‚‹HYH[™İXYÙHİÚ]Ú[™È™]ÙY[ˆ\˜XšXÈ[™[™Û\Ú‹H•Óˆ^[İ]İ\Ü‹H\šÈ›YH™\ÜÛœÚ]™H\ÚYÛ‚‹H’SH›Ú™XİËÚÚ[Ë›Ùš[K[™ÛÛXİÙXİ[ÛœÂ‹H™XYH›ÜˆÚ]XˆYÙ\Â‚ˆÈÈX›\ÚÚ]Ú]XˆYÙ\Â‚“Ü[ˆ
-Š”Ù][™ÜÈ8¡¤ˆYÙ\ÊŠ‹Ù[Xİ
-Š‘\ŞHœ›ÛHHœ˜[˜Ú
-Š‹[ˆÚÛÜÙHXZ[˜[™È
-›Ûİ
-X‚
+# Komail Jaffar Al Senan â€” Portfolio
+
+Professional portfolio website for **Komail Jaffar Al Senan**, focused on BIM, architectural modeling, Revit workflows, coordination, automation, and engineering technology.
+
+## Portfolio
+
+The website includes:
+
+- BIM and architectural projects
+- Revit and Navisworks work
+- Selected professional certificates
+- Skills and software
+- Contact information
+- English / Arabic language support
+- Responsive desktop and mobile layout
+
+## Main Skills
+
+- Autodesk Revit
+- Navisworks Manage
+- AutoCAD
+- Dynamo
+- Revit API
+- C# / .NET
+- WPF / MVVM
+- BIM Coordination
+- Clash Detection
+- 4D Planning
+- ISO 19650
+
+## Featured Projects
+
+- Qiddiya Project
+- Red Sea Turtle Bay Village
+- Nesma Car Parking Building
+- Health Gym
+- Residential Villa Projects
+- Interior Design
+
+## Website Files
+
+- `index.html` â€” Main portfolio page
+- `project.html` â€” Individual project pages
+- `certificates.html` â€” Certificates page
+- `styles.css` â€” Website styles
+- `script.js` â€” Website interactions
+- `assets/` â€” Project images, certificates, documents, and other media
+
+## Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©
+
+Ù‡Ø°Ø§ Ø§Ù„Ù…Ø³ØªÙˆØ¯Ø¹ ÙŠØ­ØªÙˆÙŠ Ø¹Ù„Ù‰ Ù…ÙˆÙ‚Ø¹ **Ø§Ù„Ø¨ÙˆØ±ØªÙÙˆÙ„ÙŠÙˆ Ø§Ù„Ø´Ø®ØµÙŠ Ù„ÙƒÙ…ÙŠÙ„ Ø¬Ø¹ÙØ± Ø¢Ù„ Ø³Ù†Ø§Ù†**ØŒ ÙˆÙŠØ¹Ø±Ø¶ Ø§Ù„Ø£Ø¹Ù…Ø§Ù„ ÙˆØ§Ù„Ø®Ø¨Ø±Ø§Øª ÙÙŠ Ù…Ø¬Ø§Ù„ BIM ÙˆØ§Ù„Ù†Ù…Ø°Ø¬Ø© Ø§Ù„Ù…Ø¹Ù…Ø§Ø±ÙŠØ© ÙˆRevit ÙˆØ§Ù„ØªÙ†Ø³ÙŠÙ‚ ÙˆØ§Ù„Ø£ØªÙ…ØªØ© ÙˆØ§Ù„ØªÙ‚Ù†ÙŠØ§Øª Ø§Ù„Ù‡Ù†Ø¯Ø³ÙŠØ©.
+
+### Ù…Ø­ØªÙˆÙŠØ§Øª Ø§Ù„Ù…ÙˆÙ‚Ø¹
+
+- Ù…Ø´Ø§Ø±ÙŠØ¹ BIM ÙˆÙ…Ø¹Ù…Ø§Ø±ÙŠØ©
+- Ø£Ø¹Ù…Ø§Ù„ Revit ÙˆNavisworks
+- Ø´Ù‡Ø§Ø¯Ø§Øª Ù…Ù‡Ù†ÙŠØ© Ù…Ø®ØªØ§Ø±Ø©
+- Ø§Ù„Ù…Ù‡Ø§Ø±Ø§Øª ÙˆØ§Ù„Ø¨Ø±Ø§Ù…Ø¬
+- Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„ØªÙˆØ§ØµÙ„
+- Ø¯Ø¹Ù… Ø§Ù„Ù„ØºØªÙŠÙ† Ø§Ù„Ø¹Ø±Ø¨ÙŠØ© ÙˆØ§Ù„Ø¥Ù†Ø¬Ù„ÙŠØ²ÙŠØ©
+- ØªØµÙ…ÙŠÙ… Ù…ØªØ¬Ø§ÙˆØ¨ Ù„Ù„ÙƒÙ…Ø¨ÙŠÙˆØªØ± ÙˆØ§Ù„Ø¬ÙˆØ§Ù„
+
+---
+
+**Komail Jaffar Al Senan**  
+BIM Specialist Â· Saudi Arabia
