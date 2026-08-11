@@ -37,14 +37,16 @@ The website includes:
 - Residential Villa Projects
 - Interior Design
 
-## Website Files
+## Website Structure
 
-- `index.html` — Main portfolio page
-- `project.html` — Individual project pages
+- `index.html` — Main portfolio page, including its current page-specific styles and interactions
+- `project.html` — Individual project pages and project data/rendering logic
 - `certificates.html` — Certificates page
-- `styles.css` — Website styles
-- `script.js` — Website interactions
 - `assets/` — Project images, certificates, documents, and other media
+- `projects/` — Archived/source project material
+- `.github/` — GitHub configuration and workflows
+
+The previous standalone `styles.css` and `script.js` files were removed because they represented an older implementation and were no longer used by the current pages.
 
 ## العربية
 
@@ -59,6 +61,16 @@ The website includes:
 - بيانات التواصل
 - دعم اللغتين العربية والإنجليزية
 - تصميم متجاوب للكمبيوتر والجوال
+
+### بنية الموقع الحالية
+
+- `index.html` — الصفحة الرئيسية، وتشمل التنسيقات والتفاعلات المستخدمة حاليًا
+- `project.html` — صفحات المشاريع ومنطق عرض بيانات المشاريع
+- `certificates.html` — صفحة الشهادات
+- `assets/` — الصور والشهادات والمستندات والوسائط
+- `projects/` — مواد وأرشيف المشاريع
+
+تم حذف `styles.css` و`script.js` القديمين لأنهما كانا يمثلان نسخة سابقة ولم يعودا مستخدمين في الصفحات الحالية.
 
 ---
 
