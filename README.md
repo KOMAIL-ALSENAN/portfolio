@@ -1,78 +1,133 @@
 # Komail Jaffar Al Senan — Portfolio
 
-Professional portfolio website for **Komail Jaffar Al Senan**, focused on BIM, architectural modeling, Revit workflows, coordination, automation, and engineering technology.
+Professional portfolio website for **Komail Jaffar Al Senan**, presented as an **Architecture BIM Modeler** with a supporting focus on **BIM coordination, Revit automation, multidisciplinary delivery, and digital AEC workflows**.
 
-## Portfolio
+## Live Portfolio
 
-The website includes:
+The site is structured as a responsive bilingual portfolio for desktop and mobile, with shared identity, SEO metadata, social preview, project galleries, certificate filters, and accessibility improvements.
 
-- BIM and architectural projects
-- Revit and Navisworks work
-- Selected professional certificates
-- Skills and software
-- Contact information
+## Main Portfolio Sections
+
+- About / professional profile
+- Experience Summary
+- Core Competencies
+- Featured Projects
+- All Projects with category filters
+- Featured Certificates
+- All Certificates with issuing-organization filters
+- Skills & Software
+- Contact and CV
 - English / Arabic language support
-- Responsive desktop and mobile layout
 
-## Main Skills
+## Professional Focus
 
+- Architecture BIM Modeling
 - Autodesk Revit
-- Navisworks Manage
-- AutoCAD
-- Dynamo
-- Revit API
-- C# / .NET
-- WPF / MVVM
 - BIM Coordination
+- Navisworks Manage
 - Clash Detection
-- 4D Planning
-- ISO 19650
+- Dynamo Automation
+- Revit API / C# Workflows
+- Model QA / QC
+- 4D Coordination
+- ISO 19650 Information Management
 
 ## Featured Projects
 
+The home page currently highlights six selected projects:
+
 - Qiddiya Project
 - Red Sea Turtle Bay Village
+- NEOM
+- ZAIN INDUSTRIES
 - Nesma Car Parking Building
-- Health Gym
-- Residential Villa Projects
-- Interior Design
+- NUPCO
 
-## Website Structure
+Additional projects remain available through the **All Projects** page.
 
-- `index.html` — Main portfolio page, including its current page-specific styles and interactions
-- `project.html` — Individual project pages and project data/rendering logic
-- `certificates.html` — Certificates page
-- `assets/` — Project images, certificates, documents, and other media
-- `projects/` — Archived/source project material
-- `.github/` — GitHub configuration and workflows
+## Project Pages
 
-The previous standalone `styles.css` and `script.js` files were removed because they represented an older implementation and were no longer used by the current pages.
+- `index.html` — Main portfolio and featured content
+- `projects.html` — All projects with interactive filtering
+- `project.html` — Shared project gallery page used by Qiddiya, Red Sea, Nesma, Villas, Health Gym and other project entries
+- `neom.html` — NEOM project overview and building galleries
+- `neom-professional-village.html` — NEOM Professional Village multi-building gallery
+- `nupco.html` — NUPCO multi-building project page, prepared for future building images
+- `zain-industries.html` — ZAIN INDUSTRIES Warehouse and HCL Tank Farm galleries
+- `certificates.html` — Full certificate library with organization filters and Featured certificates
+
+## Shared Front-End Structure
+
+- `assets/css/main.css` — Shared portfolio identity, navigation, accessibility, About enhancements, and responsive behavior
+- `assets/js/main.js` — Shared identity normalization, SEO support, accessibility helpers, media optimization, and About content
+- `assets/favicon.svg` — KA browser tab icon
+- `assets/social-preview.png` — Open Graph / social sharing preview image
+- `assets/documents/Komail-Al-Senan-CV.pdf` — Portfolio CV
+
+Page-specific CSS and JavaScript are still retained where required for galleries, project rendering, filters, language switching, and lightbox interactions.
+
+## Asset Structure
+
+```text
+assets/
+├── certificates/
+│   ├── autodesk-training-center/
+│   ├── bim-solutions/
+│   ├── revizto/
+│   ├── saudi-council-of-engineers/
+│   └── linkedin-learning/
+├── css/
+│   └── main.css
+├── documents/
+│   └── Komail-Al-Senan-CV.pdf
+├── js/
+│   └── main.js
+├── projects/
+│   ├── health-gym/
+│   ├── neom/
+│   ├── nesma-car-parking-building/
+│   ├── nupco/
+│   ├── qiddiya/
+│   ├── red-sea-turtle-bay-village/
+│   └── zain-industries/
+├── favicon.svg
+└── social-preview.png
+```
+
+## Responsive & Accessibility Features
+
+- Responsive layouts for desktop, tablet, and mobile
+- Touch-friendly controls with minimum target sizing
+- Keyboard focus states
+- Skip-to-content support
+- Accessible navigation labels
+- Responsive galleries and lightboxes
+- Lazy loading and asynchronous image decoding where appropriate
+- External-link security using `noopener` and `noreferrer`
+
+## SEO & Sharing
+
+The primary pages include:
+
+- Meta descriptions
+- Canonical URLs
+- Open Graph metadata
+- Twitter summary cards
+- Shared social preview image
+- Favicon and theme color
+
+## GitHub Pages
+
+The site is deployed from the `main` branch through the GitHub Pages workflow under `.github/workflows/pages.yml`.
 
 ## العربية
 
-هذا المستودع يحتوي على موقع **البورتفوليو الشخصي لكميل جعفر آل سنان**، ويعرض الأعمال والخبرات في مجال BIM والنمذجة المعمارية وRevit والتنسيق والأتمتة والتقنيات الهندسية.
+هذا المستودع يحتوي على موقع البورتفوليو الشخصي لـ **كميل جعفر آل سنان** بصفته **Architecture BIM Modeler** مع تركيز إضافي على تنسيق BIM وأتمتة Revit وسير العمل الرقمي في مشاريع AEC.
 
-### محتويات الموقع
-
-- مشاريع BIM ومعمارية
-- أعمال Revit وNavisworks
-- شهادات مهنية مختارة
-- المهارات والبرامج
-- بيانات التواصل
-- دعم اللغتين العربية والإنجليزية
-- تصميم متجاوب للكمبيوتر والجوال
-
-### بنية الموقع الحالية
-
-- `index.html` — الصفحة الرئيسية، وتشمل التنسيقات والتفاعلات المستخدمة حاليًا
-- `project.html` — صفحات المشاريع ومنطق عرض بيانات المشاريع
-- `certificates.html` — صفحة الشهادات
-- `assets/` — الصور والشهادات والمستندات والوسائط
-- `projects/` — مواد وأرشيف المشاريع
-
-تم حذف `styles.css` و`script.js` القديمين لأنهما كانا يمثلان نسخة سابقة ولم يعودا مستخدمين في الصفحات الحالية.
+الموقع يحتوي على نبذة مهنية، ملخص خبرة، الكفاءات الأساسية، المشاريع المختارة، صفحة لجميع المشاريع، الشهادات المهنية، المهارات، السيرة الذاتية، ودعم العربية والإنجليزية، بالإضافة إلى تصميم متجاوب وتحسينات SEO وAccessibility.
 
 ---
 
 **Komail Jaffar Al Senan**  
-BIM Specialist · Saudi Arabia
+Architecture BIM Modeler  
+BIM Specialist · Revit Automation
