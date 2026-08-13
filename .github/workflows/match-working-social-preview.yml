@@ -1,0 +1,83 @@
+name: Match working Teams preview pattern
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/match-working-social-preview.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Match colleague working metadata pattern
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, json
+
+          image = 'https://komail-alsenan.github.io/portfolio/assets/projects/qiddiya/b05/QRXL103100-TPE-MOD-3DM-ARC-02-B05-01.jpg'
+          index = Path('index.html')
+          text = index.read_text(encoding='utf-8')
+
+          # Remove the extra social-image declarations that the working reference site does not use.
+          for prop in ['og:image:secure_url','og:image:type','og:image:width','og:image:height']:
+              text = re.sub(rf'\s*<meta\s+property=["\']{re.escape(prop)}["\'][^>]*>', '', text, flags=re.I)
+          text = re.sub(r'\s*<meta\s+name=["\']twitter:image:alt["\'][^>]*>', '', text, flags=re.I)
+          text = re.sub(r'\s*<meta\s+name=["\']robots["\'][^>]*>', '', text, flags=re.I)
+          text = re.sub(r'\s*<link\s+rel=["\']image_src["\'][^>]*>', '', text, flags=re.I)
+
+          # Replace OG/Twitter image with a real project image, like the working reference site.
+          text = re.sub(r'<meta\s+property=["\']og:image["\']\s+content=["\'][^"\']*["\']\s*/?>',
+                        f'<meta property="og:image" content="{image}">', text, flags=re.I)
+          text = re.sub(r'<meta\s+property=["\']og:image:alt["\']\s+content=["\'][^"\']*["\']\s*/?>',
+                        '<meta property="og:image:alt" content="Selected BIM and architectural work by Komail Alsenan">', text, flags=re.I)
+          text = re.sub(r'<meta\s+name=["\']twitter:image["\']\s+content=["\'][^"\']*["\']\s*/?>',
+                        f'<meta name="twitter:image" content="{image}">', text, flags=re.I)
+
+          # Replace Article schema with the simpler Person schema used by the working site.
+          text = re.sub(r'\s*<script\s+type=["\']application/ld\+json["\'][^>]*>.*?</script>', '', text, flags=re.I|re.S)
+          person = {
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              'name': 'Komail Alsenan',
+              'jobTitle': 'Architecture BIM Modeler',
+              'url': 'https://komail-alsenan.github.io/portfolio/',
+              'sameAs': ['https://www.linkedin.com/in/komail-al-senan/'],
+              'knowsAbout': ['Building Information Modeling','Revit','Navisworks','BIM coordination','Dynamo','Revit API','BIM automation']
+          }
+          block = '<script type="application/ld+json">\n' + json.dumps(person, ensure_ascii=False, indent=2) + '\n</script>\n'
+          text = text.replace('</head>', block + '</head>', 1)
+          index.write_text(text, encoding='utf-8')
+
+          js = Path('assets/js/main.js')
+          if js.exists():
+              t = js.read_text(encoding='utf-8')
+              t = re.sub(r"preview:'https://komail-alsenan\.github\.io/portfolio/assets/[^']+'", f"preview:'{image}'", t)
+              t = t.replace("meta('og:image:type','image/jpeg',true);", '')
+              t = t.replace("meta('og:image:width','1200',true);", '')
+              t = t.replace("meta('og:image:height','630',true);", '')
+              t = re.sub(r"meta\('twitter:image:alt','[^']*'\);", '', t)
+              js.write_text(t, encoding='utf-8')
+          PY
+
+      - name: Remove temporary workflow
+        shell: bash
+        run: rm -f .github/workflows/match-working-social-preview.yml
+
+      - name: Commit matched metadata
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Match proven Teams social preview pattern"
+          git push origin HEAD:main
