@@ -28,9 +28,7 @@
   }
   function open(item){refresh();const i=state.items.indexOf(item);state.lastFocus=document.activeElement;show(i<0?0:i);requestAnimationFrame(()=>q('.pg-lightbox-close',ensureLightbox()).focus())}
   function close(){const box=q('#pgLightbox');if(!box||!box.classList.contains('open'))return;box.classList.remove('open');q('img',box).removeAttribute('src');document.body.style.overflow='';if(state.lastFocus&&state.lastFocus.focus)state.lastFocus.focus()}
-  function bind(root=document){
-    qa('[data-pg-image]',root).forEach(el=>{if(el.dataset.pgBound)return;el.dataset.pgBound='1';el.addEventListener('click',()=>open(el))});refresh();
-  }
+  function bind(root=document){qa('[data-pg-image]',root).forEach(el=>{if(el.dataset.pgBound)return;el.dataset.pgBound='1';el.addEventListener('click',()=>open(el))});refresh()}
   function applyLanguage(lang){
     const next=lang==='ar'?'ar':'en';document.documentElement.lang=next;document.documentElement.dir=next==='ar'?'rtl':'ltr';
     qa('[data-en][data-ar]').forEach(el=>{const value=el.dataset[next];if(value!==undefined)el.textContent=value});
@@ -40,6 +38,7 @@
     document.dispatchEvent(new CustomEvent('projectgallery:language',{detail:{lang:next}}));
   }
   function initLanguage(){
+    const bilingual=!!q('[data-pg-lang]')||!!q('[data-en][data-ar]');if(!bilingual)return;
     let lang='en';try{lang=localStorage.getItem('portfolio-language')||document.documentElement.lang||'en'}catch(_){lang=document.documentElement.lang||'en'}
     applyLanguage(lang==='ar'?'ar':'en');qa('[data-pg-lang]').forEach(btn=>btn.addEventListener('click',()=>applyLanguage(document.documentElement.lang==='ar'?'en':'ar')))
   }
