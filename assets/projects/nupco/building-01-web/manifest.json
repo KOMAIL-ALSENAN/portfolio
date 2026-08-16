@@ -1,0 +1,2191 @@
+{
+  "version": 1,
+  "generated_from": "assets/projects/nupco/building-01",
+  "max_dimension": 1600,
+  "quality": 82,
+  "uploaded": 255,
+  "matched": 255,
+  "uncategorized": 0,
+  "missing_expected": 3,
+  "groups": [
+    {
+      "code": "AR-0000",
+      "name_en": "General / Cover",
+      "name_ar": "عام / أغلفة",
+      "expected": [
+        "00000",
+        "00003",
+        "00004",
+        "00005",
+        "00006",
+        "00007",
+        "00008",
+        "00701",
+        "00702",
+        "00703"
+      ],
+      "missing": [
+        "00000"
+      ]
+    },
+    {
+      "code": "AR-0100",
+      "name_en": "Fire Life Safety",
+      "name_ar": "السلامة ومكافحة الحريق",
+      "expected": [
+        "00010",
+        "00011",
+        "00012",
+        "00013",
+        "01301",
+        "01302",
+        "01303",
+        "01304",
+        "01305"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-0200",
+      "name_en": "Site Drawings",
+      "name_ar": "مخططات الموقع",
+      "expected": [
+        "00015"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-0300",
+      "name_en": "Architecture Drawings",
+      "name_ar": "المخططات المعمارية",
+      "expected": [
+        "00016",
+        "00017",
+        "00018",
+        "00019",
+        "00020",
+        "00021",
+        "00022",
+        "00023",
+        "00024",
+        "00025",
+        "00026",
+        "00027",
+        "00028",
+        "00029",
+        "00030",
+        "00031",
+        "00032",
+        "00034",
+        "00035",
+        "00036",
+        "00037",
+        "00038",
+        "00039",
+        "00040",
+        "00062",
+        "00066",
+        "00072",
+        "00667",
+        "03201",
+        "03403",
+        "03404",
+        "03405",
+        "03406",
+        "03407",
+        "03408",
+        "03409",
+        "03410",
+        "03411",
+        "03412",
+        "03413",
+        "03414",
+        "03415",
+        "03703",
+        "03704",
+        "03705",
+        "03706",
+        "03707",
+        "03708",
+        "03709",
+        "03710",
+        "03711",
+        "03712",
+        "03713",
+        "03714",
+        "03715"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-0400",
+      "name_en": "Elevations",
+      "name_ar": "الواجهات",
+      "expected": [
+        "00075",
+        "00076",
+        "00077",
+        "00078",
+        "00079",
+        "00080",
+        "00081",
+        "00082",
+        "00083"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-0500",
+      "name_en": "Sections",
+      "name_ar": "القطاعات",
+      "expected": [
+        "00084",
+        "00085",
+        "00086",
+        "00087",
+        "00088",
+        "00089",
+        "00090"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-0600",
+      "name_en": "Reflected Ceiling",
+      "name_ar": "الأسقف المنعكسة",
+      "expected": [
+        "00014",
+        "00093",
+        "00094",
+        "00095",
+        "00096",
+        "00097",
+        "09200",
+        "09201",
+        "09202",
+        "09203",
+        "09204",
+        "09205",
+        "09206",
+        "09207",
+        "09208",
+        "09209",
+        "09210",
+        "09211",
+        "09212",
+        "09213",
+        "09214",
+        "09215",
+        "09503",
+        "09504",
+        "09505",
+        "09506",
+        "09507",
+        "09508",
+        "09509",
+        "09510",
+        "09511",
+        "09512",
+        "09513",
+        "09514",
+        "09515"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-0700",
+      "name_en": "Floor Pattern Layout",
+      "name_ar": "مخططات تشطيبات الأرضيات",
+      "expected": [
+        "00102",
+        "00103",
+        "01010",
+        "01011",
+        "01012",
+        "01013",
+        "01014",
+        "01015",
+        "01016",
+        "01017",
+        "01018",
+        "01019",
+        "01020",
+        "01021",
+        "01022",
+        "01023",
+        "01024",
+        "01025",
+        "01026",
+        "01060",
+        "01061",
+        "01062",
+        "01063",
+        "01064",
+        "01065",
+        "01066",
+        "01067",
+        "01068",
+        "01069",
+        "01070",
+        "01071",
+        "01072",
+        "01073",
+        "01074",
+        "01075"
+      ],
+      "missing": [
+        "01026"
+      ]
+    },
+    {
+      "code": "AR-0800",
+      "name_en": "Furniture Layouts",
+      "name_ar": "مخططات الأثاث",
+      "expected": [
+        "00109",
+        "00110",
+        "00111",
+        "00112",
+        "00113",
+        "01080",
+        "01081",
+        "01082",
+        "01083",
+        "01084",
+        "01085",
+        "01086",
+        "01087",
+        "01088",
+        "01089",
+        "01090",
+        "01091",
+        "01092",
+        "01093",
+        "01094",
+        "01095",
+        "01111",
+        "01112",
+        "01113",
+        "01114",
+        "01115",
+        "01116",
+        "01117",
+        "01118",
+        "01119",
+        "01120",
+        "01121",
+        "01122",
+        "01123"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-0900",
+      "name_en": "Internal Elevations",
+      "name_ar": "الواجهات الداخلية",
+      "expected": [
+        "00114",
+        "00115",
+        "00116",
+        "00117",
+        "00118",
+        "00119",
+        "00120"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-1000",
+      "name_en": "Stairs, Ramps & Lifts",
+      "name_ar": "السلالم والمنحدرات والمصاعد",
+      "expected": [
+        "00121",
+        "00122",
+        "00123",
+        "00124",
+        "00125",
+        "00126",
+        "00127",
+        "00128",
+        "00129",
+        "00130",
+        "00131",
+        "00132",
+        "01211",
+        "01212"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-1300",
+      "name_en": "Kitchens",
+      "name_ar": "المطابخ",
+      "expected": [
+        "00133",
+        "00155"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-1401",
+      "name_en": "Toilets",
+      "name_ar": "دورات المياه",
+      "expected": [
+        "00063",
+        "00064",
+        "00134",
+        "00135",
+        "00136",
+        "00138",
+        "00139",
+        "00140",
+        "00141"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-1500",
+      "name_en": "Wall Sections",
+      "name_ar": "قطاعات الجدران",
+      "expected": [
+        "00143",
+        "00144",
+        "00145",
+        "01451",
+        "01452",
+        "01457"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-1600",
+      "name_en": "Schedules",
+      "name_ar": "الجداول",
+      "expected": [
+        "00146",
+        "00147",
+        "00148",
+        "00149",
+        "00150",
+        "00151",
+        "00152",
+        "00153",
+        "00156",
+        "00157",
+        "01453",
+        "01454",
+        "01455",
+        "01456",
+        "01458",
+        "01561",
+        "01562",
+        "01563",
+        "01564",
+        "01565",
+        "01566"
+      ],
+      "missing": []
+    },
+    {
+      "code": "AR-1700",
+      "name_en": "Signage",
+      "name_ar": "اللوحات الإرشادية",
+      "expected": [
+        "08001",
+        "08002",
+        "08003",
+        "08004"
+      ],
+      "missing": [
+        "08004"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "number": "00003",
+      "group": "AR-0000",
+      "title": "LIST OF DRAWINGS",
+      "path": "assets/projects/nupco/building-01-web/AR-0000/DD-00003-list-of-drawings.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00003 - LIST OF DRAWINGS_001.jpg"
+    },
+    {
+      "number": "00004",
+      "group": "AR-0000",
+      "title": "COVER SHEET 1",
+      "path": "assets/projects/nupco/building-01-web/AR-0000/DD-00004-cover-sheet-1.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00004 - COVER SHEET 1_001.jpg"
+    },
+    {
+      "number": "00005",
+      "group": "AR-0000",
+      "title": "COVER SHEET 2",
+      "path": "assets/projects/nupco/building-01-web/AR-0000/DD-00005-cover-sheet-2.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00005 - COVER SHEET 2_001.jpg"
+    },
+    {
+      "number": "00006",
+      "group": "AR-0000",
+      "title": "GENERAL NOTES",
+      "path": "assets/projects/nupco/building-01-web/AR-0000/DD-00006-general-notes.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00006 - GENERAL NOTES_001.jpg"
+    },
+    {
+      "number": "00007",
+      "group": "AR-0000",
+      "title": "MISCELLANEOUS DETAILS 1-4",
+      "path": "assets/projects/nupco/building-01-web/AR-0000/DD-00007-miscellaneous-details-1-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00007 - MISCELLANEOUS DETAILS 1-4_001.jpg"
+    },
+    {
+      "number": "00008",
+      "group": "AR-0000",
+      "title": "SIGNAGE DETAILS",
+      "path": "assets/projects/nupco/building-01-web/AR-0000/DD-00008-signage-details.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00008 - SIGNAGE DETAILS_001.jpg"
+    },
+    {
+      "number": "00010",
+      "group": "AR-0100",
+      "title": "GROUND FLOOR LAYOUT FIRE LIFE SAFETY",
+      "path": "assets/projects/nupco/building-01-web/AR-0100/DD-00010-ground-floor-layout-fire-life-safety.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00010 - GROUND FLOOR LAYOUT FIRE LIFE SAFETY_001.jpg"
+    },
+    {
+      "number": "00011",
+      "group": "AR-0100",
+      "title": "MEZZANINE FLOOR LAYOUT FIRE LIFE SAFETY",
+      "path": "assets/projects/nupco/building-01-web/AR-0100/DD-00011-mezzanine-floor-layout-fire-life-safety.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00011 - MEZZANINE FLOOR LAYOUT FIRE LIFE SAFETY_001.jpg"
+    },
+    {
+      "number": "00012",
+      "group": "AR-0100",
+      "title": "FIRST FLOOR LAYOUT FIRE LIFE SAFETY",
+      "path": "assets/projects/nupco/building-01-web/AR-0100/DD-00012-first-floor-layout-fire-life-safety.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00012 - FIRST FLOOR LAYOUT FIRE LIFE SAFETY_001.jpg"
+    },
+    {
+      "number": "00013",
+      "group": "AR-0100",
+      "title": "ROOF LAYOUT FIRE LIFE SAFETY",
+      "path": "assets/projects/nupco/building-01-web/AR-0100/DD-00013-roof-layout-fire-life-safety.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00013 - ROOF LAYOUT FIRE LIFE SAFETY_001.jpg"
+    },
+    {
+      "number": "00014",
+      "group": "AR-0600",
+      "title": "ROOF 1 REFLECTED CEILING PLAN",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-00014-roof-1-reflected-ceiling-plan.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00014 - ROOF 1 REFLECTED CEILING PLAN_001.jpg"
+    },
+    {
+      "number": "00015",
+      "group": "AR-0200",
+      "title": "SITE PLAN",
+      "path": "assets/projects/nupco/building-01-web/AR-0200/DD-00015-site-plan.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00015 - SITE PLAN_001.jpg"
+    },
+    {
+      "number": "00016",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR GENERAL LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00016-ground-floor-general-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00016 - GROUND FLOOR GENERAL LAYOUT_001.jpg"
+    },
+    {
+      "number": "00017",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART A",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00017-ground-floor-plan-part-a.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00017 - GROUND FLOOR PLAN - PART A_001.jpg"
+    },
+    {
+      "number": "00018",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART B",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00018-ground-floor-plan-part-b.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00018 - GROUND FLOOR PLAN - PART B_001.jpg"
+    },
+    {
+      "number": "00019",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART C",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00019-ground-floor-plan-part-c.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00019 - GROUND FLOOR PLAN - PART C_001.jpg"
+    },
+    {
+      "number": "00020",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00020-ground-floor-plan-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00020 - GROUND FLOOR PLAN - PART D_001.jpg"
+    },
+    {
+      "number": "00021",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART E",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00021-ground-floor-plan-part-e.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00021 - GROUND FLOOR PLAN - PART E_001.jpg"
+    },
+    {
+      "number": "00022",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART F",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00022-ground-floor-plan-part-f.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00022 - GROUND FLOOR PLAN - PART F_001.jpg"
+    },
+    {
+      "number": "00023",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART G",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00023-ground-floor-plan-part-g.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00023 - GROUND FLOOR PLAN - PART G_001.jpg"
+    },
+    {
+      "number": "00024",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART H",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00024-ground-floor-plan-part-h.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00024 - GROUND FLOOR PLAN - PART H_001.jpg"
+    },
+    {
+      "number": "00025",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART J",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00025-ground-floor-plan-part-j.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00025 - GROUND FLOOR PLAN - PART J_001.jpg"
+    },
+    {
+      "number": "00026",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART K",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00026-ground-floor-plan-part-k.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00026 - GROUND FLOOR PLAN - PART K_001.jpg"
+    },
+    {
+      "number": "00027",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART L",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00027-ground-floor-plan-part-l.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00027 - GROUND FLOOR PLAN - PART L_001.jpg"
+    },
+    {
+      "number": "00028",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART M",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00028-ground-floor-plan-part-m.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00028 - GROUND FLOOR PLAN - PART M_001.jpg"
+    },
+    {
+      "number": "00029",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART N",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00029-ground-floor-plan-part-n.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00029 - GROUND FLOOR PLAN - PART N_001.jpg"
+    },
+    {
+      "number": "00030",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART P",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00030-ground-floor-plan-part-p.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00030 - GROUND FLOOR PLAN - PART P_001.jpg"
+    },
+    {
+      "number": "00031",
+      "group": "AR-0300",
+      "title": "GROUND FLOOR PLAN - PART Q",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00031-ground-floor-plan-part-q.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00031 - GROUND FLOOR PLAN - PART Q_001.jpg"
+    },
+    {
+      "number": "00032",
+      "group": "AR-0300",
+      "title": "MEZZANINE FLOOR GENERAL LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00032-mezzanine-floor-general-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00032 - MEZZANINE FLOOR GENERAL LAYOUT_001.jpg"
+    },
+    {
+      "number": "00034",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR GENERAL LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00034-first-floor-general-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00034 - FIRST FLOOR GENERAL LAYOUT_001.jpg"
+    },
+    {
+      "number": "00035",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART A",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00035-first-floor-plan-part-a.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00035 - FIRST FLOOR PLAN - PART A_001.jpg"
+    },
+    {
+      "number": "00036",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART B",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00036-first-floor-plan-part-b.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00036 - FIRST FLOOR PLAN - PART B_001.jpg"
+    },
+    {
+      "number": "00037",
+      "group": "AR-0300",
+      "title": "ROOF 1 GENERAL LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00037-roof-1-general-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00037 - ROOF 1 GENERAL LAYOUT_001.jpg"
+    },
+    {
+      "number": "00038",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART A",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00038-roof-1-plan-part-a.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00038 - ROOF 1 PLAN - PART A_001.jpg"
+    },
+    {
+      "number": "00039",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART B",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00039-roof-1-plan-part-b.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00039 - ROOF 1 PLAN - PART B_001.jpg"
+    },
+    {
+      "number": "00040",
+      "group": "AR-0300",
+      "title": "TOP OF ROOF GENERAL LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00040-top-of-roof-general-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00040 - TOP OF ROOF GENERAL LAYOUT_001.jpg"
+    },
+    {
+      "number": "00062",
+      "group": "AR-0300",
+      "title": "MAIN ENTRANCE RECEPTION LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00062-main-entrance-reception-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00062 - MAIN ENTRANCE RECEPTION LAYOUT_001.jpg"
+    },
+    {
+      "number": "00063",
+      "group": "AR-1401",
+      "title": "GROUND FLOOR ABLUTION",
+      "path": "assets/projects/nupco/building-01-web/AR-1401/DD-00063-ground-floor-ablution.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00063 - GROUND FLOOR ABLUTION_001.jpg"
+    },
+    {
+      "number": "00064",
+      "group": "AR-1401",
+      "title": "FIRST FLOOR ABLUTION",
+      "path": "assets/projects/nupco/building-01-web/AR-1401/DD-00064-first-floor-ablution.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00064 - FIRST FLOOR ABLUTION_001.jpg"
+    },
+    {
+      "number": "00066",
+      "group": "AR-0300",
+      "title": "ENTRANCE CANOPY LAYOUT & DETAILS 1-2",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00066-entrance-canopy-layout-details-1-2.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00066 - ENTRANCE CANOPY LAYOUT & DETAILS 1-2_001.jpg"
+    },
+    {
+      "number": "00072",
+      "group": "AR-0300",
+      "title": "FACILITY MANAGEMENT LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00072-facility-management-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00072 - FACILITY MANAGEMENT LAYOUT_001.jpg"
+    },
+    {
+      "number": "00075",
+      "group": "AR-0400",
+      "title": "GENERAL ELEVATIONS",
+      "path": "assets/projects/nupco/building-01-web/AR-0400/DD-00075-general-elevations.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00075 - GENERAL ELEVATIONS_001.jpg"
+    },
+    {
+      "number": "00076",
+      "group": "AR-0400",
+      "title": "SOUTH ELEVATION PARTS 1 & 2",
+      "path": "assets/projects/nupco/building-01-web/AR-0400/DD-00076-south-elevation-parts-1-2.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00076 - SOUTH ELEVATION PARTS 1 & 2_001.jpg"
+    },
+    {
+      "number": "00077",
+      "group": "AR-0400",
+      "title": "NORTH ELEVATION PARTS 1 & 2",
+      "path": "assets/projects/nupco/building-01-web/AR-0400/DD-00077-north-elevation-parts-1-2.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00077 - NORTH ELEVATION PARTS 1 & 2_001.jpg"
+    },
+    {
+      "number": "00078",
+      "group": "AR-0400",
+      "title": "EAST ELEVATION PARTS 1 & 2",
+      "path": "assets/projects/nupco/building-01-web/AR-0400/DD-00078-east-elevation-parts-1-2.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00078 - EAST ELEVATION PARTS 1 & 2_001.jpg"
+    },
+    {
+      "number": "00079",
+      "group": "AR-0400",
+      "title": "EAST ELEVATION PARTS 3 & 4",
+      "path": "assets/projects/nupco/building-01-web/AR-0400/DD-00079-east-elevation-parts-3-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00079 - EAST ELEVATION PARTS 3 & 4_001.jpg"
+    },
+    {
+      "number": "00080",
+      "group": "AR-0400",
+      "title": "EAST ELEVATION PART 5",
+      "path": "assets/projects/nupco/building-01-web/AR-0400/DD-00080-east-elevation-part-5.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00080 - EAST ELEVATION PART 5_001.jpg"
+    },
+    {
+      "number": "00081",
+      "group": "AR-0400",
+      "title": "WEST ELEVATION PARTS 1 & 2",
+      "path": "assets/projects/nupco/building-01-web/AR-0400/DD-00081-west-elevation-parts-1-2.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00081 - WEST ELEVATION PARTS 1 & 2_001.jpg"
+    },
+    {
+      "number": "00082",
+      "group": "AR-0400",
+      "title": "WEST ELEVATION PARTS 3 & 4",
+      "path": "assets/projects/nupco/building-01-web/AR-0400/DD-00082-west-elevation-parts-3-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00082 - WEST ELEVATION PARTS 3 & 4_001.jpg"
+    },
+    {
+      "number": "00083",
+      "group": "AR-0400",
+      "title": "WEST ELEVATION PART 5",
+      "path": "assets/projects/nupco/building-01-web/AR-0400/DD-00083-west-elevation-part-5.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00083 - WEST ELEVATION PART 5_001.jpg"
+    },
+    {
+      "number": "00084",
+      "group": "AR-0500",
+      "title": "GENERAL SECTIONS",
+      "path": "assets/projects/nupco/building-01-web/AR-0500/DD-00084-general-sections.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00084 - GENERAL SECTIONS_001.jpg"
+    },
+    {
+      "number": "00085",
+      "group": "AR-0500",
+      "title": "SECTION 1 - 1-100",
+      "path": "assets/projects/nupco/building-01-web/AR-0500/DD-00085-section-1-1-100.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00085 - SECTION 1 - 1-100_001.jpg"
+    },
+    {
+      "number": "00086",
+      "group": "AR-0500",
+      "title": "SECTION 2 - 1-100",
+      "path": "assets/projects/nupco/building-01-web/AR-0500/DD-00086-section-2-1-100.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00086 - SECTION 2 - 1-100_001.jpg"
+    },
+    {
+      "number": "00087",
+      "group": "AR-0500",
+      "title": "SECTION 3 - 1-100",
+      "path": "assets/projects/nupco/building-01-web/AR-0500/DD-00087-section-3-1-100.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00087 - SECTION 3 - 1-100_001.jpg"
+    },
+    {
+      "number": "00088",
+      "group": "AR-0500",
+      "title": "SECTION 4 - 1-100 - 1-3",
+      "path": "assets/projects/nupco/building-01-web/AR-0500/DD-00088-section-4-1-100-1-3.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00088 - SECTION 4 - 1-100 - 1-3_001.jpg"
+    },
+    {
+      "number": "00089",
+      "group": "AR-0500",
+      "title": "SECTION 4  - 1-100 - 2-3",
+      "path": "assets/projects/nupco/building-01-web/AR-0500/DD-00089-section-4-1-100-2-3.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00089 - SECTION 4  - 1-100 - 2-3_001.jpg"
+    },
+    {
+      "number": "00090",
+      "group": "AR-0500",
+      "title": "SECTION 4 - 1-100 - 3-3",
+      "path": "assets/projects/nupco/building-01-web/AR-0500/DD-00090-section-4-1-100-3-3.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00090 - SECTION 4 - 1-100 - 3-3_001.jpg"
+    },
+    {
+      "number": "00093",
+      "group": "AR-0600",
+      "title": "MEZZANINE  FLOOR GENERAL LAYOUT - RCL",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-00093-mezzanine-floor-general-layout-rcl.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00093 - MEZZANINE  FLOOR GENERAL LAYOUT - RCL_001.jpg"
+    },
+    {
+      "number": "00094",
+      "group": "AR-0600",
+      "title": "MEZZANINE - RC - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-00094-mezzanine-rc-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00094 - MEZZANINE - RC - PART D_001.jpg"
+    },
+    {
+      "number": "00095",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR GENERAL LAYOUT-RC",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-00095-first-floor-general-layout-rc.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00095 - FIRST FLOOR GENERAL LAYOUT-RC_001.jpg"
+    },
+    {
+      "number": "00096",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART A",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-00096-first-floor-rc-part-a.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00096 - FIRST FLOOR - RC - PART A_001.jpg"
+    },
+    {
+      "number": "00097",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART B",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-00097-first-floor-rc-part-b.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00097 - FIRST FLOOR - RC - PART B_001.jpg"
+    },
+    {
+      "number": "00102",
+      "group": "AR-0700",
+      "title": "MEZZANINE FLOOR GENERAL LAYOUT-FPL",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-00102-mezzanine-floor-general-layout-fpl.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00102 - MEZZANINE FLOOR GENERAL LAYOUT-FPL_001.jpg"
+    },
+    {
+      "number": "00103",
+      "group": "AR-0700",
+      "title": "MEZZANINE FLOOR - FPL - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-00103-mezzanine-floor-fpl-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00103 - MEZZANINE FLOOR - FPL - PART D_001.jpg"
+    },
+    {
+      "number": "00109",
+      "group": "AR-0800",
+      "title": "MEZZANINE FLOOR GENERAL FURNITURE LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-00109-mezzanine-floor-general-furniture-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00109 - MEZZANINE FLOOR GENERAL FURNITURE LAYOUT_001.jpg"
+    },
+    {
+      "number": "00110",
+      "group": "AR-0800",
+      "title": "MEZZANINE FLOOR FURNITURE LAYOUT - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-00110-mezzanine-floor-furniture-layout-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00110 - MEZZANINE FLOOR FURNITURE LAYOUT - PART D_001.jpg"
+    },
+    {
+      "number": "00111",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR GENERAL FURNITURE LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-00111-first-floor-general-furniture-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00111 - FIRST FLOOR GENERAL FURNITURE LAYOUT_001.jpg"
+    },
+    {
+      "number": "00112",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR FURNITURE LAYOUT - PART A",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-00112-first-floor-furniture-layout-part-a.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00112 - FIRST FLOOR FURNITURE LAYOUT - PART A_001.jpg"
+    },
+    {
+      "number": "00113",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART B",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-00113-first-floor-furniture-layout-part-b.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00113 - FIRST FLOOR  FURNITURE LAYOUT - PART B_001.jpg"
+    },
+    {
+      "number": "00114",
+      "group": "AR-0900",
+      "title": "LOBBY INTERNAL ELEVATIONS 1-2",
+      "path": "assets/projects/nupco/building-01-web/AR-0900/DD-00114-lobby-internal-elevations-1-2.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00114 - LOBBY INTERNAL ELEVATIONS 1-2_001.jpg"
+    },
+    {
+      "number": "00115",
+      "group": "AR-0900",
+      "title": "LOBBY INTERNAL ELEVATIONS 2-2",
+      "path": "assets/projects/nupco/building-01-web/AR-0900/DD-00115-lobby-internal-elevations-2-2.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00115 - LOBBY INTERNAL ELEVATIONS 2-2_001.jpg"
+    },
+    {
+      "number": "00116",
+      "group": "AR-0900",
+      "title": "INTERNAL ELEVATIONS 1-5",
+      "path": "assets/projects/nupco/building-01-web/AR-0900/DD-00116-internal-elevations-1-5.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00116 - INTERNAL ELEVATIONS 1-5_001.jpg"
+    },
+    {
+      "number": "00117",
+      "group": "AR-0900",
+      "title": "INTERNAL ELEVATIONS 2-5",
+      "path": "assets/projects/nupco/building-01-web/AR-0900/DD-00117-internal-elevations-2-5.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00117 - INTERNAL ELEVATIONS 2-5_001.jpg"
+    },
+    {
+      "number": "00118",
+      "group": "AR-0900",
+      "title": "INTERNAL ELEVATIONS 3-5",
+      "path": "assets/projects/nupco/building-01-web/AR-0900/DD-00118-internal-elevations-3-5.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00118 - INTERNAL ELEVATIONS 3-5_001.jpg"
+    },
+    {
+      "number": "00119",
+      "group": "AR-0900",
+      "title": "INTERNAL ELEVATIONS 4-5",
+      "path": "assets/projects/nupco/building-01-web/AR-0900/DD-00119-internal-elevations-4-5.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00119 - INTERNAL ELEVATIONS 4-5_001.jpg"
+    },
+    {
+      "number": "00120",
+      "group": "AR-0900",
+      "title": "INTERNAL ELEVATIONS 5-5",
+      "path": "assets/projects/nupco/building-01-web/AR-0900/DD-00120-internal-elevations-5-5.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00120 - INTERNAL ELEVATIONS 5-5_001.jpg"
+    },
+    {
+      "number": "00121",
+      "group": "AR-1000",
+      "title": "STAIRCASE 1 - PLANS",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00121-staircase-1-plans.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00121 - STAIRCASE 1 - PLANS_001.jpg"
+    },
+    {
+      "number": "00122",
+      "group": "AR-1000",
+      "title": "STAIRCASE 1 - SECTIONS",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00122-staircase-1-sections.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00122 - STAIRCASE 1 - SECTIONS_001.jpg"
+    },
+    {
+      "number": "00123",
+      "group": "AR-1000",
+      "title": "STAIRCASE 2 - PLANS",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00123-staircase-2-plans.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00123 - STAIRCASE 2 - PLANS_001.jpg"
+    },
+    {
+      "number": "00124",
+      "group": "AR-1000",
+      "title": "STAIRCASE 2 - SECTIONS",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00124-staircase-2-sections.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00124 - STAIRCASE 2 - SECTIONS_001.jpg"
+    },
+    {
+      "number": "00125",
+      "group": "AR-1000",
+      "title": "STAIRCASE 3 - PLANS",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00125-staircase-3-plans.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00125 - STAIRCASE 3 - PLANS_001.jpg"
+    },
+    {
+      "number": "00126",
+      "group": "AR-1000",
+      "title": "STAIRCASE 3 SECTIONS",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00126-staircase-3-sections.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00126 - STAIRCASE 3 SECTIONS_001.jpg"
+    },
+    {
+      "number": "00127",
+      "group": "AR-1000",
+      "title": "STAIRCASE 4 - PLAN & SECTION",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00127-staircase-4-plan-section.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00127 - STAIRCASE 4 - PLAN & SECTION_001.jpg"
+    },
+    {
+      "number": "00128",
+      "group": "AR-1000",
+      "title": "STAIRCASE 5 - PLAN & SECTIONS",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00128-staircase-5-plan-sections.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00128 - STAIRCASE 5 - PLAN & SECTIONS_001.jpg"
+    },
+    {
+      "number": "00129",
+      "group": "AR-1000",
+      "title": "ENTRANCE STAIRCASE",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00129-entrance-staircase.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00129 - ENTRANCE STAIRCASE_001.jpg"
+    },
+    {
+      "number": "00130",
+      "group": "AR-1000",
+      "title": "EXTERIOR STAIRCASES",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00130-exterior-staircases.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00130 - EXTERIOR STAIRCASES.jpg"
+    },
+    {
+      "number": "00131",
+      "group": "AR-1000",
+      "title": "MHE RAMP",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00131-mhe-ramp.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00131 - MHE RAMP_001.jpg"
+    },
+    {
+      "number": "00132",
+      "group": "AR-1000",
+      "title": "STAIRCASES PARKING",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-00132-staircases-parking.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00132 - STAIRCASES PARKING_001.jpg"
+    },
+    {
+      "number": "00133",
+      "group": "AR-1300",
+      "title": "GROUND FLOOR - CANTEEN",
+      "path": "assets/projects/nupco/building-01-web/AR-1300/DD-00133-ground-floor-canteen.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00133 - GROUND FLOOR - CANTEEN_001.jpg"
+    },
+    {
+      "number": "00134",
+      "group": "AR-1401",
+      "title": "GROUND FLOOR TOILET 1",
+      "path": "assets/projects/nupco/building-01-web/AR-1401/DD-00134-ground-floor-toilet-1.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00134 - GROUND FLOOR TOILET 1_001.jpg"
+    },
+    {
+      "number": "00135",
+      "group": "AR-1401",
+      "title": "GROUND FLOOR MALE CHANGING ROOM",
+      "path": "assets/projects/nupco/building-01-web/AR-1401/DD-00135-ground-floor-male-changing-room.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00135 - GROUND FLOOR MALE CHANGING ROOM_001.jpg"
+    },
+    {
+      "number": "00136",
+      "group": "AR-1401",
+      "title": "GROUND FLOOR FEMALE CHANGING ROOM",
+      "path": "assets/projects/nupco/building-01-web/AR-1401/DD-00136-ground-floor-female-changing-room.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00136 - GROUND FLOOR FEMALE CHANGING ROOM_001.jpg"
+    },
+    {
+      "number": "00138",
+      "group": "AR-1401",
+      "title": "MEZZANINE FLOOR TOILET",
+      "path": "assets/projects/nupco/building-01-web/AR-1401/DD-00138-mezzanine-floor-toilet.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00138 - MEZZANINE FLOOR TOILET_001.jpg"
+    },
+    {
+      "number": "00139",
+      "group": "AR-1401",
+      "title": "FIRST FLOOR GUEST TOILET",
+      "path": "assets/projects/nupco/building-01-web/AR-1401/DD-00139-first-floor-guest-toilet.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00139 - FIRST FLOOR GUEST TOILET_001.jpg"
+    },
+    {
+      "number": "00140",
+      "group": "AR-1401",
+      "title": "FIRST FLOOR LADIES WASHROOM",
+      "path": "assets/projects/nupco/building-01-web/AR-1401/DD-00140-first-floor-ladies-washroom.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00140 - FIRST FLOOR LADIES WASHROOM_001.jpg"
+    },
+    {
+      "number": "00141",
+      "group": "AR-1401",
+      "title": "FIRST FLOOR MEN WASHROOM",
+      "path": "assets/projects/nupco/building-01-web/AR-1401/DD-00141-first-floor-men-washroom.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00141 - FIRST FLOOR MEN WASHROOM_001.jpg"
+    },
+    {
+      "number": "00143",
+      "group": "AR-1500",
+      "title": "WALL SECTIONS 1-4",
+      "path": "assets/projects/nupco/building-01-web/AR-1500/DD-00143-wall-sections-1-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00143 - WALL SECTIONS 1-4_001.jpg"
+    },
+    {
+      "number": "00144",
+      "group": "AR-1500",
+      "title": "WALL SECTIONS 2-4",
+      "path": "assets/projects/nupco/building-01-web/AR-1500/DD-00144-wall-sections-2-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00144 - WALL SECTIONS 2-4_001.jpg"
+    },
+    {
+      "number": "00145",
+      "group": "AR-1500",
+      "title": "WALL SECTIONS 3-4",
+      "path": "assets/projects/nupco/building-01-web/AR-1500/DD-00145-wall-sections-3-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00145 - WALL SECTIONS 3-4_001.jpg"
+    },
+    {
+      "number": "00146",
+      "group": "AR-1600",
+      "title": "DOORS SCHEDULE 1-9",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00146-doors-schedule-1-9.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00146 - DOORS SCHEDULE 1-9_001.jpg"
+    },
+    {
+      "number": "00147",
+      "group": "AR-1600",
+      "title": "DOORS SCHEDULE 2-9",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00147-doors-schedule-2-9.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00147 - DOORS SCHEDULE 2-9_001.jpg"
+    },
+    {
+      "number": "00148",
+      "group": "AR-1600",
+      "title": "FINISHING SCHEDULE",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00148-finishing-schedule.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00148 - FINISHING SCHEDULE_001.jpg"
+    },
+    {
+      "number": "00149",
+      "group": "AR-1600",
+      "title": "ALUMINUM SCHEDULE 1-4",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00149-aluminum-schedule-1-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00149 - ALUMINUM SCHEDULE 1-4_001.jpg"
+    },
+    {
+      "number": "00150",
+      "group": "AR-1600",
+      "title": "ALUMINUM SCHEDULE 2-4",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00150-aluminum-schedule-2-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00150 - ALUMINUM SCHEDULE 2-4_001.jpg"
+    },
+    {
+      "number": "00151",
+      "group": "AR-1600",
+      "title": "ALUMINUM SCHEDULE 3-4",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00151-aluminum-schedule-3-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00151 - ALUMINUM SCHEDULE 3-4_001.jpg"
+    },
+    {
+      "number": "00152",
+      "group": "AR-1600",
+      "title": "ALUMINUM SCHEDULE 4-4",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00152-aluminum-schedule-4-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00152 - ALUMINUM SCHEDULE 4-4_001.jpg"
+    },
+    {
+      "number": "00153",
+      "group": "AR-1600",
+      "title": "LOUVERS SCHEDULE",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00153-louvers-schedule.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00153 - LOUVERS SCHEDULE_001.jpg"
+    },
+    {
+      "number": "00155",
+      "group": "AR-1300",
+      "title": "FIRST FLOOR - CANTEEN",
+      "path": "assets/projects/nupco/building-01-web/AR-1300/DD-00155-first-floor-canteen.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00155 - FIRST FLOOR - CANTEEN_001.jpg"
+    },
+    {
+      "number": "00156",
+      "group": "AR-1600",
+      "title": "DOORS SCHEDULE 3-9",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00156-doors-schedule-3-9.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00156 - DOORS SCHEDULE 3-9_001.jpg"
+    },
+    {
+      "number": "00157",
+      "group": "AR-1600",
+      "title": "ALUMINUM SCHEDULE 3-4 Copy 1",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-00157-aluminum-schedule-3-4-copy-1.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00157 - ALUMINUM SCHEDULE 3-4 Copy 1_001.jpg"
+    },
+    {
+      "number": "00667",
+      "group": "AR-0300",
+      "title": "ENTRANCE CANOPY LAYOUT & DETAILS 2-2",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-00667-entrance-canopy-layout-details-2-2.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00667 - ENTRANCE CANOPY LAYOUT & DETAILS 2-2.jpg"
+    },
+    {
+      "number": "00701",
+      "group": "AR-0000",
+      "title": "MISCELLANEOUS DETAILS 2-4",
+      "path": "assets/projects/nupco/building-01-web/AR-0000/DD-00701-miscellaneous-details-2-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00701 - MISCELLANEOUS DETAILS 2-4_001.jpg"
+    },
+    {
+      "number": "00702",
+      "group": "AR-0000",
+      "title": "MISCELLANEOUS DETAILS 3-4",
+      "path": "assets/projects/nupco/building-01-web/AR-0000/DD-00702-miscellaneous-details-3-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00702 - MISCELLANEOUS DETAILS 3-4_001.jpg"
+    },
+    {
+      "number": "00703",
+      "group": "AR-0000",
+      "title": "MISCELLANEOUS DETAILS 4-4",
+      "path": "assets/projects/nupco/building-01-web/AR-0000/DD-00703-miscellaneous-details-4-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-00703 - MISCELLANEOUS DETAILS 4-4.jpg"
+    },
+    {
+      "number": "01010",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR GENERAL LAYOUT-FPL",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01010-ground-floor-general-layout-fpl.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01010 - GROUND FLOOR GENERAL LAYOUT-FPL_001.jpg"
+    },
+    {
+      "number": "01011",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART A",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01011-ground-floor-fpl-part-a.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01011 - GROUND FLOOR - FPL - PART A_001.jpg"
+    },
+    {
+      "number": "01012",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART B",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01012-ground-floor-fpl-part-b.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01012 - GROUND FLOOR - FPL - PART B_001.jpg"
+    },
+    {
+      "number": "01013",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART C",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01013-ground-floor-fpl-part-c.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01013 - GROUND FLOOR - FPL - PART C_001.jpg"
+    },
+    {
+      "number": "01014",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01014-ground-floor-fpl-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01014 - GROUND FLOOR - FPL - PART D_001.jpg"
+    },
+    {
+      "number": "01015",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART E",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01015-ground-floor-fpl-part-e.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01015 - GROUND FLOOR - FPL - PART E_001.jpg"
+    },
+    {
+      "number": "01016",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART F",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01016-ground-floor-fpl-part-f.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01016 - GROUND FLOOR - FPL - PART F_001.jpg"
+    },
+    {
+      "number": "01017",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART G",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01017-ground-floor-fpl-part-g.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01017 - GROUND FLOOR - FPL - PART G_001.jpg"
+    },
+    {
+      "number": "01018",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART H",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01018-ground-floor-fpl-part-h.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01018 - GROUND FLOOR - FPL - PART H_001.jpg"
+    },
+    {
+      "number": "01019",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART J",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01019-ground-floor-fpl-part-j.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01019 - GROUND FLOOR - FPL - PART J_001.jpg"
+    },
+    {
+      "number": "01020",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART K",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01020-ground-floor-fpl-part-k.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01020 - GROUND FLOOR - FPL - PART K_001.jpg"
+    },
+    {
+      "number": "01021",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART L",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01021-ground-floor-fpl-part-l.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01021 - GROUND FLOOR - FPL - PART L_001.jpg"
+    },
+    {
+      "number": "01022",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART M",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01022-ground-floor-fpl-part-m.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01022 - GROUND FLOOR - FPL - PART M_001.jpg"
+    },
+    {
+      "number": "01023",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART N",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01023-ground-floor-fpl-part-n.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01023 - GROUND FLOOR - FPL - PART N_001.jpg"
+    },
+    {
+      "number": "01024",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART P",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01024-ground-floor-fpl-part-p.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01024 - GROUND FLOOR - FPL - PART P_001.jpg"
+    },
+    {
+      "number": "01025",
+      "group": "AR-0700",
+      "title": "GROUND FLOOR - FPL - PART Q",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01025-ground-floor-fpl-part-q.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01025 - GROUND FLOOR - FPL - PART Q_001.jpg"
+    },
+    {
+      "number": "01060",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR GENERAL LAYOUT-FPL",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01060-first-floor-general-layout-fpl.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01060 - FIRST FLOOR GENERAL LAYOUT-FPL_001.jpg"
+    },
+    {
+      "number": "01061",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART A",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01061-first-floor-fpl-part-a.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01061 - FIRST FLOOR - FPL - PART A_001.jpg"
+    },
+    {
+      "number": "01062",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART B",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01062-first-floor-fpl-part-b.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01062 - FIRST FLOOR - FPL - PART B_001.jpg"
+    },
+    {
+      "number": "01063",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART C",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01063-first-floor-fpl-part-c.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01063 - FIRST FLOOR - FPL - PART C_001.jpg"
+    },
+    {
+      "number": "01064",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01064-first-floor-fpl-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01064 - FIRST FLOOR - FPL - PART D_001.jpg"
+    },
+    {
+      "number": "01065",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART E",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01065-first-floor-fpl-part-e.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01065 - FIRST FLOOR - FPL - PART E_001.jpg"
+    },
+    {
+      "number": "01066",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART F",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01066-first-floor-fpl-part-f.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01066 - FIRST FLOOR - FPL - PART F_001.jpg"
+    },
+    {
+      "number": "01067",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART G",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01067-first-floor-fpl-part-g.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01067 - FIRST FLOOR - FPL - PART G_001.jpg"
+    },
+    {
+      "number": "01068",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART H",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01068-first-floor-fpl-part-h.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01068 - FIRST FLOOR - FPL - PART H_001.jpg"
+    },
+    {
+      "number": "01069",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART J",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01069-first-floor-fpl-part-j.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01069 - FIRST FLOOR - FPL - PART J_001.jpg"
+    },
+    {
+      "number": "01070",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART K",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01070-first-floor-fpl-part-k.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01070 - FIRST FLOOR - FPL - PART K_001.jpg"
+    },
+    {
+      "number": "01071",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART L",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01071-first-floor-fpl-part-l.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01071 - FIRST FLOOR - FPL - PART L_001.jpg"
+    },
+    {
+      "number": "01072",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART M",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01072-first-floor-fpl-part-m.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01072 - FIRST FLOOR - FPL - PART M_001.jpg"
+    },
+    {
+      "number": "01073",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART N",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01073-first-floor-fpl-part-n.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01073 - FIRST FLOOR - FPL - PART N_001.jpg"
+    },
+    {
+      "number": "01074",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART P",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01074-first-floor-fpl-part-p.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01074 - FIRST FLOOR - FPL - PART P_001.jpg"
+    },
+    {
+      "number": "01075",
+      "group": "AR-0700",
+      "title": "FIRST FLOOR - FPL - PART Q",
+      "path": "assets/projects/nupco/building-01-web/AR-0700/DD-01075-first-floor-fpl-part-q.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01075 - FIRST FLOOR - FPL - PART Q_001.jpg"
+    },
+    {
+      "number": "01080",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR GENERAL FURNITURE LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01080-ground-floor-general-furniture-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01080 - GROUND FLOOR GENERAL FURNITURE LAYOUT_001.jpg"
+    },
+    {
+      "number": "01081",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART A",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01081-ground-floor-furniture-layout-part-a.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01081 - GROUND FLOOR FURNITURE LAYOUT -  PART A_001.jpg"
+    },
+    {
+      "number": "01082",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART B",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01082-ground-floor-furniture-layout-part-b.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01082 - GROUND FLOOR FURNITURE LAYOUT -  PART B_001.jpg"
+    },
+    {
+      "number": "01083",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART C",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01083-ground-floor-furniture-layout-part-c.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01083 - GROUND FLOOR FURNITURE LAYOUT -  PART C_001.jpg"
+    },
+    {
+      "number": "01084",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01084-ground-floor-furniture-layout-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01084 - GROUND FLOOR FURNITURE LAYOUT -  PART D_001.jpg"
+    },
+    {
+      "number": "01085",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART E",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01085-ground-floor-furniture-layout-part-e.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01085 - GROUND FLOOR FURNITURE LAYOUT -  PART E_001.jpg"
+    },
+    {
+      "number": "01086",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART F",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01086-ground-floor-furniture-layout-part-f.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01086 - GROUND FLOOR FURNITURE LAYOUT -  PART F_001.jpg"
+    },
+    {
+      "number": "01087",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART G",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01087-ground-floor-furniture-layout-part-g.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01087 - GROUND FLOOR FURNITURE LAYOUT -  PART G_001.jpg"
+    },
+    {
+      "number": "01088",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART H",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01088-ground-floor-furniture-layout-part-h.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01088 - GROUND FLOOR FURNITURE LAYOUT -  PART H_001.jpg"
+    },
+    {
+      "number": "01089",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART J",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01089-ground-floor-furniture-layout-part-j.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01089 - GROUND FLOOR FURNITURE LAYOUT -  PART J_001.jpg"
+    },
+    {
+      "number": "01090",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART K",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01090-ground-floor-furniture-layout-part-k.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01090 - GROUND FLOOR FURNITURE LAYOUT -  PART K_001.jpg"
+    },
+    {
+      "number": "01091",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART L",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01091-ground-floor-furniture-layout-part-l.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01091 - GROUND FLOOR FURNITURE LAYOUT -  PART L_001.jpg"
+    },
+    {
+      "number": "01092",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART M",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01092-ground-floor-furniture-layout-part-m.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01092 - GROUND FLOOR FURNITURE LAYOUT -  PART M_001.jpg"
+    },
+    {
+      "number": "01093",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART N",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01093-ground-floor-furniture-layout-part-n.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01093 - GROUND FLOOR FURNITURE LAYOUT -  PART N_001.jpg"
+    },
+    {
+      "number": "01094",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART P",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01094-ground-floor-furniture-layout-part-p.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01094 - GROUND FLOOR FURNITURE LAYOUT -  PART P_001.jpg"
+    },
+    {
+      "number": "01095",
+      "group": "AR-0800",
+      "title": "GROUND FLOOR FURNITURE LAYOUT -  PART Q",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01095-ground-floor-furniture-layout-part-q.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01095 - GROUND FLOOR FURNITURE LAYOUT -  PART Q_001.jpg"
+    },
+    {
+      "number": "01111",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART C",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01111-first-floor-furniture-layout-part-c.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01111 - FIRST FLOOR  FURNITURE LAYOUT - PART C_001.jpg"
+    },
+    {
+      "number": "01112",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01112-first-floor-furniture-layout-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01112 - FIRST FLOOR  FURNITURE LAYOUT - PART D_001.jpg"
+    },
+    {
+      "number": "01113",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART E",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01113-first-floor-furniture-layout-part-e.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01113 - FIRST FLOOR  FURNITURE LAYOUT - PART E_001.jpg"
+    },
+    {
+      "number": "01114",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART F",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01114-first-floor-furniture-layout-part-f.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01114 - FIRST FLOOR  FURNITURE LAYOUT - PART F_001.jpg"
+    },
+    {
+      "number": "01115",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART G",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01115-first-floor-furniture-layout-part-g.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01115 - FIRST FLOOR  FURNITURE LAYOUT - PART G_001.jpg"
+    },
+    {
+      "number": "01116",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART H",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01116-first-floor-furniture-layout-part-h.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01116 - FIRST FLOOR  FURNITURE LAYOUT - PART H_001.jpg"
+    },
+    {
+      "number": "01117",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART J",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01117-first-floor-furniture-layout-part-j.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01117 - FIRST FLOOR  FURNITURE LAYOUT - PART J_001.jpg"
+    },
+    {
+      "number": "01118",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART K",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01118-first-floor-furniture-layout-part-k.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01118 - FIRST FLOOR  FURNITURE LAYOUT - PART K_001.jpg"
+    },
+    {
+      "number": "01119",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART L",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01119-first-floor-furniture-layout-part-l.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01119 - FIRST FLOOR  FURNITURE LAYOUT - PART L_001.jpg"
+    },
+    {
+      "number": "01120",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART M",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01120-first-floor-furniture-layout-part-m.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01120 - FIRST FLOOR  FURNITURE LAYOUT - PART M_001.jpg"
+    },
+    {
+      "number": "01121",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART N",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01121-first-floor-furniture-layout-part-n.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01121 - FIRST FLOOR  FURNITURE LAYOUT - PART N_001.jpg"
+    },
+    {
+      "number": "01122",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART P",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01122-first-floor-furniture-layout-part-p.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01122 - FIRST FLOOR  FURNITURE LAYOUT - PART P_001.jpg"
+    },
+    {
+      "number": "01123",
+      "group": "AR-0800",
+      "title": "FIRST FLOOR  FURNITURE LAYOUT - PART Q",
+      "path": "assets/projects/nupco/building-01-web/AR-0800/DD-01123-first-floor-furniture-layout-part-q.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01123 - FIRST FLOOR  FURNITURE LAYOUT - PART Q_001.jpg"
+    },
+    {
+      "number": "01211",
+      "group": "AR-1000",
+      "title": "STAIRCASE 6 - PLANS",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-01211-staircase-6-plans.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01211 - STAIRCASE 6 - PLANS_001.jpg"
+    },
+    {
+      "number": "01212",
+      "group": "AR-1000",
+      "title": "STAIRCASE 6 - SECTIONS",
+      "path": "assets/projects/nupco/building-01-web/AR-1000/DD-01212-staircase-6-sections.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01212 - STAIRCASE 6 - SECTIONS_001.jpg"
+    },
+    {
+      "number": "01301",
+      "group": "AR-0100",
+      "title": "FIRE LIFE SAFETY SECTION 1 - 1-100",
+      "path": "assets/projects/nupco/building-01-web/AR-0100/DD-01301-fire-life-safety-section-1-1-100.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01301 - FIRE LIFE SAFETY SECTION 1 - 1-100_001.jpg"
+    },
+    {
+      "number": "01302",
+      "group": "AR-0100",
+      "title": "FIRE LIFE SAFETY SECTION 2 - 1-100",
+      "path": "assets/projects/nupco/building-01-web/AR-0100/DD-01302-fire-life-safety-section-2-1-100.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01302 - FIRE LIFE SAFETY SECTION 2 - 1-100_001.jpg"
+    },
+    {
+      "number": "01303",
+      "group": "AR-0100",
+      "title": "FIRE LIFE SAFETY SECTION 4 - 1-100 - 1-3",
+      "path": "assets/projects/nupco/building-01-web/AR-0100/DD-01303-fire-life-safety-section-4-1-100-1-3.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01303 - FIRE LIFE SAFETY SECTION 4 - 1-100 - 1-3_001.jpg"
+    },
+    {
+      "number": "01304",
+      "group": "AR-0100",
+      "title": "FIRE LIFE SAFETY SECTION 4  - 1-100 - 2-3",
+      "path": "assets/projects/nupco/building-01-web/AR-0100/DD-01304-fire-life-safety-section-4-1-100-2-3.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01304 - FIRE LIFE SAFETY SECTION 4  - 1-100 - 2-3_001.jpg"
+    },
+    {
+      "number": "01305",
+      "group": "AR-0100",
+      "title": "FIRE LIFE SAFETY SECTION 4 - 1-100 - 3-3",
+      "path": "assets/projects/nupco/building-01-web/AR-0100/DD-01305-fire-life-safety-section-4-1-100-3-3.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01305 - FIRE LIFE SAFETY SECTION 4 - 1-100 - 3-3_001.jpg"
+    },
+    {
+      "number": "01451",
+      "group": "AR-1500",
+      "title": "WALL SECTIONS 4-4",
+      "path": "assets/projects/nupco/building-01-web/AR-1500/DD-01451-wall-sections-4-4.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01451 - WALL SECTIONS 4-4_001.jpg"
+    },
+    {
+      "number": "01452",
+      "group": "AR-1500",
+      "title": "WALL SECTION - REFERENCE PLAN",
+      "path": "assets/projects/nupco/building-01-web/AR-1500/DD-01452-wall-section-reference-plan.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01452 - WALL SECTION - REFERENCE PLAN_001.jpg"
+    },
+    {
+      "number": "01453",
+      "group": "AR-1600",
+      "title": "GROUND FLOOR - DOOR REFERENCE PLAN",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01453-ground-floor-door-reference-plan.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01453 - GROUND FLOOR - DOOR REFERENCE PLAN_001.jpg"
+    },
+    {
+      "number": "01454",
+      "group": "AR-1600",
+      "title": "MEZZANINE FLOOR - DOOR REFERENCE PLAN",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01454-mezzanine-floor-door-reference-plan.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01454 - MEZZANINE FLOOR - DOOR REFERENCE PLAN_001.jpg"
+    },
+    {
+      "number": "01455",
+      "group": "AR-1600",
+      "title": "FIRST FLOOR - DOOR REFERENCE PLAN",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01455-first-floor-door-reference-plan.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01455 - FIRST FLOOR - DOOR REFERENCE PLAN_001.jpg"
+    },
+    {
+      "number": "01456",
+      "group": "AR-1600",
+      "title": "ROOF 1 - DOOR REFERENCE PLAN",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01456-roof-1-door-reference-plan.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01456 - ROOF 1 - DOOR REFERENCE PLAN_001.jpg"
+    },
+    {
+      "number": "01457",
+      "group": "AR-1500",
+      "title": "WALL SECTION - VENDOR",
+      "path": "assets/projects/nupco/building-01-web/AR-1500/DD-01457-wall-section-vendor.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01457 - WALL SECTION - VENDOR_001.jpg"
+    },
+    {
+      "number": "01458",
+      "group": "AR-1600",
+      "title": "GROUND FLOOR - REFERENCE PLAN (KINGSPAN)",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01458-ground-floor-reference-plan-kingspan.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01458 - GROUND FLOOR - REFERENCE PLAN (KINGSPAN)_001.jpg"
+    },
+    {
+      "number": "01561",
+      "group": "AR-1600",
+      "title": "DOORS SCHEDULE 4-9",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01561-doors-schedule-4-9.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01561 - DOORS SCHEDULE 4-9_001.jpg"
+    },
+    {
+      "number": "01562",
+      "group": "AR-1600",
+      "title": "DOORS SCHEDULE 5-9",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01562-doors-schedule-5-9.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01562 - DOORS SCHEDULE 5-9_001.jpg"
+    },
+    {
+      "number": "01563",
+      "group": "AR-1600",
+      "title": "DOORS SCHEDULE 6-9",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01563-doors-schedule-6-9.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01563 - DOORS SCHEDULE 6-9_001.jpg"
+    },
+    {
+      "number": "01564",
+      "group": "AR-1600",
+      "title": "DOORS SCHEDULE 7-9",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01564-doors-schedule-7-9.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01564 - DOORS SCHEDULE 7-9_001.jpg"
+    },
+    {
+      "number": "01565",
+      "group": "AR-1600",
+      "title": "DOORS SCHEDULE 8-9",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01565-doors-schedule-8-9.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01565 - DOORS SCHEDULE 8-9_001.jpg"
+    },
+    {
+      "number": "01566",
+      "group": "AR-1600",
+      "title": "WINDOWS SCHEDULE & DETAILS",
+      "path": "assets/projects/nupco/building-01-web/AR-1600/DD-01566-windows-schedule-details.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-01566 - WINDOWS SCHEDULE & DETAILS_001.jpg"
+    },
+    {
+      "number": "03201",
+      "group": "AR-0300",
+      "title": "MEZZANINE FLOOR PLAN - PART  D",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03201-mezzanine-floor-plan-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03201 - MEZZANINE FLOOR PLAN - PART  D_001.jpg"
+    },
+    {
+      "number": "03403",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART C",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03403-first-floor-plan-part-c.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03403 - FIRST FLOOR PLAN - PART C_001.jpg"
+    },
+    {
+      "number": "03404",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03404-first-floor-plan-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03404 - FIRST FLOOR PLAN - PART D_001.jpg"
+    },
+    {
+      "number": "03405",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART E",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03405-first-floor-plan-part-e.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03405 - FIRST FLOOR PLAN - PART E_001.jpg"
+    },
+    {
+      "number": "03406",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART F",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03406-first-floor-plan-part-f.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03406 - FIRST FLOOR PLAN - PART F_001.jpg"
+    },
+    {
+      "number": "03407",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART G",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03407-first-floor-plan-part-g.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03407 - FIRST FLOOR PLAN - PART G_001.jpg"
+    },
+    {
+      "number": "03408",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART H",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03408-first-floor-plan-part-h.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03408 - FIRST FLOOR PLAN - PART H_001.jpg"
+    },
+    {
+      "number": "03409",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART J",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03409-first-floor-plan-part-j.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03409 - FIRST FLOOR PLAN - PART J_001.jpg"
+    },
+    {
+      "number": "03410",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART K",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03410-first-floor-plan-part-k.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03410 - FIRST FLOOR PLAN - PART K_001.jpg"
+    },
+    {
+      "number": "03411",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART L",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03411-first-floor-plan-part-l.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03411 - FIRST FLOOR PLAN - PART L_001.jpg"
+    },
+    {
+      "number": "03412",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART M",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03412-first-floor-plan-part-m.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03412 - FIRST FLOOR PLAN - PART M_001.jpg"
+    },
+    {
+      "number": "03413",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART N",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03413-first-floor-plan-part-n.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03413 - FIRST FLOOR PLAN - PART N_001.jpg"
+    },
+    {
+      "number": "03414",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART P",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03414-first-floor-plan-part-p.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03414 - FIRST FLOOR PLAN - PART P_001.jpg"
+    },
+    {
+      "number": "03415",
+      "group": "AR-0300",
+      "title": "FIRST FLOOR PLAN - PART Q",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03415-first-floor-plan-part-q.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03415 - FIRST FLOOR PLAN - PART Q_001.jpg"
+    },
+    {
+      "number": "03703",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART C",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03703-roof-1-plan-part-c.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03703 - ROOF 1 PLAN - PART C_001.jpg"
+    },
+    {
+      "number": "03704",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03704-roof-1-plan-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03704 - ROOF 1 PLAN - PART D_001.jpg"
+    },
+    {
+      "number": "03705",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART E",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03705-roof-1-plan-part-e.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03705 - ROOF 1 PLAN - PART E_001.jpg"
+    },
+    {
+      "number": "03706",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART F",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03706-roof-1-plan-part-f.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03706 - ROOF 1 PLAN - PART F_001.jpg"
+    },
+    {
+      "number": "03707",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART G",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03707-roof-1-plan-part-g.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03707 - ROOF 1 PLAN - PART G_001.jpg"
+    },
+    {
+      "number": "03708",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART H",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03708-roof-1-plan-part-h.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03708 - ROOF 1 PLAN - PART H_001.jpg"
+    },
+    {
+      "number": "03709",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART J",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03709-roof-1-plan-part-j.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03709 - ROOF 1 PLAN - PART J_001.jpg"
+    },
+    {
+      "number": "03710",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART K",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03710-roof-1-plan-part-k.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03710 - ROOF 1 PLAN - PART K_001.jpg"
+    },
+    {
+      "number": "03711",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART L",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03711-roof-1-plan-part-l.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03711 - ROOF 1 PLAN - PART L_001.jpg"
+    },
+    {
+      "number": "03712",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART M",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03712-roof-1-plan-part-m.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03712 - ROOF 1 PLAN - PART M_001.jpg"
+    },
+    {
+      "number": "03713",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART N",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03713-roof-1-plan-part-n.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03713 - ROOF 1 PLAN - PART N_001.jpg"
+    },
+    {
+      "number": "03714",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART P",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03714-roof-1-plan-part-p.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03714 - ROOF 1 PLAN - PART P_001.jpg"
+    },
+    {
+      "number": "03715",
+      "group": "AR-0300",
+      "title": "ROOF 1 PLAN - PART Q",
+      "path": "assets/projects/nupco/building-01-web/AR-0300/DD-03715-roof-1-plan-part-q.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-03715 - ROOF 1 PLAN - PART Q_001.jpg"
+    },
+    {
+      "number": "08001",
+      "group": "AR-1700",
+      "title": "GROUND FLOOR GENERAL SIGNAGE LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-1700/DD-08001-ground-floor-general-signage-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-08001 - GROUND FLOOR GENERAL SIGNAGE LAYOUT_001.jpg"
+    },
+    {
+      "number": "08002",
+      "group": "AR-1700",
+      "title": "MEZZANINE FLOOR GENERAL SIGNAGE LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-1700/DD-08002-mezzanine-floor-general-signage-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-08002 - MEZZANINE FLOOR GENERAL SIGNAGE LAYOUT_001.jpg"
+    },
+    {
+      "number": "08003",
+      "group": "AR-1700",
+      "title": "FIRST FLOOR GENERAL SIGNAGE LAYOUT",
+      "path": "assets/projects/nupco/building-01-web/AR-1700/DD-08003-first-floor-general-signage-layout.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-08003 - FIRST FLOOR GENERAL SIGNAGE LAYOUT_001.jpg"
+    },
+    {
+      "number": "09200",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR GENERAL LAYOUT - RCL",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09200-ground-floor-general-layout-rcl.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09200 - GROUND FLOOR GENERAL LAYOUT - RCL_001.jpg"
+    },
+    {
+      "number": "09201",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART A",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09201-ground-floor-rc-part-a.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09201 - GROUND FLOOR - RC - PART A_001.jpg"
+    },
+    {
+      "number": "09202",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART B",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09202-ground-floor-rc-part-b.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09202 - GROUND FLOOR - RC - PART B_001.jpg"
+    },
+    {
+      "number": "09203",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART C",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09203-ground-floor-rc-part-c.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09203 - GROUND FLOOR - RC - PART C_001.jpg"
+    },
+    {
+      "number": "09204",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09204-ground-floor-rc-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09204 - GROUND FLOOR - RC - PART D_001.jpg"
+    },
+    {
+      "number": "09205",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART E",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09205-ground-floor-rc-part-e.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09205 - GROUND FLOOR - RC - PART E_001.jpg"
+    },
+    {
+      "number": "09206",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART F",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09206-ground-floor-rc-part-f.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09206 - GROUND FLOOR - RC - PART F_001.jpg"
+    },
+    {
+      "number": "09207",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART G",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09207-ground-floor-rc-part-g.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09207 - GROUND FLOOR - RC - PART G_001.jpg"
+    },
+    {
+      "number": "09208",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART H",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09208-ground-floor-rc-part-h.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09208 - GROUND FLOOR - RC - PART H_001.jpg"
+    },
+    {
+      "number": "09209",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART J",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09209-ground-floor-rc-part-j.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09209 - GROUND FLOOR - RC - PART J_001.jpg"
+    },
+    {
+      "number": "09210",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART K",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09210-ground-floor-rc-part-k.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09210 - GROUND FLOOR - RC - PART K_001.jpg"
+    },
+    {
+      "number": "09211",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART L",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09211-ground-floor-rc-part-l.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09211 - GROUND FLOOR - RC - PART L_001.jpg"
+    },
+    {
+      "number": "09212",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART M",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09212-ground-floor-rc-part-m.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09212 - GROUND FLOOR - RC - PART M_001.jpg"
+    },
+    {
+      "number": "09213",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART N",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09213-ground-floor-rc-part-n.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09213 - GROUND FLOOR - RC - PART N_001.jpg"
+    },
+    {
+      "number": "09214",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART P",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09214-ground-floor-rc-part-p.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09214 - GROUND FLOOR - RC - PART P_001.jpg"
+    },
+    {
+      "number": "09215",
+      "group": "AR-0600",
+      "title": "GROUND FLOOR - RC - PART Q",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09215-ground-floor-rc-part-q.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09215 - GROUND FLOOR - RC - PART Q_001.jpg"
+    },
+    {
+      "number": "09503",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART C",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09503-first-floor-rc-part-c.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09503 - FIRST FLOOR - RC - PART C_001.jpg"
+    },
+    {
+      "number": "09504",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART D",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09504-first-floor-rc-part-d.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09504 - FIRST FLOOR - RC - PART D_001.jpg"
+    },
+    {
+      "number": "09505",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART E",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09505-first-floor-rc-part-e.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09505 - FIRST FLOOR - RC - PART E_001.jpg"
+    },
+    {
+      "number": "09506",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART F",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09506-first-floor-rc-part-f.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09506 - FIRST FLOOR - RC - PART F_001.jpg"
+    },
+    {
+      "number": "09507",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART G",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09507-first-floor-rc-part-g.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09507 - FIRST FLOOR - RC - PART G_001.jpg"
+    },
+    {
+      "number": "09508",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART H",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09508-first-floor-rc-part-h.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09508 - FIRST FLOOR - RC - PART H_001.jpg"
+    },
+    {
+      "number": "09509",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART J",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09509-first-floor-rc-part-j.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09509 - FIRST FLOOR - RC - PART J_001.jpg"
+    },
+    {
+      "number": "09510",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART K",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09510-first-floor-rc-part-k.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09510 - FIRST FLOOR - RC - PART K_001.jpg"
+    },
+    {
+      "number": "09511",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART L",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09511-first-floor-rc-part-l.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09511 - FIRST FLOOR - RC - PART L_001.jpg"
+    },
+    {
+      "number": "09512",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART M",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09512-first-floor-rc-part-m.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09512 - FIRST FLOOR - RC - PART M_001.jpg"
+    },
+    {
+      "number": "09513",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART N",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09513-first-floor-rc-part-n.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09513 - FIRST FLOOR - RC - PART N_001.jpg"
+    },
+    {
+      "number": "09514",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART P",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09514-first-floor-rc-part-p.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09514 - FIRST FLOOR - RC - PART P_001.jpg"
+    },
+    {
+      "number": "09515",
+      "group": "AR-0600",
+      "title": "FIRST FLOOR - RC - PART Q",
+      "path": "assets/projects/nupco/building-01-web/AR-0600/DD-09515-first-floor-rc-part-q.webp",
+      "source_name": "RCC-NPC-ASR-ARC-DD-09515 - FIRST FLOOR - RC - PART Q_001.jpg"
+    }
+  ]
+}
