@@ -77,7 +77,9 @@ The optimizer:
 - Organizes generated images into Revit sheet groups such as `AR-0000`, `AR-0100`, and `AR-0300`
 - Generates `assets/projects/nupco/building-01-web/manifest.json`
 - Removes the original heavy Warehouse image copies from the current `main` tree after successful conversion
-- Preserves recoverability through repository history and the dedicated backup branch
+- Preserves recoverability through repository history and the dedicated backup branches
+
+The current manifest contains **255 optimized drawings**, all **255 matched** to known Revit groups with **0 uncategorized files**. It also flags **3 expected sheet numbers** that were not present in the uploaded source set.
 
 The public Warehouse page reads the local manifest; it does **not** query the GitHub API in visitors' browsers.
 
@@ -145,7 +147,13 @@ The NUPCO optimization workflow is an asset-processing workflow; it is not the G
 
 ## Repository Safety
 
-`backup/pre-code-cleanup-2026-08-11` is retained as the recovery branch for the earlier portfolio state. Temporary `agent/*` branches can be removed after confirming they contain no work that needs to be retained.
+Branch cleanup is complete:
+
+- `backup/pre-code-cleanup-2026-08-11` retains the earlier portfolio state.
+- `backup/legacy-agent-fix-portfolio-2026-08-16` preserves the three unique historical fixes from the former `agent/fix-portfolio` branch.
+- Temporary `agent/*` branches and incomplete Nesma staging branches have been removed.
+
+The heavy historical image blobs are intentionally still recoverable through Git history and backup references; the published `main` tree now uses the optimized NUPCO web assets instead.
 
 ## العربية
 
