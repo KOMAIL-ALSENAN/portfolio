@@ -1,0 +1,52 @@
+name: Clean obsolete agent branches
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/cleanup-agent-branches.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch all branches
+        run: git fetch origin '+refs/heads/*:refs/remotes/origin/*'
+
+      - name: Preserve unique legacy fix branch
+        run: |
+          set -e
+          if git show-ref --verify --quiet refs/remotes/origin/agent/fix-portfolio; then
+            if ! git ls-remote --exit-code --heads origin backup/legacy-agent-fix-portfolio-2026-08-16 >/dev/null 2>&1; then
+              git push origin refs/remotes/origin/agent/fix-portfolio:refs/heads/backup/legacy-agent-fix-portfolio-2026-08-16
+            fi
+          fi
+
+      - name: Delete obsolete agent branches
+        run: |
+          set -e
+          for branch in \
+            agent/add-project-images \
+            agent/fix-portfolio \
+            agent/nesma-gallery-upload \
+            agent/nesma-gallery-upload-v2 \
+            agent/nesma-gallery-upload-v3
+          do
+            if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+              git push origin --delete "$branch"
+            fi
+          done
+
+      - name: Confirm primary backup remains
+        run: |
+          git ls-remote --exit-code --heads origin backup/pre-code-cleanup-2026-08-11
