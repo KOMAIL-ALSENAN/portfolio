@@ -1,10 +1,10 @@
 # Komail Jaffar Al Senan — Portfolio
 
-Professional portfolio website for **Komail Jaffar Al Senan**, presented as an **Architecture BIM Modeler** with a supporting focus on **BIM coordination, Revit automation, multidisciplinary delivery, and digital AEC workflows**.
+Professional bilingual portfolio website for **Komail Jaffar Al Senan**, presented as an **Architecture BIM Modeler** with a supporting focus on **BIM coordination, Revit automation, multidisciplinary delivery, and digital AEC workflows**.
 
 ## Live Portfolio
 
-The site is structured as a responsive bilingual portfolio for desktop and mobile, with shared identity, SEO metadata, social preview, project galleries, certificate filters, and accessibility improvements.
+The website is deployed with GitHub Pages from the repository's `main` branch and root directory. HTTPS is enforced.
 
 ## Main Portfolio Sections
 
@@ -52,79 +52,106 @@ Additional projects remain available through the **All Projects** page.
 - `project.html` — Shared project gallery page used by Qiddiya, Red Sea, Nesma, Villas, Health Gym and other project entries
 - `neom.html` — NEOM project overview and building galleries
 - `neom-professional-village.html` — NEOM Professional Village multi-building gallery
-- `nupco.html` — NUPCO multi-building project page, prepared for future building images
+- `nupco.html` — NUPCO multi-building overview; Building 01 links to the published Warehouse gallery while Buildings 02–04 remain unpublished placeholders
+- `nupco-warehouse.html` — Bilingual NUPCO Warehouse gallery, organized by Revit sheet groups from AR-0000 through AR-1700 and loaded from a static local manifest
 - `zain-industries.html` — ZAIN INDUSTRIES Warehouse and HCL Tank Farm galleries
 - `certificates.html` — Full certificate library with organization filters and Featured certificates
 
 ## Shared Front-End Structure
 
 - `assets/css/main.css` — Shared portfolio identity, navigation, accessibility, About enhancements, and responsive behavior
+- `assets/css/project-gallery.css` — Shared project gallery and lightbox presentation
 - `assets/js/main.js` — Shared identity normalization, SEO support, accessibility helpers, media optimization, and About content
+- `assets/js/project-gallery.js` — Shared image viewer, previous/next navigation, counter, keyboard controls, focus handling, and bilingual UI helper
 - `assets/favicon.svg` — KA browser tab icon
-- `assets/social-preview.png` — Open Graph / social sharing preview image
+- `assets/social-card-v1.jpg` — Open Graph / social sharing preview image
 - `assets/documents/Komail-Al-Senan-CV.pdf` — Portfolio CV
 
-Page-specific CSS and JavaScript are still retained where required for galleries, project rendering, filters, language switching, and lightbox interactions.
+## NUPCO Image Pipeline
+
+NUPCO Warehouse source sheets are processed by `scripts/optimize_nupco.py` and `.github/workflows/optimize-nupco.yml`.
+
+The optimizer:
+
+- Converts the Warehouse drawing images to web-optimized WebP assets with a maximum dimension of 1600 px
+- Organizes generated images into Revit sheet groups such as `AR-0000`, `AR-0100`, and `AR-0300`
+- Generates `assets/projects/nupco/building-01-web/manifest.json`
+- Removes the original heavy Warehouse image copies from the current `main` tree after successful conversion
+- Preserves recoverability through repository history and the dedicated backup branch
+
+The public Warehouse page reads the local manifest; it does **not** query the GitHub API in visitors' browsers.
 
 ## Asset Structure
 
 ```text
 assets/
 ├── certificates/
-│   ├── autodesk-training-center/
-│   ├── bim-solutions/
-│   ├── revizto/
-│   ├── saudi-council-of-engineers/
-│   └── linkedin-learning/
 ├── css/
-│   └── main.css
+│   ├── main.css
+│   └── project-gallery.css
 ├── documents/
 │   └── Komail-Al-Senan-CV.pdf
 ├── js/
-│   └── main.js
+│   ├── main.js
+│   └── project-gallery.js
 ├── projects/
 │   ├── health-gym/
 │   ├── neom/
 │   ├── nesma-car-parking-building/
 │   ├── nupco/
+│   │   ├── building-01/
+│   │   └── building-01-web/
 │   ├── qiddiya/
 │   ├── red-sea-turtle-bay-village/
 │   └── zain-industries/
 ├── favicon.svg
-└── social-preview.png
+└── social-card-v1.jpg
 ```
 
 ## Responsive & Accessibility Features
 
 - Responsive layouts for desktop, tablet, and mobile
-- Touch-friendly controls with minimum target sizing
+- Touch-friendly controls
 - Keyboard focus states
-- Skip-to-content support
+- Skip-to-content support where applicable
 - Accessible navigation labels
 - Responsive galleries and lightboxes
-- Lazy loading and asynchronous image decoding where appropriate
+- Previous / next image navigation and image counters in the shared gallery viewer
+- Escape and arrow-key lightbox controls
+- Lazy image loading and asynchronous decoding where appropriate
 - External-link security using `noopener` and `noreferrer`
+- English / Arabic direction switching on updated project galleries
 
 ## SEO & Sharing
 
-The primary pages include:
+Primary pages include:
 
 - Meta descriptions
 - Canonical URLs
 - Open Graph metadata
 - Twitter summary cards
-- Shared social preview image
+- Shared `assets/social-card-v1.jpg` social image
 - Favicon and theme color
 
 ## GitHub Pages
 
-The site is deployed from the `main` branch through the GitHub Pages workflow under `.github/workflows/pages.yml`.
+GitHub Pages is configured to publish from:
+
+- Branch: `main`
+- Path: `/`
+- HTTPS: enforced
+
+The NUPCO optimization workflow is an asset-processing workflow; it is not the GitHub Pages deployment mechanism.
+
+## Repository Safety
+
+`backup/pre-code-cleanup-2026-08-11` is retained as the recovery branch for the earlier portfolio state. Temporary `agent/*` branches can be removed after confirming they contain no work that needs to be retained.
 
 ## العربية
 
 هذا المستودع يحتوي على موقع البورتفوليو الشخصي لـ **كميل جعفر آل سنان** بصفته **Architecture BIM Modeler** مع تركيز إضافي على تنسيق BIM وأتمتة Revit وسير العمل الرقمي في مشاريع AEC.
 
-الموقع يحتوي على نبذة مهنية، ملخص خبرة، الكفاءات الأساسية، المشاريع المختارة، صفحة لجميع المشاريع، الشهادات المهنية، المهارات، السيرة الذاتية، ودعم العربية والإنجليزية، بالإضافة إلى تصميم متجاوب وتحسينات SEO وAccessibility.
+الموقع يدعم العربية والإنجليزية، ويحتوي على صفحات المشاريع والشهادات والمهارات والسيرة الذاتية. معرض مستودع NUPCO منظم حسب مجموعات لوحات Revit ويعتمد على صور WebP محسنة وملف Manifest محلي ثابت بدل طلب GitHub API أثناء تصفح الموقع.
 
 ---
 
