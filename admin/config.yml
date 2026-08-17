@@ -1,0 +1,58 @@
+backend:
+  name: github
+  repo: KOMAIL-ALSENAN/portfolio
+  branch: content-editor
+  auth_methods: [token]
+
+site_url: https://komail-alsenan.github.io/portfolio/
+display_url: https://komail-alsenan.github.io/portfolio/
+logo_url: https://komail-alsenan.github.io/portfolio/assets/favicon.svg
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+publish_mode: simple
+
+collections:
+  - name: site
+    label: Site Content
+    files:
+      - name: portfolio
+        label: Portfolio Content
+        file: content/portfolio.json
+        format: json
+        fields:
+          - label: Tools
+            name: tools
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Arabic title, name: title_ar, widget: string, required: false}
+              - {label: Type, name: type, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Arabic description, name: description_ar, widget: text, required: false}
+              - {label: Website, name: url, widget: string}
+              - {label: Badge, name: badge, widget: string, required: false}
+          - label: Certificates
+            name: certificates
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Issuer, name: issuer, widget: string}
+              - {label: Issuer Arabic, name: issuer_ar, widget: string, required: false}
+              - {label: Image, name: image, widget: image}
+              - {label: Featured, name: featured, widget: boolean, default: false}
+          - label: Projects
+            name: projects
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - {label: Project ID, name: id, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Arabic title, name: title_ar, widget: string, required: false}
+              - {label: Category, name: category, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Arabic description, name: description_ar, widget: text, required: false}
+              - {label: Cover image, name: image, widget: image}
+              - {label: Project URL, name: url, widget: string}
