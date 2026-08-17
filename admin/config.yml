@@ -9,7 +9,7 @@ display_url: https://komail-alsenan.github.io/portfolio/
 logo_url: https://komail-alsenan.github.io/portfolio/assets/favicon.svg
 
 media_folder: assets/uploads
-public_folder: /assets/uploads
+public_folder: /portfolio/assets/uploads
 publish_mode: simple
 
 collections:
