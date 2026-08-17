@@ -26,6 +26,13 @@
       "issuer_ar": "BIM SOLUTIONS",
       "image": "assets/certificates/bim-solutions/Rendering Solutions for revit users-ON (Current).jpg",
       "featured": false
+    },
+    {
+      "title": "TEST",
+      "issuer": "TEST",
+      "issuer_ar": "",
+      "image": "/portfolio/assets/uploads/pasted-image-1786950256155.png",
+      "featured": false
     }
   ],
   "projects": [
