@@ -20,7 +20,8 @@ collections:
     files:
       - name: portfolio
         label: Portfolio Content
-        file: content/portfolio.yml
+        file: content/portfolio.json
+        format: json
         fields:
           - label: Tools
             name: tools
