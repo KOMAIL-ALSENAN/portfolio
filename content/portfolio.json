@@ -1,0 +1,53 @@
+{
+  "tools": [
+    {
+      "title": "BIM Specialist",
+      "title_ar": "BIM Specialist",
+      "type": "REVIT PRODUCTIVITY TOOLKIT",
+      "description": "A professional Autodesk Revit productivity toolkit designed to streamline repetitive BIM tasks and improve day-to-day modeling workflows.",
+      "description_ar": "حزمة احترافية لأدوات Autodesk Revit تهدف إلى تسريع المهام المتكررة وتحسين سير العمل اليومي في BIM.",
+      "url": "https://bimspecialist.github.io/bim-specialist/",
+      "badge": "BIM"
+    },
+    {
+      "title": "Toolbox Suite",
+      "title_ar": "Toolbox Suite",
+      "type": "WINDOWS · PRODUCTIVITY SUITE",
+      "description": "A Windows productivity suite by BIM Specialist Software for practical file and document workflows, with Microsoft Store licensing, subscriptions and dedicated product support.",
+      "description_ar": "حزمة إنتاجية لنظام Windows من BIM Specialist Software لتسهيل سير عمل الملفات والمستندات، مع ترخيص واشتراكات عبر Microsoft Store ودعم مخصص للمنتج.",
+      "url": "https://bimspecialist.github.io/bim-specialist/",
+      "badge": "TBX"
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Rendering Solutions for Revit Users",
+      "issuer": "BIM SOLUTIONS",
+      "issuer_ar": "BIM SOLUTIONS",
+      "image": "assets/certificates/bim-solutions/Rendering Solutions for revit users-ON (Current).jpg",
+      "featured": false
+    }
+  ],
+  "projects": [
+    {
+      "id": "nesma-car-parking-building",
+      "title": "Nesma Car Parking Building",
+      "title_ar": "Nesma Car Parking Building",
+      "category": "Architecture",
+      "description": "Architectural design and documentation for a multi-level parking facility.",
+      "description_ar": "تصميم وتوثيق معماري لمبنى مواقف سيارات متعدد الطوابق.",
+      "image": "assets/projects/nesma-car-parking-building/Nesma LOGO.png",
+      "url": "project.html?id=nesma-car-parking-building"
+    },
+    {
+      "id": "nupco",
+      "title": "NUPCO",
+      "title_ar": "NUPCO",
+      "category": "BIM · MULTI-BUILDING",
+      "description": "Multi-building BIM project with organized building packages and drawing galleries.",
+      "description_ar": "مشروع BIM متعدد المباني مع حزم مبانٍ ومعارض لوحات منظمة.",
+      "image": "assets/projects/nupco/NUPCO LOGO.jpg",
+      "url": "nupco.html"
+    }
+  ]
+}
