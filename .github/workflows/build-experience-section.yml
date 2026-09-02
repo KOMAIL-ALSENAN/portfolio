@@ -6,32 +6,37 @@ permissions:
   contents: write
 jobs:
   build:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
-      - name: Build homepage integration
+      - name: Integrate and verify Experience
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git clone --branch feature/experience-timeline-20260902 "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo
           cd repo
-          if grep -q 'assets/js/experience.js' index.html; then exit 0; fi
           python3 - <<'PY'
           from pathlib import Path
           p=Path('index.html')
           s=p.read_text(encoding='utf-8')
-          marker='<script src="assets/js/main.js"></script>'
-          if marker not in s:
-              raise SystemExit('main.js marker not found')
-          s=s.replace(marker, marker+'\n<script src="assets/js/experience.js"></script>',1)
+          if 'assets/js/experience.js' not in s:
+              if '</body>' not in s:
+                  raise SystemExit('body marker not found')
+              s=s.replace('</body>','<script src="assets/js/experience.js"></script>\n</body>',1)
           schema='  "jobTitle": "Architecture BIM Modeler",\n'
           extra='  "jobTitle": "Architecture BIM Modeler",\n  "hasOccupation": {"@type": "Occupation", "name": "BIM Modeler"},\n  "worksFor": {"@type": "Organization", "name": "GULF CONSULT Architects & Engineers"},\n'
           if schema in s and '"worksFor"' not in s:
               s=s.replace(schema,extra,1)
           p.write_text(s,encoding='utf-8')
           PY
-          python3 .github/scripts/test_experience.py || true
           grep -q 'assets/js/experience.js' index.html
           grep -q '"worksFor"' index.html
+          grep -q '.experience-timeline' assets/css/main.css
+          grep -q 'GULF CONSULT Architects & Engineers' assets/js/experience.js
+          grep -q 'FOUAD AHMAD ENGINEERING CONSULTANTS' assets/js/experience.js
+          grep -q "CADD/ARCH'T" assets/js/experience.js
+          grep -q '>aramco<' assets/js/experience.js
+          grep -q 'المسار المهني' assets/js/experience.js
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add index.html
