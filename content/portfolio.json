@@ -10,13 +10,13 @@
       "badge": "BIM"
     },
     {
-      "title": "Toolbox Suite",
-      "title_ar": "Toolbox Suite",
-      "type": "WINDOWS · PRODUCTIVITY SUITE",
-      "description": "A Windows productivity suite by BIM Specialist Software for practical file and document workflows, with Microsoft Store licensing, subscriptions and dedicated product support.",
-      "description_ar": "حزمة إنتاجية لنظام Windows من BIM Specialist Software لتسهيل سير عمل الملفات والمستندات، مع ترخيص واشتراكات عبر Microsoft Store ودعم مخصص للمنتج.",
-      "url": "https://bimspecialist.github.io/microsoft-tools/toolbox-suite/",
-      "badge": "TBX"
+      "title": "Microsoft Tools",
+      "title_ar": "Microsoft Tools",
+      "type": "WINDOWS · MICROSOFT STORE APPS",
+      "description": "The official hub for Windows applications by BIM Specialist Software, including product pages, documentation, support, privacy and updates for Microsoft Store apps.",
+      "description_ar": "البوابة الرسمية لتطبيقات Windows من BIM Specialist Software، وتشمل صفحات المنتجات وأدلة الاستخدام والدعم والخصوصية والتحديثات لتطبيقات Microsoft Store.",
+      "url": "https://bimspecialist.github.io/microsoft-tools/",
+      "badge": "MS"
     }
   ],
   "certificates": [
