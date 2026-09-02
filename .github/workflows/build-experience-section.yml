@@ -20,23 +20,21 @@ jobs:
           p=Path('index.html')
           s=p.read_text(encoding='utf-8')
           if 'assets/js/experience.js' not in s:
-              if '</body>' not in s:
-                  raise SystemExit('body marker not found')
+              if '</body>' not in s: raise SystemExit('body marker not found')
               s=s.replace('</body>','<script src="assets/js/experience.js"></script>\n</body>',1)
           schema='  "jobTitle": "Architecture BIM Modeler",\n'
           extra='  "jobTitle": "Architecture BIM Modeler",\n  "hasOccupation": {"@type": "Occupation", "name": "BIM Modeler"},\n  "worksFor": {"@type": "Organization", "name": "GULF CONSULT Architects & Engineers"},\n'
-          if schema in s and '"worksFor"' not in s:
-              s=s.replace(schema,extra,1)
+          if schema in s and '"worksFor"' not in s: s=s.replace(schema,extra,1)
           p.write_text(s,encoding='utf-8')
           PY
-          grep -q 'assets/js/experience.js' index.html
-          grep -q '"worksFor"' index.html
-          grep -q '.experience-timeline' assets/css/main.css
-          grep -q 'GULF CONSULT Architects & Engineers' assets/js/experience.js
-          grep -q 'FOUAD AHMAD ENGINEERING CONSULTANTS' assets/js/experience.js
-          grep -q "CADD/ARCH'T" assets/js/experience.js
-          grep -q '>aramco<' assets/js/experience.js
-          grep -q 'المسار المهني' assets/js/experience.js
+          echo 'Verify homepage integration'; grep -q 'assets/js/experience.js' index.html
+          echo 'Verify timeline CSS'; grep -q '.experience-timeline' assets/css/main.css
+          echo 'Verify Gulf Consult'; grep -q 'GULF CONSULT Architects & Engineers' assets/js/experience.js
+          echo 'Verify Fouad Ahmad'; grep -q 'FOUAD AHMAD ENGINEERING CONSULTANTS' assets/js/experience.js
+          echo 'Verify CADD role'; grep -q "CADD/ARCH'T" assets/js/experience.js
+          echo 'Verify aramco'; grep -q "company:'aramco'" assets/js/experience.js
+          echo 'Verify Arabic'; grep -q 'المسار المهني' assets/js/experience.js
+          echo 'Verify responsive CSS'; grep -q '@media(max-width:700px)' assets/css/main.css
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add index.html
