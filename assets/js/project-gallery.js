@@ -64,3 +64,15 @@
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',protectAll,{once:true});else protectAll();
   new MutationObserver(protectAll).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['src']});
 })();
+
+/* PROJECT_IMAGE_TARGET_SHIELD_V2 */
+(()=>{
+  'use strict';
+  const isProjectImage=img=>img instanceof HTMLImageElement&&(img.src.includes('/assets/projects/')||img.closest('[data-pg-image],.pg-card,.lightbox,.pg-lightbox'));
+  const shield=img=>{if(!isProjectImage(img))return;img.draggable=false;img.style.pointerEvents="none";img.style.webkitUserDrag="none";img.style.userSelect="none";};
+  const scan=root=>{if(root instanceof HTMLImageElement)shield(root);root.querySelectorAll?.('img').forEach(shield);};
+  scan(document);
+  new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1)scan(n)}))).observe(document.documentElement,{childList:true,subtree:true});
+  document.addEventListener('contextmenu',e=>{const protectedHost=e.target.closest?.('[data-pg-image],.pg-card,.lightbox,.pg-lightbox');if(protectedHost)e.preventDefault();},true);
+  document.addEventListener('dragstart',e=>{if(e.target.closest?.('[data-pg-image],.pg-card,.lightbox,.pg-lightbox'))e.preventDefault();},true);
+})();
