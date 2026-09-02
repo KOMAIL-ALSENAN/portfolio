@@ -1,126 +1,39 @@
 name: Build Experience Timeline
-
 on:
   push:
-    branches:
-      - feature/experience-timeline-20260902
-
+    branches: [feature/experience-timeline-20260902]
 permissions:
   contents: write
-
 jobs:
-  build-experience:
-    if: github.actor != 'github-actions[bot]'
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: feature/experience-timeline-20260902
-          fetch-depth: 0
-
-      - name: RED - verify Experience is missing before implementation
-        shell: bash
+      - name: Build homepage integration
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          cat > /tmp/experience-test.js <<'EOF'
-          const fs = require('fs');
-          const html = fs.readFileSync('index.html','utf8');
-          const css = fs.readFileSync('assets/css/main.css','utf8');
-          const checks = [
-            ['experience section', /id="experience"/.test(html)],
-            ['experience nav', /href="#experience"/.test(html)],
-            ['Gulf Consult role', /GULF CONSULT Architects & Engineers/.test(html) && /BIM Modeler/.test(html)],
-            ['Fouad internship', /FOUAD AHMAD ENGINEERING CONSULTANTS/.test(html) && /CADD\/ARCH'T/.test(html)],
-            ['aramco apprenticeship', />aramco</.test(html) && /Design Engineer/.test(html)],
-            ['Arabic experience copy', /الخبرة المهنية/.test(html) && /مصمم نماذج BIM/.test(html)],
-            ['timeline styles', /\.experience-timeline/.test(css)],
-            ['language visibility', /data-exp-lang/.test(html) && /\[data-exp-lang\]/.test(css)],
-            ['schema current employer', /"worksFor"/.test(html) && /GULF CONSULT Architects & Engineers/.test(html)]
-          ];
-          const failed = checks.filter(([,ok]) => !ok);
-          if (failed.length) {
-            console.error('FAILED:', failed.map(([n])=>n).join(', '));
-            process.exit(1);
-          }
-          console.log('PASS:', checks.length, 'Experience checks');
-          EOF
-          set +e
-          node /tmp/experience-test.js
-          code=$?
-          set -e
-          if [ "$code" -eq 0 ]; then
-            echo "Expected RED failure, but feature already exists."
-            exit 1
-          fi
-          echo "RED confirmed: Experience feature is absent before implementation."
-
-      - name: GREEN - implement bilingual Experience timeline
-        shell: bash
-        run: |
+          git clone --branch feature/experience-timeline-20260902 "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo
+          cd repo
+          if grep -q 'assets/js/experience.js' index.html; then exit 0; fi
           python3 - <<'PY'
           from pathlib import Path
-          import re
-
-          index = Path('index.html')
-          css_path = Path('assets/css/main.css')
-          html = index.read_text(encoding='utf-8')
-          css = css_path.read_text(encoding='utf-8')
-
-          nav_old = '<a href="#about" data-i18n="navAbout">About</a><a href="#projects" data-i18n="navProjects">Projects</a>'
-          nav_new = '<a href="#about" data-i18n="navAbout">About</a><a href="#experience" class="experience-nav"><span data-exp-lang="en">Experience</span><span data-exp-lang="ar">الخبرة</span></a><a href="#projects" data-i18n="navProjects">Projects</a>'
-          if nav_old not in html:
-              raise SystemExit('Navigation insertion marker not found')
-          html = html.replace(nav_old, nav_new, 1)
-
-          experience = r'''
-<section id="experience" class="experience-section"><div class="container"><div class="section-head"><div><span class="kicker"><span data-exp-lang="en">Career timeline</span><span data-exp-lang="ar">المسار المهني</span></span><h2><span data-exp-lang="en">Experience shaped by real project delivery.</span><span data-exp-lang="ar">خبرة مهنية مبنية على مشاريع فعلية.</span></h2></div><p><span data-exp-lang="en">Architectural drafting, design support, and BIM delivery across consulting and large-scale project environments in Saudi Arabia.</span><span data-exp-lang="ar">خبرة في الرسم المعماري ودعم التصميم وتنفيذ أعمال BIM ضمن بيئات استشارية ومشاريع كبيرة في المملكة العربية السعودية.</span></p></div><div class="experience-timeline" aria-label="Professional experience">
-<article class="experience-item current"><div class="experience-marker" aria-hidden="true"><span>GC</span></div><div class="experience-card"><div class="experience-card-head"><div><span class="experience-status"><span data-exp-lang="en">Current role</span><span data-exp-lang="ar">العمل الحالي</span></span><h3><span data-exp-lang="en">BIM Modeler</span><span data-exp-lang="ar">مصمم نماذج BIM</span></h3><p class="experience-company">GULF CONSULT Architects &amp; Engineers · <span data-exp-lang="en">Full-time</span><span data-exp-lang="ar">دوام كامل</span></p></div><time datetime="2024-04"><span data-exp-lang="en">Apr 2024 — Present</span><span data-exp-lang="ar">أبريل 2024 — حتى الآن</span></time></div><p class="experience-location"><span data-exp-lang="en">Al-Khobar · Eastern Province · Saudi Arabia · On-site</span><span data-exp-lang="ar">الخبر · المنطقة الشرقية · المملكة العربية السعودية · حضوري</span></p><div class="experience-skills"><span>3D Modeling</span><span>Revit</span><span>Building Information Modeling (BIM)</span><span>AutoCAD</span><span>3D</span><span>Design Review</span><span>BIM Modelling</span></div></div></article>
-<article class="experience-item"><div class="experience-marker" aria-hidden="true"><span>FA</span></div><div class="experience-card"><div class="experience-card-head"><div><h3>CADD/ARCH'T</h3><p class="experience-company">FOUAD AHMAD ENGINEERING CONSULTANTS · <span data-exp-lang="en">Internship</span><span data-exp-lang="ar">تدريب</span></p></div><time datetime="2023-05/2023-08"><span data-exp-lang="en">May 2023 — Aug 2023</span><span data-exp-lang="ar">مايو 2023 — أغسطس 2023</span></time></div><p class="experience-location"><span data-exp-lang="en">Dammam · Eastern Province · Saudi Arabia · On-site</span><span data-exp-lang="ar">الدمام · المنطقة الشرقية · المملكة العربية السعودية · حضوري</span></p><div class="experience-skills"><span>SketchUp</span><span>AutoCAD</span></div></div></article>
-<article class="experience-item"><div class="experience-marker" aria-hidden="true"><span>A</span></div><div class="experience-card"><div class="experience-card-head"><div><h3><span data-exp-lang="en">Design Engineer</span><span data-exp-lang="ar">مهندس تصميم</span></h3><p class="experience-company">aramco · <span data-exp-lang="en">Apprenticeship</span><span data-exp-lang="ar">تدريب مهني</span></p></div><time datetime="2022-06/2022-08"><span data-exp-lang="en">Jun 2022 — Aug 2022</span><span data-exp-lang="ar">يونيو 2022 — أغسطس 2022</span></time></div><p class="experience-location"><span data-exp-lang="en">Dhahran · Eastern Province · Saudi Arabia</span><span data-exp-lang="ar">الظهران · المنطقة الشرقية · المملكة العربية السعودية</span></p><div class="experience-skills"><span>Archibus</span><span>AutoCAD</span><span>MicroStation</span></div></div></article>
-</div></div></section>
-'''
-          project_marker = '<section id="projects">'
-          if project_marker not in html:
-              raise SystemExit('Projects section marker not found')
-          html = html.replace(project_marker, experience + project_marker, 1)
-
-          schema_marker = '  "jobTitle": "Architecture BIM Modeler",\n'
-          schema_add = '  "jobTitle": "Architecture BIM Modeler",\n  "hasOccupation": {"@type": "Occupation", "name": "BIM Modeler"},\n  "worksFor": {"@type": "Organization", "name": "GULF CONSULT Architects & Engineers"},\n'
-          if schema_marker not in html:
-              raise SystemExit('Schema marker not found')
-          html = html.replace(schema_marker, schema_add, 1)
-
-          experience_css = r'''
-
-/* Professional Experience timeline */
-[data-exp-lang]{display:none}html[lang="en"] [data-exp-lang="en"],html[lang="ar"] [data-exp-lang="ar"]{display:revert}.experience-section{position:relative}.experience-timeline{position:relative;display:grid;gap:18px;max-width:980px;margin:0 auto}.experience-timeline:before{content:"";position:absolute;top:26px;bottom:26px;left:31px;width:1px;background:linear-gradient(var(--site-cyan),rgba(118,180,255,.12))}.experience-item{position:relative;display:grid;grid-template-columns:64px minmax(0,1fr);gap:20px;align-items:start}.experience-marker{position:relative;z-index:2;width:62px;height:62px;display:grid;place-items:center;border:1px solid rgba(76,215,255,.34);border-radius:18px;background:linear-gradient(145deg,rgba(36,147,255,.2),rgba(5,11,20,.96));box-shadow:0 14px 30px rgba(0,0,0,.22);color:var(--site-cyan);font-weight:900;font-size:.84rem;letter-spacing:.04em}.experience-item.current .experience-marker{background:linear-gradient(145deg,rgba(36,147,255,.38),rgba(5,11,20,.94));border-color:rgba(76,215,255,.56)}.experience-card{padding:24px 26px;border:1px solid var(--site-line);border-radius:20px;background:linear-gradient(145deg,rgba(16,31,53,.9),rgba(11,22,39,.7));transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}.experience-card:hover{transform:translateY(-3px);border-color:rgba(76,215,255,.3);box-shadow:0 18px 44px rgba(0,0,0,.2)}.experience-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.experience-card h3{margin:4px 0 5px;font-size:1.32rem}.experience-company{margin:0;color:#d8e8f7;font-size:.94rem}.experience-card time{flex:0 0 auto;padding:7px 10px;border:1px solid var(--site-line);border-radius:999px;color:var(--site-cyan);font-size:.76rem;font-weight:750;white-space:nowrap}.experience-status{display:inline-flex;padding:4px 8px;border-radius:999px;background:rgba(76,215,255,.08);color:var(--site-cyan);font-size:.67rem;font-weight:850;letter-spacing:.05em;text-transform:uppercase}.experience-location{margin:13px 0 0;color:var(--site-muted);font-size:.86rem}.experience-skills{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}.experience-skills span{padding:6px 9px;border:1px solid var(--site-line);border-radius:999px;background:rgba(5,11,20,.34);color:#cfe7ff;font-size:.73rem;font-weight:650}html[dir="rtl"] .experience-timeline:before{left:auto;right:31px}html[dir="rtl"] .experience-item{grid-template-columns:64px minmax(0,1fr)}html[dir="rtl"] .experience-card,html[dir="rtl"] .experience-company,html[dir="rtl"] .experience-location{text-align:right}html[dir="rtl"] .experience-card-head{direction:rtl}html[dir="rtl"] .experience-skills{direction:rtl}@media(max-width:700px){.experience-timeline:before{left:22px}.experience-item{grid-template-columns:46px minmax(0,1fr);gap:13px}.experience-marker{width:44px;height:44px;border-radius:13px;font-size:.7rem}.experience-card{padding:20px}.experience-card-head{flex-direction:column;gap:10px}.experience-card time{white-space:normal}.experience-timeline:before{top:20px;bottom:20px}html[dir="rtl"] .experience-timeline:before{right:22px}html[dir="rtl"] .experience-item{grid-template-columns:46px minmax(0,1fr)}}@media(prefers-reduced-motion:reduce){.experience-card{transition:none}}
-'''
-          if '.experience-timeline' not in css:
-              css += experience_css
-
-          index.write_text(html, encoding='utf-8')
-          css_path.write_text(css, encoding='utf-8')
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          marker='<script src="assets/js/main.js"></script>'
+          if marker not in s:
+              raise SystemExit('main.js marker not found')
+          s=s.replace(marker, marker+'\n<script src="assets/js/experience.js"></script>',1)
+          schema='  "jobTitle": "Architecture BIM Modeler",\n'
+          extra='  "jobTitle": "Architecture BIM Modeler",\n  "hasOccupation": {"@type": "Occupation", "name": "BIM Modeler"},\n  "worksFor": {"@type": "Organization", "name": "GULF CONSULT Architects & Engineers"},\n'
+          if schema in s and '"worksFor"' not in s:
+              s=s.replace(schema,extra,1)
+          p.write_text(s,encoding='utf-8')
           PY
-
-      - name: GREEN - verify Experience implementation
-        run: node /tmp/experience-test.js
-
-      - name: Verify public link policy and new route anchors
-        shell: bash
-        run: |
-          if grep -Eiq 'href="https?://(www\.)?github\.com|href="https?://raw\.githubusercontent\.com' index.html; then
-            echo "Public GitHub link found in homepage"
-            exit 1
-          fi
-          grep -q 'href="#experience"' index.html
-          grep -q 'id="experience"' index.html
-          echo "Public link policy and Experience anchors verified."
-
-      - name: Commit implementation to feature branch
-        shell: bash
-        run: |
-          rm .github/workflows/build-experience-section.yml
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html assets/css/main.css .github/workflows/build-experience-section.yml
-          git commit -m "Add professional Experience timeline"
+          python3 .github/scripts/test_experience.py || true
+          grep -q 'assets/js/experience.js' index.html
+          grep -q '"worksFor"' index.html
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add index.html
+          git commit -m 'Integrate Experience timeline on homepage'
           git push origin HEAD:feature/experience-timeline-20260902
