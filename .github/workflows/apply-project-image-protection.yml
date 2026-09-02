@@ -14,54 +14,10 @@ jobs:
           ref: feature/project-image-protection-20260902
       - name: Add centralized project image protection
         shell: bash
-        run: |
-          cat >> assets/js/project-gallery.js <<'EOF'
-
-/* PROJECT_IMAGE_PROTECTION_V1 - deterrence for published project imagery; original image bytes and quality are unchanged. */
-(()=>{
-  'use strict';
-  const PROJECT_SRC='assets/projects/';
-  const isProjectImage=(node)=>{
-    if(!(node instanceof HTMLImageElement)) return false;
-    const src=node.getAttribute('src')||'';
-    return src.includes(PROJECT_SRC)||node.matches('.lightbox img');
-  };
-  const protect=(img)=>{
-    if(!isProjectImage(img)) return;
-    img.draggable=false;
-    img.setAttribute('draggable','false');
-    img.style.userSelect='none';
-    img.style.webkitUserSelect='none';
-    img.style.webkitUserDrag='none';
-    img.style.imageRendering='auto';
-    img.dataset.projectProtected='true';
-  };
-  const protectAll=()=>document.querySelectorAll('img').forEach(protect);
-  document.addEventListener('contextmenu',(e)=>{if(isProjectImage(e.target))e.preventDefault();},true);
-  document.addEventListener('dragstart',(e)=>{if(isProjectImage(e.target))e.preventDefault();},true);
-  document.addEventListener('copy',(e)=>{if(isProjectImage(e.target))e.preventDefault();},true);
-  document.addEventListener('keydown',(e)=>{
-    const k=(e.key||'').toLowerCase();
-    if((e.ctrlKey||e.metaKey)&&(k==='s'||k==='c'||k==='u')&&document.querySelector('img[src*="assets/projects/"]'))e.preventDefault();
-  },true);
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',protectAll,{once:true});else protectAll();
-  new MutationObserver(protectAll).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['src']});
-})();
-EOF
+        run: echo 'Ci8qIFBST0pFQ1RfSU1BR0VfUFJPVEVDVElPTl9WMSAtIGRldGVycmVuY2UgZm9yIHB1Ymxpc2hlZCBwcm9qZWN0IGltYWdlcnk7IG9yaWdpbmFsIGltYWdlIGJ5dGVzIGFuZCBxdWFsaXR5IGFyZSB1bmNoYW5nZWQuICovCigoKT0+ewogICd1c2Ugc3RyaWN0JzsKICBjb25zdCBQUk9KRUNUX1NSQz0nYXNzZXRzL3Byb2plY3RzLyc7CiAgY29uc3QgaXNQcm9qZWN0SW1hZ2U9KG5vZGUpPT57aWYoIShub2RlIGluc3RhbmNlb2YgSFRNTEltYWdlRWxlbWVudCkpcmV0dXJuIGZhbHNlO2NvbnN0IHNyYz1ub2RlLmdldEF0dHJpYnV0ZSgnc3JjJyl8fCcnO3JldHVybiBzcmMuaW5jbHVkZXMoUFJPSkVDVF9TUkMpfHxub2RlLm1hdGNoZXMoJy5saWdodGJveCBpbWcnKTt9OwogIGNvbnN0IHByb3RlY3Q9KGltZyk9PntpZighaXNQcm9qZWN0SW1hZ2UoaW1nKSlyZXR1cm47aW1nLmRyYWdnYWJsZT1mYWxzZTtpbWcuc2V0QXR0cmlidXRlKCdkcmFnZ2FibGUnLCdmYWxzZScpO2ltZy5zdHlsZS51c2VyU2VsZWN0PSdub25lJztpbWcuc3R5bGUud2Via2l0VXNlclNlbGVjdD0nbm9uZSc7aW1nLnN0eWxlLndlYmtpdFVzZXJEcmFnPSdub25lJztpbWcuc3R5bGUuaW1hZ2VSZW5kZXJpbmc9J2F1dG8nO2ltZy5kYXRhc2V0LnByb2plY3RQcm90ZWN0ZWQ9J3RydWUnO307CiAgY29uc3QgcHJvdGVjdEFsbD0oKT0+ZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnaW1nJykuZm9yRWFjaChwcm90ZWN0KTsKICBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdjb250ZXh0bWVudScsKGUpPT57aWYoaXNQcm9qZWN0SW1hZ2UoZS50YXJnZXQpKWUucHJldmVudERlZmF1bHQoKTt9LHRydWUpOwogIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2RyYWdzdGFydCcsKGUpPT57aWYoaXNQcm9qZWN0SW1hZ2UoZS50YXJnZXQpKWUucHJldmVudERlZmF1bHQoKTt9LHRydWUpOwogIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2NvcHknLChlKT0+e2lmKGlzUHJvamVjdEltYWdlKGUudGFyZ2V0KSllLnByZXZlbnREZWZhdWx0KCk7fSx0cnVlKTsKICBkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdrZXlkb3duJywoZSk9Pntjb25zdCBrPShlLmtleXx8JycpLnRvTG93ZXJDYXNlKCk7aWYoKGUuY3RybEtleXx8ZS5tZXRhS2V5KSYmKGs9PT0ncyd8fGs9PT0nYyd8fGs9PT0ndScpJiZkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdpbWdbc3JjKj1cImFzc2V0cy9wcm9qZWN0cy9cIl0nKSllLnByZXZlbnREZWZhdWx0KCk7fSx0cnVlKTsKICBpZihkb2N1bWVudC5yZWFkeVN0YXRlPT09J2xvYWRpbmcnKWRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ0RPTUNvbnRlbnRMb2FkZWQnLHByb3RlY3RBbGwse29uY2U6dHJ1ZX0pO2Vsc2UgcHJvdGVjdEFsbCgpOwogIG5ldyBNdXRhdGlvbk9ic2VydmVyKHByb3RlY3RBbGwpLm9ic2VydmUoZG9jdW1lbnQuZG9jdW1lbnRFbGVtZW50LHtzdWJ0cmVlOnRydWUsY2hpbGRMaXN0OnRydWUsYXR0cmlidXRlczp0cnVlLGF0dHJpYnV0ZUZpbHRlcjpbJ3NyYyddfSk7Cn0pKCk7Cg==' | base64 -d >> assets/js/project-gallery.js
       - name: Verify protection
         shell: bash
-        run: |
-          grep -q PROJECT_IMAGE_PROTECTION_V1 assets/js/project-gallery.js
-          grep -q contextmenu assets/js/project-gallery.js
-          grep -q dragstart assets/js/project-gallery.js
-          grep -q imageRendering assets/js/project-gallery.js
-          if grep -qi watermark assets/js/project-gallery.js; then exit 1; fi
+        run: grep -q PROJECT_IMAGE_PROTECTION_V1 assets/js/project-gallery.js && grep -q contextmenu assets/js/project-gallery.js && grep -q dragstart assets/js/project-gallery.js && grep -q imageRendering assets/js/project-gallery.js && ! grep -qi watermark assets/js/project-gallery.js
       - name: Commit implementation
         shell: bash
-        run: |
-          rm .github/workflows/apply-project-image-protection.yml
-          git config user.name github-actions-bot
-          git config user.email github-actions-bot@users.noreply.github.com
-          git add assets/js/project-gallery.js .github/workflows/apply-project-image-protection.yml
-          git commit -m 'Protect published project images from casual copying'
-          git push origin HEAD:feature/project-image-protection-20260902
+        run: rm .github/workflows/apply-project-image-protection.yml && git config user.name github-actions-bot && git config user.email github-actions-bot@users.noreply.github.com && git add assets/js/project-gallery.js .github/workflows/apply-project-image-protection.yml && git commit -m 'Protect published project images from casual copying' && git push origin HEAD:feature/project-image-protection-20260902
