@@ -1,0 +1,34 @@
+name: Apply Global Project Protection
+on:
+  workflow_dispatch:
+  push:
+    branches: [fix/project-image-protection-global-20260902]
+    paths: ['assets/js/project-image-protection.js']
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/project-image-protection-global-20260902
+      - name: Load protection on generic project pages
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          tag='<script src="assets/js/project-image-protection.js"></script>'
+          for name in ['project.html','projects.html']:
+              p=Path(name); s=p.read_text(encoding='utf-8')
+              if tag in s: continue
+              if '</body>' not in s: raise SystemExit(f'No body close in {name}')
+              p.write_text(s.replace('</body>',tag+'\n</body>',1),encoding='utf-8')
+          PY
+      - name: Commit patch
+        run: |
+          git config user.name github-actions-bot
+          git config user.email github-actions-bot@users.noreply.github.com
+          git add project.html projects.html
+          git diff --cached --quiet && exit 0
+          git commit -m "fix: load protection on generic project pages"
+          git push
