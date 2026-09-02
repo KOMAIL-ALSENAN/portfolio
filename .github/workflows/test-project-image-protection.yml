@@ -1,0 +1,22 @@
+name: Test Project Image Protection
+on:
+  push:
+    branches: [feature/project-image-protection-20260902]
+  pull_request:
+    branches: [main]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify strong project image protection
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('assets/js/project-gallery.js').read_text(encoding='utf-8')
+          required=['PROJECT_IMAGE_PROTECTION_V1','contextmenu','dragstart','copy','ctrlKey','assets/projects/','.lightbox img','imageRendering']
+          missing=[x for x in required if x not in s]
+          if 'watermark' in s.lower(): missing.append('unexpected watermark')
+          if missing: raise SystemExit('Missing protection behavior: '+', '.join(missing))
+          print('PASS: project image protection behavior present')
+          PY
