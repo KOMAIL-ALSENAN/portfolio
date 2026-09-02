@@ -30,6 +30,8 @@
   "@type": "Person",
   "name": "Komail Alsenan",
   "jobTitle": "Architecture BIM Modeler",
+  "hasOccupation": {"@type": "Occupation", "name": "BIM Modeler"},
+  "worksFor": {"@type": "Organization", "name": "GULF CONSULT Architects & Engineers"},
   "url": "https://komail-alsenan.github.io/portfolio/",
   "sameAs": [
     "https://www.linkedin.com/in/komail-al-senan/"
@@ -65,4 +67,5 @@ document.getElementById('langBtn').onclick=()=>{lang=lang==='en'?'ar':'en';local
 let revealObserver;
 function setupRevealAnimations(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(revealObserver)revealObserver.disconnect();const targets=document.querySelectorAll('section .section-head, .about-card, .stat, .project, .certificate, .skill, .contact, .section-action');targets.forEach((el,i)=>{el.classList.add('scroll-reveal');el.style.transitionDelay=`${Math.min(i%6,5)*55}ms`});revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('reveal-visible')}else{entry.target.classList.remove('reveal-visible')}})},{threshold:.16,rootMargin:'0px 0px -5% 0px'});targets.forEach(el=>revealObserver.observe(el))}
 applyLang();setupRevealAnimations();
-</script><script src="assets/js/main.js" defer></script></body></html>
+</script><script src="assets/js/main.js" defer></script><script src="assets/js/experience.js"></script>
+</body></html>
