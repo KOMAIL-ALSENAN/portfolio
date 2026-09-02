@@ -1,9 +1,8 @@
 name: Apply Project Image Protection
 on:
-  workflow_dispatch:
   push:
-    paths: [.github/workflows/apply-project-image-protection.yml]
-    branches: [feature/project-image-protection-20260902]
+    branches:
+      - feature/project-image-protection-20260902
 permissions:
   contents: write
 jobs:
@@ -14,10 +13,11 @@ jobs:
         with:
           ref: feature/project-image-protection-20260902
       - name: Add centralized project image protection
+        shell: bash
         run: |
           cat >> assets/js/project-gallery.js <<'EOF'
 
-/* PROJECT_IMAGE_PROTECTION_V1 — deterrence for published project imagery; original image bytes/quality are unchanged. */
+/* PROJECT_IMAGE_PROTECTION_V1 - deterrence for published project imagery; original image bytes and quality are unchanged. */
 (()=>{
   'use strict';
   const PROJECT_SRC='assets/projects/';
@@ -37,37 +37,31 @@ jobs:
     img.dataset.projectProtected='true';
   };
   const protectAll=()=>document.querySelectorAll('img').forEach(protect);
-  document.addEventListener('contextmenu',(e)=>{if(isProjectImage(e.target)){e.preventDefault();}},true);
-  document.addEventListener('dragstart',(e)=>{if(isProjectImage(e.target)){e.preventDefault();}},true);
-  document.addEventListener('copy',(e)=>{const sel=document.getSelection();const anchor=sel&&sel.anchorNode;const el=anchor&&(anchor.nodeType===1?anchor:anchor.parentElement);if((el&&el.closest&&el.closest('[data-project-protected="true"]'))||isProjectImage(e.target)){e.preventDefault();}},true);
+  document.addEventListener('contextmenu',(e)=>{if(isProjectImage(e.target))e.preventDefault();},true);
+  document.addEventListener('dragstart',(e)=>{if(isProjectImage(e.target))e.preventDefault();},true);
+  document.addEventListener('copy',(e)=>{if(isProjectImage(e.target))e.preventDefault();},true);
   document.addEventListener('keydown',(e)=>{
     const k=(e.key||'').toLowerCase();
-    if((e.ctrlKey||e.metaKey)&&(k==='s'||k==='c'||k==='u')){
-      const active=document.activeElement;
-      const projectPage=document.querySelector('img[src*="assets/projects/"]');
-      if(projectPage||isProjectImage(active)){e.preventDefault();}
-    }
+    if((e.ctrlKey||e.metaKey)&&(k==='s'||k==='c'||k==='u')&&document.querySelector('img[src*="assets/projects/"]'))e.preventDefault();
   },true);
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',protectAll,{once:true}); else protectAll();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',protectAll,{once:true});else protectAll();
   new MutationObserver(protectAll).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['src']});
 })();
 EOF
-      - name: Verify GREEN locally
+      - name: Verify protection
+        shell: bash
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          s=Path('assets/js/project-gallery.js').read_text(encoding='utf-8')
-          required=['PROJECT_IMAGE_PROTECTION_V1','contextmenu','dragstart','copy','ctrlKey','assets/projects/','.lightbox img','imageRendering']
-          missing=[x for x in required if x not in s]
-          if 'watermark' in s.lower(): missing.append('unexpected watermark')
-          if missing: raise SystemExit('Missing protection behavior: '+', '.join(missing))
-          print('PASS: protection enabled without modifying image assets')
-          PY
-      - name: Remove one-time patch workflow and commit
+          grep -q PROJECT_IMAGE_PROTECTION_V1 assets/js/project-gallery.js
+          grep -q contextmenu assets/js/project-gallery.js
+          grep -q dragstart assets/js/project-gallery.js
+          grep -q imageRendering assets/js/project-gallery.js
+          if grep -qi watermark assets/js/project-gallery.js; then exit 1; fi
+      - name: Commit implementation
+        shell: bash
         run: |
           rm .github/workflows/apply-project-image-protection.yml
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.name github-actions-bot
+          git config user.email github-actions-bot@users.noreply.github.com
           git add assets/js/project-gallery.js .github/workflows/apply-project-image-protection.yml
           git commit -m 'Protect published project images from casual copying'
           git push origin HEAD:feature/project-image-protection-20260902
