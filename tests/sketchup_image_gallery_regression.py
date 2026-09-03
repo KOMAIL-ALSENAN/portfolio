@@ -1,5 +1,6 @@
 from pathlib import Path
 
+# Post-apply verification for the published SKETCHUP image wiring.
 cover = 'assets/projects/sketchup/building-01/WhatsApp Image 2026-09-03 at 1.21.01 PM.jpeg'
 b1 = [
 'WhatsApp Image 2026-09-03 at 1.21.01 PM.jpeg',
