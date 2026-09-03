@@ -1,91 +1,73 @@
-name: Fix Microsoft Tools Renderer
+name: Microsoft Tools Source Fix
 
 on:
   push:
-    branches: [fix/microsoft-tools-renderer-20260903]
+    branches:
+      - fix/microsoft-tools-renderer-20260903
 
 permissions:
   contents: write
 
 jobs:
-  red-green:
-    if: github.actor != 'github-actions[bot]'
+  patch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: fix/microsoft-tools-renderer-20260903
           fetch-depth: 0
-
-      - name: RED - prove renderer guard is missing
-        shell: bash
+      - name: Patch actual homepage renderer
         run: |
-          set +e
-          grep -q 'MICROSOFT_TOOLS_RENDER_GUARD_V1' assets/js/main.js
-          code=$?
-          set -e
-          if [ "$code" -eq 0 ]; then
-            echo 'Expected renderer guard to be missing before fix.'
-            exit 1
-          fi
-          grep -q '"title": "Microsoft Tools"' content/portfolio.json
-          echo 'RED confirmed: data is current but renderer guard is absent.'
-
-      - name: Apply renderer guard
-        shell: bash
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('assets/js/main.js')
+          s=p.read_text(encoding='utf-8')
+          old=[
+            "pdfType:'WINDOWS · PRODUCTIVITY SUITE'",
+            "pdfTitle:'Toolbox Suite'",
+            "pdfText:'A Windows productivity suite by BIM Specialist Software for practical file and document workflows, with Microsoft Store licensing, subscriptions and dedicated product support.'",
+            "pdfLink:'Visit Toolbox Suite ↗'",
+            "pdfType:'WINDOWS · حزمة إنتاجية'",
+            "pdfTitle:'Toolbox Suite'",
+            "pdfText:'حزمة إنتاجية لنظام Windows من BIM Specialist Software لتسهيل سير عمل الملفات والمستندات، مع ترخيص واشتراكات عبر Microsoft Store ودعم مخصص للمنتج.'",
+            "pdfLink:'زيارة Toolbox Suite ↗'",
+            '<div class="tool-icon tool-icon-pdf">TBX</div>',
+            'href="https://bimspecialist.github.io/toolbox-suite-support/"'
+          ]
+          missing=[x for x in old if x not in s]
+          if missing:
+              raise SystemExit('RED source pattern missing: '+repr(missing))
+          replacements={
+            "pdfType:'WINDOWS · PRODUCTIVITY SUITE'":"pdfType:'WINDOWS · MICROSOFT STORE APPS'",
+            "pdfTitle:'Toolbox Suite'":"pdfTitle:'Microsoft Tools'",
+            "pdfText:'A Windows productivity suite by BIM Specialist Software for practical file and document workflows, with Microsoft Store licensing, subscriptions and dedicated product support.'":"pdfText:'The official hub for Windows applications by BIM Specialist Software, including product pages, documentation, support, privacy and updates for Microsoft Store apps.'",
+            "pdfLink:'Visit Toolbox Suite ↗'":"pdfLink:'Visit Microsoft Tools ↗'",
+            "pdfType:'WINDOWS · حزمة إنتاجية'":"pdfType:'WINDOWS · تطبيقات MICROSOFT STORE'",
+            "pdfText:'حزمة إنتاجية لنظام Windows من BIM Specialist Software لتسهيل سير عمل الملفات والمستندات، مع ترخيص واشتراكات عبر Microsoft Store ودعم مخصص للمنتج.'":"pdfText:'البوابة الرسمية لتطبيقات Windows من BIM Specialist Software، وتشمل صفحات المنتجات وأدلة الاستخدام والدعم والخصوصية والتحديثات لتطبيقات Microsoft Store.'",
+            "pdfLink:'زيارة Toolbox Suite ↗'":"pdfLink:'زيارة Microsoft Tools ↗'",
+            '<div class="tool-icon tool-icon-pdf">TBX</div>':'<div class="tool-icon tool-icon-pdf">MS</div>',
+            'href="https://bimspecialist.github.io/toolbox-suite-support/"':'href="https://bimspecialist.github.io/microsoft-tools/"'
+          }
+          for a,b in replacements.items(): s=s.replace(a,b)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Verify corrected renderer
         run: |
-          cat >> assets/js/main.js <<'EOF'
-
-/* MICROSOFT_TOOLS_RENDER_GUARD_V1
-   Ensures stale cached/rendered Toolbox Suite content cannot survive on the public Portfolio homepage. */
-(()=>{
-  'use strict';
-  const isHome=()=>/\/(portfolio\/)?(?:index\.html)?$/.test(location.pathname);
-  const copy={
-    en:{title:'Microsoft Tools',type:'WINDOWS · MICROSOFT STORE APPS',desc:'The official hub for Windows applications by BIM Specialist Software, including product pages, documentation, support, privacy and updates for Microsoft Store apps.',button:'Visit Microsoft Tools ↗'},
-    ar:{title:'Microsoft Tools',type:'WINDOWS · تطبيقات MICROSOFT STORE',desc:'البوابة الرسمية لتطبيقات Windows من BIM Specialist Software، وتشمل صفحات المنتجات وأدلة الاستخدام والدعم والخصوصية والتحديثات لتطبيقات Microsoft Store.',button:'زيارة Microsoft Tools ↗'}
-  };
-  const text=n=>(n?.textContent||'').trim();
-  const patch=()=>{
-    if(!isHome())return;
-    const lang=document.documentElement.lang==='ar'?'ar':'en';
-    document.querySelectorAll('h1,h2,h3,h4,strong').forEach(title=>{
-      if(text(title)!=='Toolbox Suite'&&text(title)!=='Microsoft Tools')return;
-      const card=title.closest('article,.tool-card,.product,.card')||title.parentElement?.parentElement;
-      if(!card)return;
-      const c=copy[lang];
-      title.textContent=c.title;
-      const badge=[...card.querySelectorAll('*')].find(el=>['TBX','MS'].includes(text(el)));
-      if(badge)badge.textContent='MS';
-      const type=[...card.querySelectorAll('*')].find(el=>/WINDOWS\s*[·-]/i.test(text(el))&&el.children.length===0);
-      if(type)type.textContent=c.type;
-      const paras=[...card.querySelectorAll('p')];
-      if(paras[0])paras[0].textContent=c.desc;
-      const link=[...card.querySelectorAll('a')].find(a=>/Toolbox|Microsoft Tools/i.test(text(a))||/microsoft-tools/i.test(a.href));
-      if(link){link.href='https://bimspecialist.github.io/microsoft-tools/';link.textContent=c.button;link.target='_blank';link.rel='noopener';}
-    });
-  };
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',patch,{once:true});else patch();
-  new MutationObserver(patch).observe(document.documentElement,{childList:true,subtree:true,characterData:true});
-  document.addEventListener('click',e=>{if(e.target.closest?.('#langBtn,[data-pg-lang],[data-lang-toggle]'))setTimeout(patch,0);},true);
-})();
-EOF
-
-      - name: GREEN - verify renderer guard
-        shell: bash
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('assets/js/main.js').read_text(encoding='utf-8')
+          required=['Microsoft Tools','WINDOWS · MICROSOFT STORE APPS','https://bimspecialist.github.io/microsoft-tools/','>MS</div>','زيارة Microsoft Tools']
+          forbidden=['toolbox-suite-support/']
+          missing=[x for x in required if x not in s]
+          bad=[x for x in forbidden if x in s]
+          if missing or bad: raise SystemExit('Verification failed: missing='+repr(missing)+' forbidden='+repr(bad))
+          print('GREEN: actual homepage renderer now targets Microsoft Tools')
+          PY
+      - name: Commit source fix
         run: |
-          grep -q 'MICROSOFT_TOOLS_RENDER_GUARD_V1' assets/js/main.js
-          grep -q "https://bimspecialist.github.io/microsoft-tools/" assets/js/main.js
-          grep -q "Microsoft Tools" assets/js/main.js
-          grep -q '"title": "Microsoft Tools"' content/portfolio.json
-          echo 'GREEN: source data and renderer guard both target Microsoft Tools.'
-
-      - name: Commit fix and remove one-time workflow
-        shell: bash
-        run: |
-          rm .github/workflows/fix-microsoft-tools-renderer.yml
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/js/main.js .github/workflows/fix-microsoft-tools-renderer.yml
-          git commit -m 'Fix Microsoft Tools card rendering'
+          git config user.name github-actions-bot
+          git config user.email github-actions-bot@users.noreply.github.com
+          git add assets/js/main.js
+          git diff --cached --quiet && exit 0
+          git commit -m 'fix: update homepage renderer to Microsoft Tools'
           git push origin HEAD:fix/microsoft-tools-renderer-20260903
