@@ -1,0 +1,85 @@
+name: Full Site Cleanup
+on:
+  push:
+    branches: [fix/full-site-cleanup-20260903]
+permissions:
+  contents: write
+jobs:
+  red-green:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/full-site-cleanup-20260903
+          fetch-depth: 0
+      - name: RED - confirm old issues exist
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          checks = {
+            'developer/index.html': ['toolbox-suite-support/'],
+            'developer-portfolio.html': ['BIM Specialist and Toolbox Suite'],
+            'nupco.html': ['<article class="building pending">'],
+            'zain-industries.html': ['<a class="view" href="#">View gallery →</a>'],
+          }
+          missing=[]
+          for p,tokens in checks.items():
+              s=Path(p).read_text(encoding='utf-8')
+              for t in tokens:
+                  if t not in s: missing.append((p,t))
+          if missing: raise SystemExit('Expected RED patterns missing: '+repr(missing))
+          print('RED confirmed')
+          PY
+      - name: Apply cleanup
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p=Path('developer/index.html'); s=p.read_text(encoding='utf-8')
+          s=s.replace('<span class="badge">WINDOWS PRODUCT</span><h2>Toolbox Suite</h2><p>Product information, screenshots, support content and media.</p><div class="actions"><a class="btn primary" href="https://bimspecialist.github.io/toolbox-suite-support/admin/">Open Admin <span>→</span></a><a class="btn" href="https://bimspecialist.github.io/toolbox-suite-support/" target="_blank" rel="noopener">Production <span>↗</span></a></div>',
+                      '<span class="badge">WINDOWS APPS HUB</span><h2>Microsoft Tools</h2><p>Central hub for Microsoft Store apps, documentation, support, privacy and updates.</p><div class="actions"><a class="btn primary" href="https://bimspecialist.github.io/microsoft-tools/">Open Hub <span>→</span></a><a class="btn" href="https://bimspecialist.github.io/microsoft-tools/" target="_blank" rel="noopener">Production <span>↗</span></a></div>')
+          p.write_text(s,encoding='utf-8')
+
+          p=Path('developer-portfolio.html'); s=p.read_text(encoding='utf-8')
+          s=s.replace('BIM Specialist and Toolbox Suite.','BIM Specialist and Microsoft Tools.')
+          s=s.replace('BIM Specialist and Toolbox Suite.','BIM Specialist and Microsoft Tools.')
+          p.write_text(s,encoding='utf-8')
+
+          p=Path('nupco.html'); s=p.read_text(encoding='utf-8')
+          s=s.replace('<article class="building pending"><div><strong data-en="Building 02"', '<article class="building pending" hidden aria-hidden="true"><div><strong data-en="Building 02"')
+          s=s.replace('<article class="building pending"><div><strong data-en="Building 03"', '<article class="building pending" hidden aria-hidden="true"><div><strong data-en="Building 03"')
+          s=s.replace('<article class="building pending"><div><strong data-en="Building 04"', '<article class="building pending" hidden aria-hidden="true"><div><strong data-en="Building 04"')
+          p.write_text(s,encoding='utf-8')
+
+          p=Path('zain-industries.html'); s=p.read_text(encoding='utf-8')
+          s=s.replace('<a class="view" href="#">View gallery →</a>', '<button class="view" type="button">View gallery →</button>')
+          s=s.replace('.view{display:inline-flex;', '.view{display:inline-flex;border:0;background:transparent;padding:0;cursor:pointer;')
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: GREEN - verify cleanup
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          dev=Path('developer/index.html').read_text(encoding='utf-8')
+          dp=Path('developer-portfolio.html').read_text(encoding='utf-8')
+          nu=Path('nupco.html').read_text(encoding='utf-8')
+          za=Path('zain-industries.html').read_text(encoding='utf-8')
+          assert 'toolbox-suite-support/' not in dev
+          assert '<h2>Microsoft Tools</h2>' in dev
+          assert 'BIM Specialist and Microsoft Tools.' in dp
+          assert 'BIM Specialist and Toolbox Suite.' not in dp
+          for n in ('02','03','04'):
+              assert f'<article class="building pending" hidden aria-hidden="true"><div><strong data-en="Building {n}"' in nu
+          assert '<a class="view" href="#">' not in za
+          assert '<button class="view" type="button">View gallery →</button>' in za
+          print('GREEN: cleanup verified')
+          PY
+      - name: Commit cleanup and remove one-time workflow
+        run: |
+          rm .github/workflows/full-site-cleanup.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add developer/index.html developer-portfolio.html nupco.html zain-industries.html .github/workflows/full-site-cleanup.yml
+          git commit -m 'Fix site cleanup, Microsoft Tools links, and NUPCO placeholders'
+          git push origin HEAD:fix/full-site-cleanup-20260903
