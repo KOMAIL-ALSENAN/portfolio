@@ -1,0 +1,91 @@
+name: Fix Microsoft Tools Renderer
+
+on:
+  push:
+    branches: [fix/microsoft-tools-renderer-20260903]
+
+permissions:
+  contents: write
+
+jobs:
+  red-green:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/microsoft-tools-renderer-20260903
+          fetch-depth: 0
+
+      - name: RED - prove renderer guard is missing
+        shell: bash
+        run: |
+          set +e
+          grep -q 'MICROSOFT_TOOLS_RENDER_GUARD_V1' assets/js/main.js
+          code=$?
+          set -e
+          if [ "$code" -eq 0 ]; then
+            echo 'Expected renderer guard to be missing before fix.'
+            exit 1
+          fi
+          grep -q '"title": "Microsoft Tools"' content/portfolio.json
+          echo 'RED confirmed: data is current but renderer guard is absent.'
+
+      - name: Apply renderer guard
+        shell: bash
+        run: |
+          cat >> assets/js/main.js <<'EOF'
+
+/* MICROSOFT_TOOLS_RENDER_GUARD_V1
+   Ensures stale cached/rendered Toolbox Suite content cannot survive on the public Portfolio homepage. */
+(()=>{
+  'use strict';
+  const isHome=()=>/\/(portfolio\/)?(?:index\.html)?$/.test(location.pathname);
+  const copy={
+    en:{title:'Microsoft Tools',type:'WINDOWS · MICROSOFT STORE APPS',desc:'The official hub for Windows applications by BIM Specialist Software, including product pages, documentation, support, privacy and updates for Microsoft Store apps.',button:'Visit Microsoft Tools ↗'},
+    ar:{title:'Microsoft Tools',type:'WINDOWS · تطبيقات MICROSOFT STORE',desc:'البوابة الرسمية لتطبيقات Windows من BIM Specialist Software، وتشمل صفحات المنتجات وأدلة الاستخدام والدعم والخصوصية والتحديثات لتطبيقات Microsoft Store.',button:'زيارة Microsoft Tools ↗'}
+  };
+  const text=n=>(n?.textContent||'').trim();
+  const patch=()=>{
+    if(!isHome())return;
+    const lang=document.documentElement.lang==='ar'?'ar':'en';
+    document.querySelectorAll('h1,h2,h3,h4,strong').forEach(title=>{
+      if(text(title)!=='Toolbox Suite'&&text(title)!=='Microsoft Tools')return;
+      const card=title.closest('article,.tool-card,.product,.card')||title.parentElement?.parentElement;
+      if(!card)return;
+      const c=copy[lang];
+      title.textContent=c.title;
+      const badge=[...card.querySelectorAll('*')].find(el=>['TBX','MS'].includes(text(el)));
+      if(badge)badge.textContent='MS';
+      const type=[...card.querySelectorAll('*')].find(el=>/WINDOWS\s*[·-]/i.test(text(el))&&el.children.length===0);
+      if(type)type.textContent=c.type;
+      const paras=[...card.querySelectorAll('p')];
+      if(paras[0])paras[0].textContent=c.desc;
+      const link=[...card.querySelectorAll('a')].find(a=>/Toolbox|Microsoft Tools/i.test(text(a))||/microsoft-tools/i.test(a.href));
+      if(link){link.href='https://bimspecialist.github.io/microsoft-tools/';link.textContent=c.button;link.target='_blank';link.rel='noopener';}
+    });
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',patch,{once:true});else patch();
+  new MutationObserver(patch).observe(document.documentElement,{childList:true,subtree:true,characterData:true});
+  document.addEventListener('click',e=>{if(e.target.closest?.('#langBtn,[data-pg-lang],[data-lang-toggle]'))setTimeout(patch,0);},true);
+})();
+EOF
+
+      - name: GREEN - verify renderer guard
+        shell: bash
+        run: |
+          grep -q 'MICROSOFT_TOOLS_RENDER_GUARD_V1' assets/js/main.js
+          grep -q "https://bimspecialist.github.io/microsoft-tools/" assets/js/main.js
+          grep -q "Microsoft Tools" assets/js/main.js
+          grep -q '"title": "Microsoft Tools"' content/portfolio.json
+          echo 'GREEN: source data and renderer guard both target Microsoft Tools.'
+
+      - name: Commit fix and remove one-time workflow
+        shell: bash
+        run: |
+          rm .github/workflows/fix-microsoft-tools-renderer.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/js/main.js .github/workflows/fix-microsoft-tools-renderer.yml
+          git commit -m 'Fix Microsoft Tools card rendering'
+          git push origin HEAD:fix/microsoft-tools-renderer-20260903
