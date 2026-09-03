@@ -1,26 +1,39 @@
 from pathlib import Path
 
-checks = {
+required = {
     'projects.html': ["id:'sketchup'", "url:'sketchup.html'", "title:'SKETCHUP'"],
-    'sketchup.html': ['SKETCHUP', 'Building 01', 'Building 02', 'sketchup-building-01.html', 'sketchup-building-02.html'],
-    'sketchup-building-01.html': ['Building 01', 'assets/projects/sketchup/building-01/'],
-    'sketchup-building-02.html': ['Building 02', 'assets/projects/sketchup/building-02/'],
-    'sitemap.xml': ['sketchup.html', 'sketchup-building-01.html', 'sketchup-building-02.html'],
-    'assets/projects/sketchup/building-01/.gitkeep': [],
-    'assets/projects/sketchup/building-02/.gitkeep': [],
+    'sketchup.html': [
+        'SKETCHUP', 'Health Gym', 'Interior Design', 'Villa 1', 'Villa 2', 'Villa 3',
+        'project.html?id=health-gym', 'project.html?id=interior-design',
+        'project.html?id=villa-1', 'project.html?id=villa-2', 'project.html?id=villa-3'
+    ],
+    'sitemap.xml': [
+        'sketchup.html', 'project.html?id=health-gym', 'project.html?id=interior-design',
+        'project.html?id=villa-1', 'project.html?id=villa-2', 'project.html?id=villa-3'
+    ],
+}
+forbidden = {
+    'sketchup.html': ['Building 01', 'Building 02', 'temporary', 'sketchup-building-01.html', 'sketchup-building-02.html'],
+    'sitemap.xml': ['sketchup-building-01.html', 'sketchup-building-02.html'],
 }
 
-missing = []
-for file, tokens in checks.items():
+errors = []
+for file, tokens in required.items():
     p = Path(file)
     if not p.exists():
-        missing.append(f'missing file: {file}')
+        errors.append(f'missing file: {file}')
         continue
-    text = p.read_text(encoding='utf-8')
+    body = p.read_text(encoding='utf-8')
     for token in tokens:
-        if token not in text:
-            missing.append(f'{file}: missing {token}')
+        if token not in body:
+            errors.append(f'{file}: missing {token}')
 
-if missing:
-    raise SystemExit('\n'.join(missing))
-print('PASS: SKETCHUP project with two buildings is fully wired')
+for file, tokens in forbidden.items():
+    body = Path(file).read_text(encoding='utf-8')
+    for token in tokens:
+        if token.lower() in body.lower():
+            errors.append(f'{file}: stale temporary token {token}')
+
+if errors:
+    raise SystemExit('\n'.join(errors))
+print('PASS: SKETCHUP showcases the five real published project galleries')
