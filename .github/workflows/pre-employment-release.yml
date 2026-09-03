@@ -1,0 +1,19 @@
+name: Pre-Employment Portfolio Release
+on:
+  push:
+    branches:
+      - feature/pre-employment-release
+  pull_request:
+    branches:
+      - main
+jobs:
+  release-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run pre-employment release gates
+        run: python3 tests/pre_employment_release.py
+      - name: Preserve project-strength order gate
+        run: python3 tests/projects_strength_order.py
+      - name: Preserve refreshed SketchUp gallery gate
+        run: python3 tests/sketchup_project_regression.py

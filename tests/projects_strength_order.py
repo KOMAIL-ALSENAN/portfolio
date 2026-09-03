@@ -13,10 +13,12 @@ EXPECTED_ORDER = [
     "villa-1",
     "villa-2",
     "villa-3",
-    "villa-4",
 ]
 
 text = Path("projects.html").read_text(encoding="utf-8")
+if "id:'villa-4'" in text:
+    raise SystemExit("Villa 4 must remain unpublished until a real evidence gallery exists")
+
 positions = {}
 for project_id in EXPECTED_ORDER:
     token = f"id:'{project_id}'"
