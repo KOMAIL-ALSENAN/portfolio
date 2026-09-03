@@ -1,0 +1,15 @@
+name: SKETCHUP Image Gallery Regression
+on:
+  push:
+    branches:
+      - feature/sketchup-image-galleries
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tests/sketchup_image_gallery_regression.py
