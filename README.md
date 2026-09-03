@@ -65,7 +65,7 @@ Additional projects remain available through the **All Projects** page.
 - `assets/js/project-gallery.js` — Shared image viewer, previous/next navigation, counter, keyboard controls, focus handling, and bilingual UI helper
 - `assets/favicon.svg` — KA browser tab icon
 - `assets/social-card-v1.jpg` — Open Graph / social sharing preview image
-- `assets/documents/Komail-Al-Senan-CV.pdf` — Portfolio CV
+- `assets/documents/Komail Jaffar Al Senan-Architectural BIM Modeler.pdf` — Portfolio CV
 
 ## NUPCO Image Pipeline
 
@@ -92,7 +92,7 @@ assets/
 │   ├── main.css
 │   └── project-gallery.css
 ├── documents/
-│   └── Komail-Al-Senan-CV.pdf
+│   └── Komail Jaffar Al Senan-Architectural BIM Modeler.pdf
 ├── js/
 │   ├── main.js
 │   └── project-gallery.js
