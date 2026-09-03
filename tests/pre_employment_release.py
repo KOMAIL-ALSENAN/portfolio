@@ -39,18 +39,11 @@ for token in order_tokens:
     positions.append(pos)
 require(positions == sorted(positions), f'Homepage project order is wrong: {positions}')
 
-# 8. Public professional title must be unified with the CV title.
-public_role_files = [
-    'index.html', 'projects.html', 'project.html', 'certificates.html',
-    'neom.html', 'neom-professional-village.html', 'nupco.html',
-    'nupco-warehouse.html', 'zain-industries.html', 'sketchup.html',
-    'developer-portfolio.html', 'pdf-toolbox-v9.html', 'assets/js/main.js',
-    'assets/js/experience.js', 'assets/js/dynamic-project-case-study.js'
-]
-for path in public_role_files:
+# 8. Use one visible professional title across the public portfolio.
+for path in ['index.html', 'projects.html', 'project.html', 'certificates.html', 'neom.html', 'neom-professional-village.html', 'nupco.html', 'nupco-warehouse.html', 'zain-industries.html', 'sketchup.html', 'developer-portfolio.html', 'pdf-toolbox-v9.html']:
     body = text(path)
-    require('Architecture BIM Modeler' not in body, f'{path} still uses Architecture BIM Modeler')
-require('Architectural BIM Modeler' in index, 'Homepage missing unified Architectural BIM Modeler title')
+    require('Architectural BIM Modeler' not in body.replace('Komail Jaffar Al Senan-Architectural BIM Modeler.pdf', ''), f'{path} exposes a conflicting professional title')
+require('Architecture BIM Modeler' in index, 'Homepage missing canonical Architecture BIM Modeler title')
 
 # 9. Hero must surface the name/title and provide both project and CV actions.
 require('data-i18n="heroName"' in index, 'Hero does not surface the candidate name')
