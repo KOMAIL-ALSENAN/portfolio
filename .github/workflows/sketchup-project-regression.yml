@@ -1,0 +1,11 @@
+name: SKETCHUP Project Regression
+on:
+  push:
+    branches:
+      - feature/sketchup-project
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tests/sketchup_project_regression.py
