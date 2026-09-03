@@ -1,0 +1,34 @@
+name: Interior Cover Diagnostic
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect candidate cover files
+        shell: bash
+        run: |
+          set -euxo pipefail
+          file "assets/projects/interior-design/1.jpg"
+          file "assets/projects/interior-design/2.jpg"
+          file "assets/projects/interior-design/3.jpg"
+          file "assets/projects/health-gym/health-gym-cover.jpg"
+          stat -c '%n %s bytes' "assets/projects/interior-design/1.jpg" "assets/projects/interior-design/2.jpg" "assets/projects/interior-design/3.jpg" "assets/projects/health-gym/health-gym-cover.jpg"
+          python3 - <<'PY'
+          from pathlib import Path
+          for p in [
+              Path('assets/projects/interior-design/1.jpg'),
+              Path('assets/projects/interior-design/2.jpg'),
+              Path('assets/projects/interior-design/3.jpg'),
+              Path('assets/projects/health-gym/health-gym-cover.jpg'),
+          ]:
+              b = p.read_bytes()
+              print(p, 'head=', b[:16].hex(), 'tail=', b[-16:].hex(), 'soi=', b[:2] == b'\xff\xd8', 'eoi=', b[-2:] == b'\xff\xd9')
+          PY
+          if command -v identify >/dev/null 2>&1; then
+            identify "assets/projects/interior-design/1.jpg" "assets/projects/interior-design/2.jpg" "assets/projects/interior-design/3.jpg" "assets/projects/health-gym/health-gym-cover.jpg"
+          else
+            echo 'ImageMagick identify not installed'
+          fi
