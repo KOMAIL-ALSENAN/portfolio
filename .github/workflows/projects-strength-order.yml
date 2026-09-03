@@ -1,0 +1,11 @@
+name: Projects Strength Order
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tests/projects_strength_order.py
