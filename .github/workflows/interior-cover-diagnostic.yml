@@ -27,8 +27,19 @@ jobs:
               b = p.read_bytes()
               print(p, 'head=', b[:16].hex(), 'tail=', b[-16:].hex(), 'soi=', b[:2] == b'\xff\xd8', 'eoi=', b[-2:] == b'\xff\xd9')
           PY
-          if command -v identify >/dev/null 2>&1; then
-            identify "assets/projects/interior-design/1.jpg" "assets/projects/interior-design/2.jpg" "assets/projects/interior-design/3.jpg" "assets/projects/health-gym/health-gym-cover.jpg"
-          else
-            echo 'ImageMagick identify not installed'
-          fi
+      - name: Inspect live GitHub Pages responses
+        shell: bash
+        run: |
+          set -euxo pipefail
+          base='https://komail-alsenan.github.io/portfolio'
+          for path in \
+            'assets/projects/interior-design/1.jpg' \
+            'assets/projects/interior-design/2.jpg' \
+            'assets/projects/interior-design/3.jpg' \
+            'assets/projects/health-gym/health-gym-cover.jpg'; do
+            echo "=== $path ==="
+            curl -sS -L -o /tmp/out.bin -D /tmp/headers.txt -w 'http=%{http_code} type=%{content_type} bytes=%{size_download} url=%{url_effective}\n' "$base/$path?diag=${GITHUB_SHA}"
+            cat /tmp/headers.txt
+            file /tmp/out.bin
+            stat -c '%s bytes downloaded' /tmp/out.bin
+          done
