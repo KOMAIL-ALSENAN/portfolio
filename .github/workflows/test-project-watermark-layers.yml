@@ -1,0 +1,15 @@
+name: Test Project Watermark Layers
+
+on:
+  push:
+    branches: [feature/project-watermark-layers-20260914]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify watermark layer stack
+        run: python3 tests/project_watermark_layers.py
