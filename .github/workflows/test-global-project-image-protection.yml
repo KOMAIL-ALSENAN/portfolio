@@ -18,8 +18,7 @@ jobs:
           missing=[p for p in required if tag not in Path(p).read_text(encoding='utf-8')]
           if missing: raise SystemExit('Protection script missing from: '+', '.join(missing))
           s=Path('assets/js/project-image-protection.js').read_text(encoding='utf-8')
-          for token in ['contextmenu','dragstart','copy','keydown','assets/projects/']:
+          for token in ['contextmenu','dragstart','copy','keydown','assets/projects/','PROJECT_WATERMARK_LAYER_V1','project-watermark-layer','project-protection-layer']:
               if token not in s: raise SystemExit('Missing behavior: '+token)
-          if 'watermark' in s.lower(): raise SystemExit('Watermark must not be added')
-          print('PASS: global project image protection is loaded')
+          print('PASS: global project image protection and watermark layers are loaded')
           PY
