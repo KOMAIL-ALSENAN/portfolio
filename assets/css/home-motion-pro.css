@@ -1042,3 +1042,45 @@ a:focus-visible,button:focus-visible{
 /* Accessible skip navigation */
 .skip-link{position:fixed;inset-block-start:10px;inset-inline-start:10px;z-index:10000;transform:translateY(-160%);padding:10px 14px;border-radius:10px;background:#f4f6f8;color:#07111f;font-weight:800;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.32)}
 .skip-link:focus,.skip-link:focus-visible{transform:none;outline:3px solid rgba(188,218,243,.82);outline-offset:3px}
+
+/* Performance-safe hero and deferred project covers */
+.hero-real-image{
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  clip-path:none!important;
+  animation:none!important;
+  z-index:2!important;
+}
+.visual.hero-visual::before{
+  clip-path:inset(0 66% 0 0)!important;
+  animation:none!important;
+  background:
+    linear-gradient(rgba(157,198,235,.12) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(157,198,235,.12) 1px,transparent 1px),
+    linear-gradient(135deg,rgba(93,143,189,.22),rgba(7,17,31,.40))!important;
+  background-size:28px 28px,28px 28px,auto!important;
+}
+.visual.hero-visual::after{
+  left:34%!important;
+  animation:heroScanGlow 2.8s ease-in-out infinite!important;
+}
+@keyframes heroScanGlow{
+  0%,100%{opacity:.72}
+  50%{opacity:1}
+}
+.project-media img[data-project-src]{
+  background:
+    linear-gradient(rgba(143,186,225,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(143,186,225,.055) 1px,transparent 1px),
+    linear-gradient(145deg,#0d1b2c,#13283f);
+  background-size:24px 24px,24px 24px,auto;
+  color:transparent;
+}
+body[dir=rtl] .hero-real-image{clip-path:none!important}
+body[dir=rtl] .visual.hero-visual::before{clip-path:inset(0 0 0 66%)!important}
+body[dir=rtl] .visual.hero-visual::after{left:66%!important}
+@media(prefers-reduced-motion:reduce){
+  .visual.hero-visual::after{animation:none!important}
+}
