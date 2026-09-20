@@ -17,6 +17,29 @@
   addEventListener('scroll', updateProgress, {passive:true});
   addEventListener('resize', updateProgress, {passive:true});
 
+  function loadProjectImages(){
+    const images=[...document.querySelectorAll('img[data-project-src]')];
+    if(!images.length)return;
+    const load=img=>{
+      if(!img.dataset.projectSrc)return;
+      const src=img.dataset.projectSrc;
+      img.onload=()=>img.removeAttribute('data-project-src');
+      img.onerror=()=>img.removeAttribute('data-project-src');
+      img.src=src;
+    };
+    if(!('IntersectionObserver' in window)){images.forEach(load);return}
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          load(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    },{rootMargin:'0px',threshold:.01});
+    images.forEach(img=>io.observe(img));
+  }
+  loadProjectImages();
+
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const targets = document.querySelectorAll(
     '#projects .project, #experience .experience-item, #capabilities .capability-card, #skills .tool-card, #skills .secondary-tools, #products .developed-tool-card, #certificates .certificate, #about .about-card, #about .stat, #developer-highlight .home-dev-card, .section-head'
