@@ -164,7 +164,6 @@ for (const s of scenarios) {
     const skip=page.locator('.skip-link').first();
     if(await skip.count()){await page.keyboard.press('Tab');const focused=await skip.evaluate(el=>document.activeElement===el);if(!focused)fail(s.name,'Skip link is not first in keyboard focus order');await page.keyboard.press('Escape')}
     else fail(s.name,'Accessible skip link not found');
-    if(s.axe) await axeAudit(page,s.name,'English');
     await seoAudit(page,s.name);
     if(s.path==='index.html'||s.path==='projects.html') await internalLinkAudit(page,s.name);
     const before = await metrics(page);
@@ -218,21 +217,29 @@ for (const s of scenarios) {
       }
     }
 
+    await scrollSample(page);
+    if (s.path === 'index.html') await exerciseCriticalHomepageReveals(page);
+    if(s.axe) await axeAudit(page,s.name,'English-stable');
+    await page.evaluate(() => scrollTo(0,0));
+    await page.waitForTimeout(120);
+
     if (s.rtl) {
       const langButton = page.locator('#langBtn, [data-pg-lang]').first();
       if (await langButton.count() && await langButton.isVisible()) {
         await langButton.click();
-        await page.waitForTimeout(120);
+        await page.waitForTimeout(700);
+        await scrollSample(page);
+        if (s.path === 'index.html') await exerciseCriticalHomepageReveals(page);
         const after = await metrics(page);
         if (after.lang !== 'ar' || after.dir !== 'rtl') fail(s.name, `Arabic switch failed: lang=${after.lang}, dir=${after.dir}`);
         if (after.scrollWidth > after.innerWidth + 2 || after.bodyScrollWidth > after.innerWidth + 2) {
           fail(s.name, `Horizontal overflow in Arabic: scrollWidth=${after.scrollWidth}, viewport=${after.innerWidth}`);
         }
-        if(s.axe) await axeAudit(page,s.name,'Arabic');
+        if(s.axe) await axeAudit(page,s.name,'Arabic-stable');
       }
     }
 
-    await scrollSample(page);
+    if (!s.rtl) await scrollSample(page);
 
     if (s.path === 'index.html') {
       await exerciseCriticalHomepageReveals(page);
