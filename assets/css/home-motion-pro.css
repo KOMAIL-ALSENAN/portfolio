@@ -1090,3 +1090,20 @@ body[dir=rtl] .visual.hero-visual::after{left:66%!important}
 #experience{
   background:linear-gradient(180deg,rgba(7,17,31,.08),rgba(11,22,39,.22))!important;
 }
+
+
+/* Certificate contrast correction */
+#certificates .certificate-body{
+  background:#0b1627!important;
+}
+#certificates .certificate-body h3{
+  color:#f4f7fb!important;
+}
+#certificates .certificate-body p{
+  color:#c4d0dc!important;
+}
+#certificates .certificate-body .featured-badge{
+  color:#e8f3fc!important;
+  background:rgba(132,178,218,.16)!important;
+  border-color:rgba(176,205,233,.28)!important;
+}
