@@ -16,6 +16,10 @@ permissions:
   issues: write
   pull-requests: write
 
+concurrency:
+  group: browser-visual-qa-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   browser-visual-qa:
     runs-on: ubuntu-latest
@@ -64,9 +68,15 @@ jobs:
             const path = 'artifacts/visual-qa/report.md';
             if (!fs.existsSync(path)) return;
             const marker = '<!-- portfolio-browser-visual-qa -->';
-            const body = marker + '\n' + fs.readFileSync(path, 'utf8');
             const { owner, repo } = context.repo;
             const issue_number = context.issue.number;
+            const eventHead = context.payload.pull_request?.head?.sha;
+            const currentPr = await github.rest.pulls.get({ owner, repo, pull_number: issue_number });
+            if (eventHead && currentPr.data.head.sha !== eventHead) {
+              core.notice(`Skipping stale Browser QA comment for ${eventHead}; current head is ${currentPr.data.head.sha}`);
+              return;
+            }
+            const body = marker + '\n' + `**HEAD:** \`${eventHead || context.sha}\`\n\n` + fs.readFileSync(path, 'utf8');
             const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number, per_page: 100 });
             const existing = comments.find(c => c.user?.type === 'Bot' && c.body?.includes(marker));
             if (existing) {
