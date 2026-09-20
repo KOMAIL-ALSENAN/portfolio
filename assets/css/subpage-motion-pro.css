@@ -424,3 +424,13 @@ a:focus-visible,button:focus-visible{
   line-height:1.55;
 }
 html[dir="rtl"] .case-study-note{font-family:Tahoma,"Segoe UI",Arial,sans-serif}
+
+/* Deferred project cover placeholder */
+.building img[data-deferred-src]{
+  background:
+    linear-gradient(rgba(143,186,225,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(143,186,225,.08) 1px,transparent 1px),
+    linear-gradient(145deg,#0d1b2c,#13283f);
+  background-size:24px 24px,24px 24px,auto;
+  color:transparent;
+}
