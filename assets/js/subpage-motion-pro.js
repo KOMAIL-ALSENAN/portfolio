@@ -1,5 +1,17 @@
 
 (() => {
+  function ensureSkipLink(){
+    const main=document.querySelector('main');
+    if(main&&!main.id) main.id='main-content';
+    if(!main||document.querySelector('.skip-link')) return;
+    const link=document.createElement('a');
+    link.className='skip-link';
+    link.href='#main-content';
+    link.textContent=document.documentElement.lang==='ar'?'انتقل إلى المحتوى الرئيسي':'Skip to main content';
+    document.body.prepend(link);
+    new MutationObserver(()=>{link.textContent=document.documentElement.lang==='ar'?'انتقل إلى المحتوى الرئيسي':'Skip to main content'}).observe(document.documentElement,{attributes:true,attributeFilter:['lang','dir']});
+  }
+  ensureSkipLink();
   document.body.classList.add('motion-ready');
 
   const bar = document.createElement('div');
