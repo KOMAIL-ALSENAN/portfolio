@@ -191,3 +191,15 @@ body::before{
 }
 .cover{border-color:var(--am-line)!important}
 .pg-label{color:#536d89!important}
+
+
+/* Keyboard focus */
+a:focus-visible,button:focus-visible{
+  outline:3px solid rgba(18,104,232,.42);
+  outline-offset:3px;
+}
+.project:focus-within,.certificate:focus-within,.building:focus-within{
+  transform:translateY(-5px)!important;
+  box-shadow:var(--am-hover)!important;
+  border-color:#b5d2ee!important;
+}
