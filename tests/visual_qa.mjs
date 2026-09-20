@@ -140,7 +140,7 @@ async function axeAudit(page, scenario, phase) {
     const summary = report.violations
       .slice(0, 8)
       .map(v => {
-        const targets = v.nodes.slice(0, 5).map(n => (n.target || []).join(' ')).join(' | ');
+        const targets = v.nodes.slice(0, 5).map(n => `${(n.target || []).join(' ')} :: ${(n.failureSummary || '').replace(/\s+/g,' ').trim()}`).join(' | ');
         return `${v.id}[${v.impact || 'unknown'}]: ${v.nodes.length} (${targets})`;
       })
       .join(', ');
