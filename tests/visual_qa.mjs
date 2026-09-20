@@ -1,4 +1,5 @@
 import { chromium } from 'playwright';
+import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs/promises';
 
 const base = 'http://127.0.0.1:4173/';
@@ -6,14 +7,27 @@ const outDir = 'artifacts/visual-qa';
 await fs.mkdir(outDir, { recursive: true });
 
 const scenarios = [
-  { name: 'home-desktop', path: 'index.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true },
-  { name: 'home-tablet', path: 'index.html', viewport: { width: 820, height: 1180 }, mobileMenu: true, rtl: true },
-  { name: 'home-mobile', path: 'index.html', viewport: { width: 390, height: 844 }, mobileMenu: true, rtl: true },
-  { name: 'projects-desktop', path: 'projects.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true },
-  { name: 'projects-mobile', path: 'projects.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true },
-  { name: 'certificates-mobile', path: 'certificates.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true },
-  { name: 'qiddiya-desktop', path: 'project.html?id=qiddiya', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true },
-  { name: 'qiddiya-mobile', path: 'project.html?id=qiddiya', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true }
+  { name: 'home-desktop', path: 'index.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'home-tablet', path: 'index.html', viewport: { width: 820, height: 1180 }, mobileMenu: true, rtl: true, axe: true },
+  { name: 'home-mobile', path: 'index.html', viewport: { width: 390, height: 844 }, mobileMenu: true, rtl: true, axe: true },
+  { name: 'projects-desktop', path: 'projects.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'projects-mobile', path: 'projects.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'certificates-desktop', path: 'certificates.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'certificates-mobile', path: 'certificates.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'qiddiya-desktop', path: 'project.html?id=qiddiya', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'qiddiya-mobile', path: 'project.html?id=qiddiya', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'neom-desktop', path: 'neom.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'neom-mobile', path: 'neom.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'neom-village-mobile', path: 'neom-professional-village.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'nupco-desktop', path: 'nupco.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'nupco-mobile', path: 'nupco.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'nupco-warehouse-mobile', path: 'nupco-warehouse.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'zain-desktop', path: 'zain-industries.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'zain-mobile', path: 'zain-industries.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'sketchup-desktop', path: 'sketchup.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'sketchup-mobile', path: 'sketchup.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'developer-desktop', path: 'developer-portfolio.html', viewport: { width: 1440, height: 1000 }, mobileMenu: false, rtl: true, axe: true },
+  { name: 'developer-mobile', path: 'developer-portfolio.html', viewport: { width: 390, height: 844 }, mobileMenu: false, rtl: true, axe: true }
 ];
 
 const failures = [];
@@ -55,15 +69,28 @@ async function metrics(page) {
 
 async function scrollSample(page) {
   await page.evaluate(async () => {
-    const step = Math.max(500, Math.floor(innerHeight * 0.8));
-    const max = document.documentElement.scrollHeight - innerHeight;
-    for (let y = 0; y <= max; y += step) {
+    const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+    const points = [...new Set([0, max * .2, max * .4, max * .6, max * .8, max].map(x => Math.round(x)))];
+    for (const y of points) {
       scrollTo(0, y);
-      await new Promise(r => setTimeout(r, 45));
+      await new Promise(r => setTimeout(r, 60));
     }
     scrollTo(0, 0);
   });
-  await page.waitForTimeout(150);
+  await page.waitForTimeout(180);
+}
+
+async function axeAudit(page, scenario, phase) {
+  const report = await new AxeBuilder({ page })
+    .withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa'])
+    .analyze();
+  if (report.violations.length) {
+    const summary = report.violations
+      .slice(0, 8)
+      .map(v => `${v.id}[${v.impact || 'unknown'}]: ${v.nodes.length}`)
+      .join(', ');
+    fail(scenario, `WCAG audit (${phase}) found ${report.violations.length} violation types: ${summary}`);
+  }
 }
 
 for (const s of scenarios) {
@@ -79,6 +106,10 @@ for (const s of scenarios) {
     if (!response || !response.ok()) fail(s.name, 'Page response was not OK');
 
     await page.waitForTimeout(200);
+    const skip=page.locator('.skip-link').first();
+    if(await skip.count()){await page.keyboard.press('Tab');const focused=await skip.evaluate(el=>document.activeElement===el);if(!focused)fail(s.name,'Skip link is not first in keyboard focus order');await page.keyboard.press('Escape')}
+    else fail(s.name,'Accessible skip link not found');
+    if(s.axe) await axeAudit(page,s.name,'English');
     const before = await metrics(page);
     if (before.scrollWidth > before.innerWidth + 2 || before.bodyScrollWidth > before.innerWidth + 2) {
       fail(s.name, `Horizontal overflow in English: scrollWidth=${before.scrollWidth}, viewport=${before.innerWidth}`);
@@ -117,6 +148,7 @@ for (const s of scenarios) {
         if (after.scrollWidth > after.innerWidth + 2 || after.bodyScrollWidth > after.innerWidth + 2) {
           fail(s.name, `Horizontal overflow in Arabic: scrollWidth=${after.scrollWidth}, viewport=${after.innerWidth}`);
         }
+        if(s.axe) await axeAudit(page,s.name,'Arabic');
       }
     }
 
@@ -132,6 +164,25 @@ for (const s of scenarios) {
     results.push({ scenario: s.name, path: s.path, viewport: s.viewport, status: 'checked' });
   } catch (err) {
     fail(s.name, String(err));
+  } finally {
+    await context.close();
+  }
+}
+
+// Text scaling contract: homepage must remain usable at 200% root text size.
+{
+  const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+  const page = await context.newPage();
+  try {
+    await page.goto(base + 'index.html', { waitUntil: 'networkidle', timeout: 30000 });
+    await page.evaluate(() => { document.documentElement.style.fontSize = '200%'; });
+    await page.waitForTimeout(150);
+    const scaled = await metrics(page);
+    if (scaled.scrollWidth > scaled.innerWidth + 2 || scaled.bodyScrollWidth > scaled.innerWidth + 2) {
+      fail('text-scale-200', `Horizontal overflow at 200% text size: scrollWidth=${scaled.scrollWidth}, viewport=${scaled.innerWidth}`);
+    }
+  } catch (err) {
+    fail('text-scale-200', String(err));
   } finally {
     await context.close();
   }
@@ -176,7 +227,7 @@ const markdown = [
   `Failures: **${failures.length}**`,
   '',
   ...results.map(r => `- ✅ ${r.scenario} — ${r.viewport.width}×${r.viewport.height}`),
-  ...(failures.length ? ['', '## Failures', ...failures.map(f => `- ❌ **${f.scenario}** — ${f.message}`)] : ['', '✅ Desktop, tablet, mobile, RTL/LTR, loaded-image, console-error, and reduced-motion gates passed.'])
+  ...(failures.length ? ['', '## Failures', ...failures.map(f => `- ❌ **${f.scenario}** — ${f.message}`)] : ['', '✅ Desktop, tablet, mobile, RTL/LTR, WCAG automated audit, skip-navigation, loaded-image, console-error, 200% text-scale, and reduced-motion gates passed.'])
 ].join('\n');
 await fs.writeFile(`${outDir}/report.md`, markdown);
 
