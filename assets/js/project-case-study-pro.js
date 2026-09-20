@@ -4,7 +4,7 @@ const CASES={
     en:{
       kicker:'PROJECT CASE STUDY',title:'NEOM — multi-building BIM portfolio',
       summary:'A multi-building BIM portfolio structured by building and sub-project so reviewers can move from project context to published model and drawing evidence quickly.',
-      facts:[['Context','Multi-building BIM project'],['Published scope','Dining Facility · Sports Center · Professional Village'],['Workflow','Organized by building and sub-project'],['Deliverables','BIM models · Documentation · Image galleries']],
+      facts:[['Verified role','BIM Modeler & Detailer'],['Published scope','Dining Facility · Sports Center · Professional Village'],['Workflow','Organized by building and sub-project'],['Deliverables','BIM models · Documentation · Image galleries']],
       story:[
         ['01','What is shown','Architectural BIM modeling and documentation published for the Dining Facility, Sports Center and Professional Village building packages.'],
         ['02','How it is organized','Each building is separated into its own review path so the portfolio does not mix unrelated model and drawing evidence.'],
@@ -16,7 +16,7 @@ const CASES={
     ar:{
       kicker:'دراسة حالة للمشروع',title:'NEOM — أعمال BIM متعددة المباني',
       summary:'عرض BIM متعدد المباني منظم حسب المبنى والمشروع الفرعي لتسهيل الانتقال من سياق المشروع إلى الأدلة المنشورة من النماذج واللوحات.',
-      facts:[['السياق','مشروع BIM متعدد المباني'],['النطاق المنشور','مبنى المطعم · المركز الرياضي · القرية المهنية'],['طريقة التنظيم','حسب المبنى والمشروع الفرعي'],['المخرجات المنشورة','نماذج BIM · توثيق · معارض صور']],
+      facts:[['الدور المثبت','مصمم نماذج BIM ومعدّ التفاصيل'],['النطاق المنشور','مبنى المطعم · المركز الرياضي · القرية المهنية'],['طريقة التنظيم','حسب المبنى والمشروع الفرعي'],['المخرجات المنشورة','نماذج BIM · توثيق · معارض صور']],
       story:[
         ['01','المحتوى المعروض','نمذجة وتوثيق BIM معماري منشور لمبنى المطعم والمركز الرياضي وحزم مباني القرية المهنية.'],
         ['02','طريقة التنظيم','فصل كل مبنى في مسار مراجعة مستقل حتى لا تختلط الأدلة الفنية بين الحزم المختلفة.'],
@@ -30,7 +30,7 @@ const CASES={
     en:{
       kicker:'PROJECT CASE STUDY',title:'NUPCO — warehouse BIM documentation',
       summary:'A drawing-led BIM case study centered on the published Building 01 Warehouse package and its structured architectural sheet set.',
-      facts:[['Context','Multi-building BIM project'],['Published scope','Building 01 · Warehouse'],['Workflow','Revit sheet groups · AR-0000 to AR-1700'],['Deliverables','Architectural BIM drawing package']],
+      facts:[['Verified role','BIM Modeler & Detailer'],['Published scope','Building 01 · Warehouse'],['Workflow','Revit sheet groups · AR-0000 to AR-1700'],['Deliverables','Architectural BIM drawing package']],
       story:[
         ['01','What is shown','The published portfolio scope focuses on Building 01 and the Warehouse architectural BIM drawing set.'],
         ['02','How it is organized','The drawing package is structured by Revit sheet groups and technical drawing ranges for faster navigation.'],
@@ -42,7 +42,7 @@ const CASES={
     ar:{
       kicker:'دراسة حالة للمشروع',title:'NUPCO — توثيق BIM للمستودع',
       summary:'دراسة حالة تعتمد على اللوحات وتركز على حزمة المبنى 01 للمستودع ومجموعة اللوحات المعمارية المنشورة والمنظمة.',
-      facts:[['السياق','مشروع BIM متعدد المباني'],['النطاق المنشور','المبنى 01 · المستودع'],['طريقة العمل','مجموعات لوحات Revit · AR-0000 إلى AR-1700'],['المخرجات','حزمة لوحات BIM معمارية']],
+      facts:[['الدور المثبت','مصمم نماذج BIM ومعدّ التفاصيل'],['النطاق المنشور','المبنى 01 · المستودع'],['طريقة العمل','مجموعات لوحات Revit · AR-0000 إلى AR-1700'],['المخرجات','حزمة لوحات BIM معمارية']],
       story:[
         ['01','المحتوى المعروض','يركز نطاق البورتفوليو المنشور على المبنى 01 وحزمة لوحات BIM المعمارية للمستودع.'],
         ['02','طريقة التنظيم','تم تنظيم حزمة اللوحات حسب مجموعات لوحات Revit ونطاقات اللوحات الفنية لتسهيل الوصول والمراجعة.'],
@@ -56,7 +56,7 @@ const CASES={
     en:{
       kicker:'PROJECT CASE STUDY',title:'ZAIN INDUSTRIES — industrial BIM documentation',
       summary:'An industrial BIM portfolio organized by facility, separating Warehouse and HCL Tank Farm evidence into focused review paths.',
-      facts:[['Context','Industrial BIM project'],['Published scope','Warehouse · HCL Tank Farm'],['Workflow','Facility-based BIM documentation'],['Deliverables','Models · Drawings · Project documentation']],
+      facts:[['Verified role','BIM Modeler & Detailer'],['Published scope','Warehouse · HCL Tank Farm'],['Workflow','Facility-based BIM documentation'],['Deliverables','Models · Drawings · Project documentation']],
       story:[
         ['01','What is shown','Published BIM modeling, drawing and documentation evidence for the Warehouse and HCL Tank Farm facilities.'],
         ['02','How it is organized','Each facility has its own card and expandable gallery, keeping industrial project evidence separated and easy to scan.'],
@@ -68,7 +68,7 @@ const CASES={
     ar:{
       kicker:'دراسة حالة للمشروع',title:'ZAIN INDUSTRIES — توثيق BIM صناعي',
       summary:'بورتفوليو BIM صناعي منظم حسب المنشأة، يفصل أدلة المستودع ومنطقة خزانات HCL في مسارات مراجعة واضحة.',
-      facts:[['السياق','مشروع BIM صناعي'],['النطاق المنشور','المستودع · منطقة خزانات HCL'],['طريقة العمل','توثيق BIM حسب المنشأة'],['المخرجات','نماذج · لوحات · توثيق مشروع']],
+      facts:[['الدور المثبت','مصمم نماذج BIM ومعدّ التفاصيل'],['النطاق المنشور','المستودع · منطقة خزانات HCL'],['طريقة العمل','توثيق BIM حسب المنشأة'],['المخرجات','نماذج · لوحات · توثيق مشروع']],
       story:[
         ['01','المحتوى المعروض','أدلة منشورة لأعمال نمذجة BIM واللوحات والتوثيق للمستودع ومنطقة خزانات HCL.'],
         ['02','طريقة التنظيم','لكل منشأة بطاقة ومعرض قابل للتوسعة، مما يحافظ على فصل الأدلة الصناعية وسهولة استعراضها.'],
