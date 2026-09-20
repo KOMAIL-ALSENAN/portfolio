@@ -151,6 +151,29 @@ for (const s of scenarios) {
       fail(s.name, `Main content exceeds viewport in English: ${JSON.stringify(before.mainRect)}`);
     }
 
+    if (s.path.startsWith('project.html')) {
+      const watermarkProblems = await page.evaluate(() => {
+        const problems = [];
+        document.querySelectorAll('.building').forEach((building, index) => {
+          const body = building.querySelector('.building-body');
+          const watermark = building.querySelector('.project-watermark-layer');
+          if (!watermark || !body) return;
+          if (watermark.parentElement === building) {
+            problems.push(`building-${index + 1}: watermark attached to whole card`);
+            return;
+          }
+          const a = watermark.getBoundingClientRect();
+          const b = body.getBoundingClientRect();
+          const overlaps = a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+          if (overlaps) problems.push(`building-${index + 1}: watermark overlaps text body`);
+        });
+        return problems;
+      });
+      if (watermarkProblems.length) {
+        fail(s.name, `Project watermark layout issue: ${watermarkProblems.join(' | ')}`);
+      }
+    }
+
     if (s.path === 'index.html') {
       const projectCount = await page.locator('#projects .project').count();
       const capabilityCount = await page.locator('#capabilities .capability-card').count();
