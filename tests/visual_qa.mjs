@@ -111,6 +111,27 @@ async function internalLinkAudit(page, scenario) {
   }
 }
 
+async function exerciseCriticalHomepageReveals(page) {
+  const selectors = [
+    '#projects .project',
+    '#capabilities .capability-card',
+    '#skills .tool-card',
+    '#certificates .certificate',
+    '#about .about-card'
+  ];
+  for (const selector of selectors) {
+    const locator = page.locator(selector);
+    const count = await locator.count();
+    for (let i = 0; i < count; i++) {
+      await locator.nth(i).scrollIntoViewIfNeeded();
+      await page.waitForTimeout(90);
+    }
+  }
+  await page.waitForTimeout(700);
+  await page.evaluate(() => scrollTo(0, 0));
+  await page.waitForTimeout(100);
+}
+
 async function axeAudit(page, scenario, phase) {
   const report = await new AxeBuilder({ page })
     .withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa'])
@@ -118,7 +139,10 @@ async function axeAudit(page, scenario, phase) {
   if (report.violations.length) {
     const summary = report.violations
       .slice(0, 8)
-      .map(v => `${v.id}[${v.impact || 'unknown'}]: ${v.nodes.length}`)
+      .map(v => {
+        const targets = v.nodes.slice(0, 5).map(n => (n.target || []).join(' ')).join(' | ');
+        return `${v.id}[${v.impact || 'unknown'}]: ${v.nodes.length} (${targets})`;
+      })
       .join(', ');
     fail(scenario, `WCAG audit (${phase}) found ${report.violations.length} violation types: ${summary}`);
   }
@@ -211,6 +235,7 @@ for (const s of scenarios) {
     await scrollSample(page);
 
     if (s.path === 'index.html') {
+      await exerciseCriticalHomepageReveals(page);
       const hiddenCritical = await page.evaluate(() => {
         const selectors = [
           '#projects .project',
