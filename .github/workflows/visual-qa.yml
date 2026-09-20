@@ -13,6 +13,8 @@ on:
 
 permissions:
   contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
   browser-visual-qa:
@@ -34,6 +36,14 @@ jobs:
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/portfolio-http.log 2>&1 &
           echo $! > /tmp/portfolio-http.pid
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:4173/index.html > /dev/null; then
+              exit 0
+            fi
+            sleep 0.5
+          done
+          cat /tmp/portfolio-http.log
+          exit 1
 
       - name: Run browser visual QA
         run: node tests/visual_qa.mjs
@@ -44,6 +54,26 @@ jobs:
           if [ -f artifacts/visual-qa/report.md ]; then
             cat artifacts/visual-qa/report.md >> "$GITHUB_STEP_SUMMARY"
           fi
+
+      - name: Comment browser QA on pull request
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = 'artifacts/visual-qa/report.md';
+            if (!fs.existsSync(path)) return;
+            const marker = '<!-- portfolio-browser-visual-qa -->';
+            const body = marker + '\n' + fs.readFileSync(path, 'utf8');
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number, per_page: 100 });
+            const existing = comments.find(c => c.user?.type === 'Bot' && c.body?.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
 
       - name: Upload screenshots and report
         if: always()
