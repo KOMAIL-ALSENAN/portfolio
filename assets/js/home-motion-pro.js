@@ -28,37 +28,97 @@
       img.src=src;
     };
     if(!('IntersectionObserver' in window)){images.forEach(load);return}
-    const io=new IntersectionObserver(entries=>{
+    const imageObserver=new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
           load(entry.target);
-          io.unobserve(entry.target);
+          imageObserver.unobserve(entry.target);
         }
       });
-    },{rootMargin:'0px',threshold:.01});
-    images.forEach(img=>io.observe(img));
+    },{rootMargin:'160px 0px',threshold:.01});
+    images.forEach(img=>imageObserver.observe(img));
   }
   loadProjectImages();
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const targets = document.querySelectorAll(
-    '#projects .project, #experience .experience-item, #capabilities .capability-card, #skills .tool-card, #skills .secondary-tools, #products .developed-tool-card, #certificates .certificate, #about .about-card, #about .stat, #developer-highlight .home-dev-card, .section-head'
-  );
-  targets.forEach(el => el.classList.add('motion-reveal'));
+  const selector = [
+    '#projects .project',
+    '#experience .experience-item',
+    '#capabilities .capability-card',
+    '#skills .tool-card',
+    '#skills .secondary-tools',
+    '#products .developed-tool-card',
+    '#certificates .certificate',
+    '#about .about-card',
+    '#about .stat',
+    '#developer-highlight .home-dev-card',
+    '.section-head'
+  ].join(',');
 
-  if (reduce || !('IntersectionObserver' in window)) {
-    targets.forEach(el => el.classList.add('is-visible'));
-    return;
+  const registered = new WeakSet();
+  let revealObserver = null;
+
+  if (!reduce && 'IntersectionObserver' in window) {
+    revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.08, rootMargin:'0px 0px -5% 0px'});
   }
 
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
+  function register(root=document){
+    const nodes = [];
+    if(root.nodeType===1 && root.matches?.(selector)) nodes.push(root);
+    root.querySelectorAll?.(selector).forEach(el=>nodes.push(el));
+    nodes.forEach(el=>{
+      if(registered.has(el)) return;
+      registered.add(el);
+      el.classList.add('motion-reveal');
+      if(reduce || !revealObserver) el.classList.add('is-visible');
+      else revealObserver.observe(el);
+    });
+  }
+
+  function revealPassedTargets(){
+    if(reduce) return;
+    document.querySelectorAll('.motion-reveal:not(.is-visible)').forEach(el=>{
+      const rect=el.getBoundingClientRect();
+      if(rect.top <= window.innerHeight * 1.08){
+        el.classList.add('is-visible');
+        revealObserver?.unobserve(el);
       }
     });
-  }, {threshold:.12, rootMargin:'0px 0px -7% 0px'});
+  }
 
-  targets.forEach(el => io.observe(el));
+  register(document);
+  revealPassedTargets();
+
+  let scheduled=false;
+  const scheduleReveal=()=>{
+    if(scheduled)return;
+    scheduled=true;
+    requestAnimationFrame(()=>{
+      scheduled=false;
+      register(document);
+      revealPassedTargets();
+    });
+  };
+  addEventListener('scroll',scheduleReveal,{passive:true});
+  addEventListener('resize',scheduleReveal,{passive:true});
+  addEventListener('hashchange',scheduleReveal);
+
+  const mutationObserver = new MutationObserver(mutations=>{
+    let needsRegister=false;
+    for(const mutation of mutations){
+      if(mutation.addedNodes?.length){needsRegister=true;break}
+    }
+    if(needsRegister)scheduleReveal();
+  });
+  mutationObserver.observe(document.body,{childList:true,subtree:true});
+
+  document.addEventListener('portfolio:language',scheduleReveal);
+  document.addEventListener('projectgallery:language',scheduleReveal);
 })();
