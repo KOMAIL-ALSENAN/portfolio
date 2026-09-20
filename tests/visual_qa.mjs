@@ -80,6 +80,36 @@ async function scrollSample(page) {
   await page.waitForTimeout(180);
 }
 
+async function seoAudit(page, scenario) {
+  const seo = await page.evaluate(() => ({
+    title: document.title.trim(),
+    description: document.querySelector('meta[name="description"]')?.content?.trim() || '',
+    canonical: document.querySelector('link[rel="canonical"]')?.href || '',
+    ogTitle: document.querySelector('meta[property="og:title"]')?.content?.trim() || '',
+    ogImage: document.querySelector('meta[property="og:image"]')?.content?.trim() || '',
+    h1Count: document.querySelectorAll('h1').length,
+    mainCount: document.querySelectorAll('main').length
+  }));
+  if (!seo.title) fail(scenario, 'Missing document title');
+  if (!seo.description) fail(scenario, 'Missing meta description');
+  if (!seo.canonical) fail(scenario, 'Missing canonical URL');
+  if (!seo.ogTitle || !seo.ogImage) fail(scenario, 'Missing Open Graph title or image');
+  if (seo.h1Count !== 1) fail(scenario, `Expected exactly one H1, found ${seo.h1Count}`);
+  if (seo.mainCount !== 1) fail(scenario, `Expected exactly one main landmark, found ${seo.mainCount}`);
+}
+
+async function internalLinkAudit(page, scenario) {
+  const urls = await page.evaluate(() => [...new Set(
+    [...document.querySelectorAll('a[href]')]
+      .map(a => a.href)
+      .filter(href => href.startsWith(location.origin) && !href.includes('#'))
+  )]);
+  for (const url of urls.slice(0, 40)) {
+    const response = await page.request.get(url, { failOnStatusCode: false });
+    if (response.status() >= 400) fail(scenario, `Broken internal link ${response.status()}: ${url}`);
+  }
+}
+
 async function axeAudit(page, scenario, phase) {
   const report = await new AxeBuilder({ page })
     .withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa'])
@@ -110,6 +140,8 @@ for (const s of scenarios) {
     if(await skip.count()){await page.keyboard.press('Tab');const focused=await skip.evaluate(el=>document.activeElement===el);if(!focused)fail(s.name,'Skip link is not first in keyboard focus order');await page.keyboard.press('Escape')}
     else fail(s.name,'Accessible skip link not found');
     if(s.axe) await axeAudit(page,s.name,'English');
+    await seoAudit(page,s.name);
+    if(s.path==='index.html'||s.path==='projects.html') await internalLinkAudit(page,s.name);
     const before = await metrics(page);
     if (before.scrollWidth > before.innerWidth + 2 || before.bodyScrollWidth > before.innerWidth + 2) {
       fail(s.name, `Horizontal overflow in English: scrollWidth=${before.scrollWidth}, viewport=${before.innerWidth}`);
@@ -227,7 +259,7 @@ const markdown = [
   `Failures: **${failures.length}**`,
   '',
   ...results.map(r => `- ✅ ${r.scenario} — ${r.viewport.width}×${r.viewport.height}`),
-  ...(failures.length ? ['', '## Failures', ...failures.map(f => `- ❌ **${f.scenario}** — ${f.message}`)] : ['', '✅ Desktop, tablet, mobile, RTL/LTR, WCAG automated audit, skip-navigation, loaded-image, console-error, 200% text-scale, and reduced-motion gates passed.'])
+  ...(failures.length ? ['', '## Failures', ...failures.map(f => `- ❌ **${f.scenario}** — ${f.message}`)] : ['', '✅ Desktop, tablet, mobile, RTL/LTR, WCAG automated audit, SEO/semantic metadata, internal-link health, skip-navigation, loaded-image, console-error, 200% text-scale, and reduced-motion gates passed.'])
 ].join('\n');
 await fs.writeFile(`${outDir}/report.md`, markdown);
 
