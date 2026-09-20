@@ -126,3 +126,24 @@ A project screenshot is weaker than a dedicated social-preview card.
 **Professional readiness:** strong, provided the publication-rights / confidentiality review is explicitly cleared.
 
 **Do not merge the draft PR solely because automated checks pass.** Keep the PR in Draft until both human gates above are confirmed.
+
+
+## Manual visual QA checklist
+
+This checklist complements the automated browser gates. It is reviewed against rendered Chromium screenshots before publication.
+
+- [ ] Hero communicates BIM / architecture clearly without looking like a generic tech landing page.
+- [ ] Cinematic navy palette remains legible in Arabic and English.
+- [ ] Primary CTA is obvious; secondary actions do not compete with it.
+- [ ] Homepage sections appear continuously with no large blank gaps caused by motion / lazy-loading.
+- [ ] Selected project cards remain readable at desktop, tablet and mobile widths.
+- [ ] Watermark protection stays inside project image areas and never overlaps project text.
+- [ ] Arabic headings do not create awkward single-word or orphaned line breaks where avoidable.
+- [ ] Experience timeline remains scannable and does not dominate selected project evidence.
+- [ ] Capabilities / tools / products remain visually distinct without repeating the same message.
+- [ ] Certificate imagery loads after viewport approach and does not create empty card states.
+- [ ] Deep technical project pages remain optional detail, not a barrier to recruiter scanning.
+- [ ] Contact block remains a clear final conversion point.
+- [ ] Mobile navigation, language switching and project galleries feel intentional, not compressed desktop UI.
+- [ ] No visual regression appears after 200% text scale or reduced-motion preference.
+- [ ] Final screenshots are reviewed after all automated gates pass on the same final HEAD.
