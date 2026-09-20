@@ -57,7 +57,7 @@ function bindGallery(){elements.content.querySelectorAll('[data-gallery-index]')
 function loadDeferredBuildingImages(){
   const images=[...elements.content.querySelectorAll('img[data-deferred-src]')];
   if(!images.length)return;
-  const load=img=>{if(!img.dataset.deferredSrc)return;img.src=img.dataset.deferredSrc;img.removeAttribute('data-deferred-src')};
+  const load=img=>{if(!img.dataset.deferredSrc)return;const src=img.dataset.deferredSrc;img.onload=()=>img.removeAttribute('data-deferred-src');img.onerror=()=>img.removeAttribute('data-deferred-src');img.src=src};
   if(!('IntersectionObserver'in window)){images.forEach(load);return}
   const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){load(entry.target);io.unobserve(entry.target)}}),{rootMargin:'120px 0px',threshold:.01});
   images.forEach(img=>io.observe(img))
