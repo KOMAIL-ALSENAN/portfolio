@@ -486,3 +486,15 @@ body[dir=rtl] .capability-card::after{transform-origin:right}
   .capability-card{min-height:244px}
   .project-proof{grid-template-columns:1fr}
 }
+
+
+/* Keyboard focus */
+a:focus-visible,button:focus-visible{
+  outline:3px solid rgba(18,104,232,.42);
+  outline-offset:3px;
+}
+.project:focus-within{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-hover)!important;
+  border-color:#b7d4ef!important;
+}
