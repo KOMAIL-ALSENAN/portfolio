@@ -1,0 +1,45 @@
+name: Lighthouse Pre-Publish
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'assets/css/**'
+      - 'assets/js/**'
+      - 'assets/projects/**'
+      - 'lighthouserc.json'
+      - '.github/workflows/lighthouse.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lighthouse-prepublish-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Lighthouse CI
+        run: npm install --no-save @lhci/cli@0.14.0
+
+      - name: Run Lighthouse pre-publish audit
+        run: npx lhci autorun --config=lighthouserc.json
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-lighthouse
+          path: artifacts/lighthouse
+          if-no-files-found: warn
+          retention-days: 14

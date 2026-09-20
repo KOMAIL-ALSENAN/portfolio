@@ -1,0 +1,95 @@
+name: Browser Visual QA
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'assets/css/**'
+      - 'assets/js/**'
+      - 'assets/projects/**'
+      - 'tests/visual_qa.mjs'
+      - '.github/workflows/visual-qa.yml'
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: browser-visual-qa-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  browser-visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.48.2 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+
+      - name: Start local portfolio server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/portfolio-http.log 2>&1 &
+          echo $! > /tmp/portfolio-http.pid
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:4173/index.html > /dev/null; then
+              exit 0
+            fi
+            sleep 0.5
+          done
+          cat /tmp/portfolio-http.log
+          exit 1
+
+      - name: Run browser visual QA
+        run: node tests/visual_qa.mjs
+
+      - name: Publish QA summary
+        if: always()
+        run: |
+          if [ -f artifacts/visual-qa/report.md ]; then
+            cat artifacts/visual-qa/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Comment browser QA on pull request
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = 'artifacts/visual-qa/report.md';
+            if (!fs.existsSync(path)) return;
+            const marker = '<!-- portfolio-browser-visual-qa -->';
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const eventHead = context.payload.pull_request?.head?.sha;
+            const currentPr = await github.rest.pulls.get({ owner, repo, pull_number: issue_number });
+            if (eventHead && currentPr.data.head.sha !== eventHead) {
+              core.notice(`Skipping stale Browser QA comment for ${eventHead}; current head is ${currentPr.data.head.sha}`);
+              return;
+            }
+            const body = marker + '\n' + `**HEAD:** \`${eventHead || context.sha}\`\n\n` + fs.readFileSync(path, 'utf8');
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number, per_page: 100 });
+            const existing = comments.find(c => c.user?.type === 'Bot' && c.body?.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
+
+      - name: Upload screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-browser-visual-qa
+          path: artifacts/visual-qa
+          if-no-files-found: warn
+          retention-days: 14

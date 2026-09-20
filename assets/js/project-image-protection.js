@@ -21,6 +21,7 @@
     style.id=STYLE_ID;
     style.textContent=`
       .project-layer-host{position:relative!important;isolation:isolate}
+      .project-inline-image-stack{position:relative;display:block;width:100%;overflow:hidden;line-height:0}
       .project-lightbox-image-stack{position:relative;display:grid;place-items:center;max-width:94vw;max-height:90dvh;line-height:0}
       .project-watermark-layer{position:absolute;inset:0;overflow:hidden;z-index:2;pointer-events:none;user-select:none;-webkit-user-select:none}
       .project-watermark-grid{position:absolute;inset:-24%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(42px,1fr);gap:12px 28px;align-items:center;justify-items:center;transform:rotate(-18deg) scale(1.08);transform-origin:center;color:rgba(255,255,255,.22);text-shadow:0 1px 2px rgba(0,0,0,.22)}
@@ -62,6 +63,16 @@
       if(!wrapper){
         wrapper=document.createElement('span');
         wrapper.className='project-lightbox-image-stack project-layer-host';
+        parent.insertBefore(wrapper,img);
+        wrapper.appendChild(img);
+      }
+      return wrapper;
+    }
+    if(parent.matches('.building,.project-card,.drawing-card')){
+      let wrapper=img.closest('.project-inline-image-stack');
+      if(!wrapper){
+        wrapper=document.createElement('span');
+        wrapper.className='project-inline-image-stack project-layer-host';
         parent.insertBefore(wrapper,img);
         wrapper.appendChild(img);
       }
