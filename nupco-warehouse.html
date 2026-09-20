@@ -38,4 +38,5 @@ function render(data){
 async function load(){try{const r=await fetch(manifestUrl,{cache:'no-cache'});if(!r.ok)throw new Error('Manifest '+r.status);manifestData=await r.json();render(manifestData)}catch(e){document.getElementById('loadNote').textContent=lang()==='ar'?'المعرض قيد المعالجة أو تعذر تحميل ملف البيانات المحلي. حاول التحديث بعد قليل.':'The gallery is being processed or the local manifest could not be loaded. Please refresh shortly.';console.error(e)}}
 document.addEventListener('projectgallery:language',()=>{if(manifestData)render(manifestData)});document.getElementById('year').textContent=new Date().getFullYear();load();
 </script><script src="assets/js/main.js" defer></script>
+<script src="assets/js/project-image-protection.js"></script>
 </body></html>

@@ -1,7 +1,7 @@
 name: Test Global Project Image Protection
 on:
   push:
-    branches: [fix/project-image-protection-global-20260902]
+    branches: [main]
   pull_request:
     branches: [main]
 jobs:
@@ -9,16 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify protection script is loaded on generic project pages
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          required = ['project.html','projects.html']
-          tag = '<script src="assets/js/project-image-protection.js"></script>'
-          missing=[p for p in required if tag not in Path(p).read_text(encoding='utf-8')]
-          if missing: raise SystemExit('Protection script missing from: '+', '.join(missing))
-          s=Path('assets/js/project-image-protection.js').read_text(encoding='utf-8')
-          for token in ['contextmenu','dragstart','copy','keydown','assets/projects/','PROJECT_WATERMARK_LAYER_V1','project-watermark-layer','project-protection-layer']:
-              if token not in s: raise SystemExit('Missing behavior: '+token)
-          print('PASS: global project image protection and watermark layers are loaded')
-          PY
+      - name: Verify project watermark coverage
+        run: python3 tests/project_watermark_coverage.py
