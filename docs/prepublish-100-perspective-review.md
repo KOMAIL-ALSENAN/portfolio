@@ -65,6 +65,11 @@ The portfolio must clearly describe the user's contribution without implying sol
 
 **Current mitigation:** recruiter-facing copy has been tightened toward role / scope / contribution language rather than ownership language.
 
+### P1 — CMS / rendered-site content drift
+The Sveltia CMS edits `content/portfolio.json`, while the current rendered homepage / project archive primarily use static HTML / JavaScript data. That means a future CMS edit can be stored successfully without automatically changing every public-facing section.
+
+**Recommendation:** treat CMS integration as a content-governance task: either wire the rendered project / product / certificate components to the JSON source with static fallbacks, or make the CMS clearly editorial-only. Do not assume a saved CMS edit is live until this is resolved.
+
 ### P1 — Content density on deep technical galleries
 Large drawing galleries are useful to BIM reviewers but can feel heavy to general recruiters.
 
