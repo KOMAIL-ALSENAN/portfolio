@@ -69,15 +69,16 @@ async function metrics(page) {
 
 async function scrollSample(page) {
   await page.evaluate(async () => {
-    const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
-    const points = [...new Set([0, max * .2, max * .4, max * .6, max * .8, max].map(x => Math.round(x)))];
-    for (const y of points) {
-      scrollTo(0, y);
-      await new Promise(r => setTimeout(r, 60));
+    const sections = [...document.querySelectorAll('main section, body > section, header.hero')];
+    for (const section of sections) {
+      section.scrollIntoView({ block: 'center' });
+      await new Promise(r => setTimeout(r, 90));
     }
+    scrollTo(0, document.documentElement.scrollHeight);
+    await new Promise(r => setTimeout(r, 120));
     scrollTo(0, 0);
   });
-  await page.waitForTimeout(180);
+  await page.waitForTimeout(220);
 }
 
 async function seoAudit(page, scenario) {
@@ -185,6 +186,31 @@ for (const s of scenarios) {
     }
 
     await scrollSample(page);
+
+    if (s.path === 'index.html') {
+      const hiddenCritical = await page.evaluate(() => {
+        const selectors = [
+          '#projects .project',
+          '#capabilities .capability-card',
+          '#skills .tool-card',
+          '#certificates .certificate',
+          '#about .about-card'
+        ];
+        return selectors.flatMap(selector =>
+          [...document.querySelectorAll(selector)]
+            .filter(el => {
+              const cs = getComputedStyle(el);
+              const rect = el.getBoundingClientRect();
+              return Number(cs.opacity) < .9 || cs.visibility === 'hidden' || rect.height < 20;
+            })
+            .map(el => selector + ':' + (el.className || el.tagName))
+        );
+      });
+      if (hiddenCritical.length) {
+        fail(s.name, `Critical homepage content remained visually hidden after scroll: ${hiddenCritical.slice(0,10).join(' | ')}`);
+      }
+    }
+
     const afterScroll = await metrics(page);
     if (afterScroll.brokenLoadedImages.length) {
       fail(s.name, `Broken loaded images: ${afterScroll.brokenLoadedImages.join(', ')}`);
