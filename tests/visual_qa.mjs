@@ -30,7 +30,7 @@ async function metrics(page) {
     const body = document.body;
     const main = document.querySelector('main');
     const brokenLoadedImages = [...document.images]
-      .filter(img => img.complete && img.naturalWidth === 0)
+      .filter(img => Boolean(img.currentSrc || img.getAttribute('src')) && img.complete && img.naturalWidth === 0)
       .map(img => img.currentSrc || img.src);
     const visibleFixed = [...document.querySelectorAll('*')]
       .filter(el => {
