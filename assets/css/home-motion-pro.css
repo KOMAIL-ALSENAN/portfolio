@@ -1107,3 +1107,20 @@ body[dir=rtl] .visual.hero-visual::after{left:66%!important}
   background:rgba(132,178,218,.16)!important;
   border-color:rgba(176,205,233,.28)!important;
 }
+
+
+/* Certificate contrast lock — bilingual dark theme */
+#certificates .certificate-body{
+  background:#0b1627!important;
+}
+#certificates .certificate h3{
+  color:#f4f7fb!important;
+}
+#certificates .certificate p{
+  color:#b8c6d4!important;
+}
+#certificates .featured-badge{
+  color:#cce4f7!important;
+  background:rgba(126,174,214,.10)!important;
+  border-color:rgba(176,205,232,.25)!important;
+}
