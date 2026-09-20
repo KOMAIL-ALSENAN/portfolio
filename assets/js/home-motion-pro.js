@@ -19,7 +19,7 @@
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const targets = document.querySelectorAll(
-    '#projects .project, #capabilities .capability-card, #skills .tool-card, #skills .secondary-tools, #about .about-card, #about .stat, #certificates .certificate, .section-head'
+    '#projects .project, #experience .experience-item, #capabilities .capability-card, #skills .tool-card, #skills .secondary-tools, #products .developed-tool-card, #certificates .certificate, #about .about-card, #about .stat, #developer-highlight .home-dev-card, .section-head'
   );
   targets.forEach(el => el.classList.add('motion-reveal'));
 
