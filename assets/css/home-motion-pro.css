@@ -851,3 +851,190 @@ a:focus-visible,button:focus-visible{
   }
   .links a{color:#c6d8e7!important}
 }
+
+
+/* Approved reference palette — cinematic navy */
+:root{
+  --paper:#07111f;
+  --paper-2:#0b1627;
+  --ink:#f4f7fb;
+  --ink-2:#d7e0e9;
+  --muted-2:#9baabd;
+  --accent:#5f9fe6;
+  --accent-2:#8bc7f5;
+  --blueprint:#80b7e7;
+  --hairline:rgba(157,188,220,.15);
+  --hairline-strong:rgba(176,203,231,.24);
+  --shadow-soft:0 24px 64px rgba(0,0,0,.34);
+  --shadow-hover:0 30px 78px rgba(0,0,0,.44);
+}
+body{
+  background:
+    radial-gradient(circle at 82% 3%,rgba(72,116,164,.13),transparent 30%),
+    radial-gradient(circle at 13% 24%,rgba(131,164,197,.035),transparent 25%),
+    linear-gradient(rgba(143,186,225,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(143,186,225,.018) 1px,transparent 1px),
+    var(--paper)!important;
+  background-size:auto,auto,40px 40px,40px 40px,auto!important;
+}
+.nav,.site-nav{
+  background:rgba(7,17,31,.86)!important;
+  border-bottom-color:rgba(172,199,226,.13)!important;
+  box-shadow:0 14px 38px rgba(0,0,0,.16)!important;
+}
+.mark,.site-mark{
+  background:#0b1627!important;
+  color:#f4f7fb!important;
+  border-color:rgba(191,211,231,.22)!important;
+}
+.site-role,.hero-name{color:#f0f4f8!important}
+.site-specialty,.links,.links a,.site-nav-links a,.site-nav-actions a{color:#9baabd!important}
+.links a:hover,.site-nav-links a:hover,.site-nav-actions a:hover{color:#f4f7fb!important}
+.links a::after{background:#f1f5f9!important}
+.eyebrow,.kicker{color:#9fc8ec!important}
+.gradient{
+  background:linear-gradient(100deg,#f6f8fb 8%,#e8eef5 58%,#82b9eb 100%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+.btn{
+  background:rgba(8,18,32,.64)!important;
+  color:#f4f7fb!important;
+  border-color:rgba(190,209,229,.24)!important;
+}
+.btn:hover{
+  background:rgba(16,31,51,.82)!important;
+  border-color:rgba(218,230,242,.42)!important;
+}
+.btn.primary{
+  background:#f4f6f8!important;
+  color:#07111f!important;
+  border-color:#f4f6f8!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
+}
+.btn.primary:hover{
+  background:#ffffff!important;
+  border-color:#ffffff!important;
+  box-shadow:0 16px 34px rgba(0,0,0,.30)!important;
+}
+.hero-proof{color:#b8c5d2!important}
+.hero-proof span{
+  background:rgba(7,17,31,.54)!important;
+  border-color:rgba(172,199,226,.15)!important;
+}
+.visual.hero-visual{
+  background:#081523!important;
+  border-color:rgba(168,198,227,.18)!important;
+  box-shadow:0 28px 78px rgba(0,0,0,.40)!important;
+}
+.hero-real-image{
+  filter:saturate(.86) contrast(1.04) brightness(.88)!important;
+}
+.hero-blueprint-image{
+  filter:grayscale(1) contrast(1.28) brightness(.92) sepia(.05) hue-rotate(166deg) saturate(1.25)!important;
+  opacity:.58!important;
+}
+.visual.hero-visual::before{
+  background:
+    linear-gradient(rgba(157,198,235,.12) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(157,198,235,.12) 1px,transparent 1px),
+    linear-gradient(135deg,rgba(93,143,189,.14),transparent 52%)!important;
+}
+.visual.hero-visual::after{
+  background:linear-gradient(transparent,#b6d7f2 12%,#6ea9db 50%,#b6d7f2 88%,transparent)!important;
+  box-shadow:0 0 20px rgba(137,190,234,.24)!important;
+}
+.blueprint-notes{
+  color:#e7f0f8!important;
+  background:rgba(7,17,31,.74)!important;
+  border-color:rgba(167,198,227,.18)!important;
+}
+.reality-label{
+  background:rgba(7,17,31,.74)!important;
+  color:#f3f6f9!important;
+  border-color:rgba(167,198,227,.16)!important;
+}
+.card,.project,.capability-card,.tool-card,.stat,.experience-card,.developed-tool-card{
+  background:linear-gradient(145deg,rgba(16,31,51,.94),rgba(10,22,38,.88))!important;
+  border-color:rgba(157,188,220,.14)!important;
+}
+.project:hover,.capability-card:hover,.tool-card:hover,.experience-card:hover,.developed-tool-card:hover{
+  border-color:rgba(175,205,233,.28)!important;
+}
+.project .tag,.featured-badge{
+  color:#afd2ef!important;
+  background:rgba(121,167,207,.075)!important;
+  border-color:rgba(159,195,225,.20)!important;
+}
+.project-link,.tool-type,.developed-tool-card:nth-child(2) .tool-type{color:#a9cdec!important}
+.project-proof b,.experience-company{color:#dbe4ed!important}
+.capability-number{color:#7f9fbd!important}
+.tool-index{
+  background:rgba(115,157,197,.09)!important;
+  border-color:rgba(159,195,225,.17)!important;
+  color:#bed8ef!important;
+}
+.secondary-tools span,.experience-skills span{
+  background:rgba(7,17,31,.42)!important;
+  color:#c4d0dc!important;
+  border-color:rgba(157,188,220,.13)!important;
+}
+.experience-marker{
+  background:linear-gradient(145deg,rgba(104,147,187,.14),rgba(7,17,31,.96))!important;
+  color:#dceaf6!important;
+  border-color:rgba(174,205,232,.22)!important;
+}
+.experience-item.current .experience-marker{
+  background:linear-gradient(145deg,rgba(111,156,199,.22),rgba(7,17,31,.96))!important;
+  color:#f5f8fb!important;
+  border-color:rgba(185,214,239,.34)!important;
+}
+.experience-card time{
+  color:#c2dbef!important;
+  background:rgba(7,17,31,.46)!important;
+  border-color:rgba(157,188,220,.13)!important;
+}
+.experience-status{
+  color:#c8e0f3!important;
+  background:rgba(121,167,207,.075)!important;
+}
+#capabilities,#products,#certificates{
+  background:linear-gradient(180deg,rgba(7,17,31,.12),rgba(11,22,39,.24))!important;
+}
+.tool-icon{
+  color:#d8e8f5!important;
+  background:rgba(93,143,189,.10)!important;
+  border-color:rgba(165,198,226,.18)!important;
+}
+.tool-link{
+  color:#e4edf5!important;
+  background:rgba(7,17,31,.42)!important;
+  border-color:rgba(157,188,220,.14)!important;
+}
+.tool-link:hover{
+  background:rgba(20,38,60,.74)!important;
+  border-color:rgba(185,211,234,.28)!important;
+}
+.contact{
+  background:linear-gradient(125deg,#0a1727,#0e2137 58%,#132a43)!important;
+  border-color:rgba(168,199,228,.18)!important;
+}
+.contact .btn.primary{
+  background:#f4f6f8!important;
+  color:#07111f!important;
+}
+.scroll-progress{
+  background:linear-gradient(90deg,#dce7f1,#8eb9dd)!important;
+  box-shadow:0 0 14px rgba(149,192,228,.20)!important;
+}
+a:focus-visible,button:focus-visible{
+  outline-color:rgba(188,218,243,.82)!important;
+}
+@media(max-width:760px){
+  .links{
+    background:rgba(7,17,31,.985)!important;
+    border-color:rgba(157,188,220,.14)!important;
+  }
+  .links a{color:#c7d2de!important}
+}
