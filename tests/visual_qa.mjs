@@ -181,4 +181,10 @@ const markdown = [
 await fs.writeFile(`${outDir}/report.md`, markdown);
 
 console.log(markdown);
-if (failures.length) process.exit(1);
+if (failures.length) {
+  const esc = value => String(value).replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
+  for (const failure of failures) {
+    console.log(`::error title=Portfolio Visual QA - ${esc(failure.scenario)}::${esc(failure.message)}`);
+  }
+  process.exit(1);
+}
