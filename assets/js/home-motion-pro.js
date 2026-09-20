@@ -19,7 +19,7 @@
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const targets = document.querySelectorAll(
-    '#projects .project, #about .about-card, #about .stat, #skills .skill, #certificates .certificate, .section-head'
+    '#projects .project, #capabilities .capability-card, #skills .tool-card, #skills .secondary-tools, #about .about-card, #about .stat, #certificates .certificate, .section-head'
   );
   targets.forEach(el => el.classList.add('motion-reveal'));
 
