@@ -1084,3 +1084,9 @@ body[dir=rtl] .visual.hero-visual::after{left:66%!important}
 @media(prefers-reduced-motion:reduce){
   .visual.hero-visual::after{animation:none!important}
 }
+
+
+/* Cinematic experience section correction */
+#experience{
+  background:linear-gradient(180deg,rgba(7,17,31,.08),rgba(11,22,39,.22))!important;
+}
