@@ -78,3 +78,42 @@ html[dir="rtl"] .skip-link{left:auto;right:16px}
   .site-specialty{display:none!important}
   .experience-card,.developed-tool-card,.about-detail-card{padding:17px!important}
 }
+
+
+/* Midnight Tech — portfolio style overlay. Real media, identities, galleries remain intact. */
+:root{color-scheme:dark;--bg:#080d19;--surface:#111b30;--surface2:#172741;
+ --text:#edf6ff;--muted:#a7bad3;--blue:#7ccfff;--cyan:#8bdcff;
+ --line:rgba(136,181,235,.25);--site-bg:#080d19;
+ --site-surface:#111b30;--site-text:#edf6ff;--site-muted:#a7bad3;
+ --site-cyan:#8bdcff;--site-line:rgba(136,181,235,.25)
+}
+html{scroll-padding-top:90px}
+body{background:radial-gradient(ellipse 58% 27% at 85% 0%,rgba(65,101,180,.2),transparent 78%),#080d19;color:#edf6ff}
+.nav,.site-nav{background:rgba(9,16,29,.91);border-color:rgba(136,181,235,.25)}
+.nav.scrolled{background:#0b1527}
+.brand .mark,.site-mark{border-color:#639cc9;color:#a6e5ff}
+.eyebrow,.kicker,.site-specialty{color:#91dfff}
+.gradient{background:linear-gradient(110deg,#ffffff,#8cd6ff 65%,#b19bff);color:transparent;background-clip:text;-webkit-background-clip:text}
+.lead,.section-head p{color:#b1c4dc}
+.btn{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease}
+.btn.primary{background:linear-gradient(115deg,#72d2ff,#a8b5ff);border:1px solid #94d5fd;color:#071626;box-shadow:0 12px 30px #4498ff26}
+.btn.primary:hover{filter:brightness(1.07);box-shadow:0 16px 35px #4498ff3b}
+.project,.card,.about-card,.experience-card,.developed-tool-card,.certificate{
+ border-color:rgba(136,181,235,.23);
+ background-color:#111f35
+}
+.project,.developed-tool-card,.certificate{
+ transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease
+}
+.project:hover,.developed-tool-card:hover,.certificate:hover{
+ transform:translateY(-3px);border-color:#548dcb;box-shadow:0 18px 40px #0004
+}
+.project-media,.project-media img,.gallery img{background-color:#10213a}
+.project-media img,.gallery img{transition:filter .28s ease,transform .28s ease}
+.project:hover .project-media img{transform:scale(1.015);filter:brightness(1.04)}
+.hero .visual,.visual{border-color:rgba(136,181,235,.26);box-shadow:0 24px 60px #0003}
+.contact{background:linear-gradient(140deg,#132b4b,#111a31);border-color:#345271}
+.footer{border-color:rgba(136,181,235,.23)}
+:focus-visible{outline:3px solid #9addff;outline-offset:3px}
+@media(max-width:600px){.project:hover .project-media img{transform:none}.nav{backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
